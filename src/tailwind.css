@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --ink-background-dark: rgb(240, 239, 255);
+  --ink-background-container: color-mix(
+    in srgb,
+    var(--ink-background-dark),
+    transparent 94%
+  );
+  --ink-background-light: rgb(255, 255, 255);
+  --ink-background-light-50: rgb(255, 255, 255);
+  --ink-background-light-0: rgb(255, 255, 0);
+
+  --ink-primary: rgb(113, 50, 245);
+  --ink-primary-hover: color-mix(in srgb, var(--ink-primary), transparent 10%);
+  --ink-secondary: color-mix(in srgb, var(--ink-primary), transparent 94%);
+  --ink-secondary-hover: color-mix(
+    in srgb,
+    var(--ink-secondary),
+    transparent 97%
+  );
+
+  --ink-text-default: rgb(22, 15, 31);
+  --ink-text-muted: color-mix(
+    in srgb,
+    var(--ink-text-default),
+    transparent 50%
+  );
+  --ink-text-on-primary: rgb(255, 255, 255);
+  --ink-text-on-primary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-primary),
+    transparent 60%
+  );
+  --ink-text-on-secondary: rgb(113, 50, 245);
+  --ink-text-on-secondary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-secondary),
+    transparent 50%
+  );
+
+  --ink-status-success: rgb(61, 166, 103);
+  --ink-status-success-bg: color-mix(
+    in srgb,
+    var(--ink-status-success),
+    transparent 94%
+  );
+  --ink-status-alert: rgb(231, 149, 74);
+  --ink-status-alert-bg: color-mix(
+    in srgb,
+    var(--ink-status-alert),
+    transparent 94%
+  );
+  --ink-status-error: rgb(236, 109, 109);
+  --ink-status-error-bg: color-mix(
+    in srgb,
+    var(--ink-status-error),
+    transparent 92%
+  );
+}
