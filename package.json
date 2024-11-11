@@ -1,6 +1,6 @@
 {
   "name": "@inkonchain/ink-kit",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -59,7 +59,8 @@
     "tslib": "^2.8.1",
     "typescript": "^5.6.3",
     "vite": "^5.4.10",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "^4.3.0",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "peerDependencies": {
     "react": "^18",

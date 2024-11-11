@@ -18,7 +18,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ["dist"],
+    ignores: ["dist", "storybook-static"],
   },
   ...compat.extends(),
   eslintPluginPrettierRecommended,
