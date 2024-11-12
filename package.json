@@ -27,7 +27,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx,css,scss}\"",
     "test": "playwright test",
     "fix:all": "pnpm run lint:fix && pnpm run format",
-    "prepublish": "build"
+    "prepublish": "build",
+    "import-svgs": "node scripts/import-svgs.mjs"
   },
   "keywords": [],
   "author": "",
