@@ -1,5 +1,5 @@
 import type { Preview, ReactRenderer } from "@storybook/react";
-import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { withThemeByClassName } from "@storybook/addon-themes";
 
 import "../src/tailwind.css";
 
@@ -13,13 +13,12 @@ const preview: Preview = {
     },
   },
   decorators: [
-    withThemeByDataAttribute<ReactRenderer>({
+    withThemeByClassName<ReactRenderer>({
       themes: {
         light: "",
-        dark: "dark",
+        dark: "ink-dark",
       },
-      defaultTheme: "light",
-      attributeName: "data-theme",
+      defaultTheme: "ink-light",
     }),
   ],
 };

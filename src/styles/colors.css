@@ -3,11 +3,11 @@
   --ink-background-container: color-mix(
     in srgb,
     var(--ink-background-dark),
-    transparent 94%
+    transparent 6%
   );
   --ink-background-light: rgb(255, 255, 255);
   --ink-background-light-50: rgb(255, 255, 255);
-  --ink-background-light-0: rgb(255, 255, 0);
+  --ink-background-light-0: rgb(255, 255, 255);
 
   --ink-primary: rgb(113, 50, 245);
   --ink-primary-hover: color-mix(in srgb, var(--ink-primary), transparent 10%);

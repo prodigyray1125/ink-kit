@@ -17,7 +17,7 @@ export const spacing = {
 
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: ["class", '[data-mode="dark"]'],
+  darkMode: "selector",
   prefix: "ink-",
   theme: {
     gap: spacing,
