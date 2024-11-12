@@ -1,6 +1,8 @@
 @import url("./styles/colors.css");
 @import url("./styles/borders.css");
 @import url("./styles/typography.css");
+@import url("./styles/spacing.css");
+@import url("./styles/font.css");
 
 @tailwind base;
 @tailwind components;

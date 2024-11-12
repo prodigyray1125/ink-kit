@@ -1,9 +1,32 @@
 /** @type {import('tailwindcss').Config} */
+
+export const spacing = {
+  0.5: "var(--ink-spacing-4)",
+  1: "var(--ink-spacing-8)",
+  1.5: "var(--ink-spacing-12)",
+  2: "var(--ink-spacing-16)",
+  2.5: "var(--ink-spacing-20)",
+  3: "var(--ink-spacing-24)",
+  4: "var(--ink-spacing-32)",
+  5: "var(--ink-spacing-40)",
+  6: "var(--ink-spacing-48)",
+  8: "var(--ink-spacing-64)",
+  12: "var(--ink-spacing-96)",
+  16: "var(--ink-spacing-128)",
+};
+
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: ["class", '[data-mode="dark"]'],
   prefix: "ink-",
   theme: {
+    gap: spacing,
+    padding: spacing,
+    margin: spacing,
+    spacing: spacing,
+    fontFamily: {
+      default: "var(--ink-default-font)",
+    },
     colors: {
       background: {
         dark: "var(--ink-background-dark)",

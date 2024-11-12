@@ -1,0 +1,14 @@
+:root {
+  --ink-spacing-4: 4px;
+  --ink-spacing-8: 8px;
+  --ink-spacing-12: 12px;
+  --ink-spacing-16: 16px;
+  --ink-spacing-20: 20px; /* This one was added, it is not in the designs */
+  --ink-spacing-24: 24px;
+  --ink-spacing-32: 32px;
+  --ink-spacing-40: 40px;
+  --ink-spacing-48: 48px;
+  --ink-spacing-64: 64px;
+  --ink-spacing-96: 96px;
+  --ink-spacing-128: 128px;
+}

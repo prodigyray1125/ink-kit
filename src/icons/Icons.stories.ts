@@ -27,6 +27,6 @@ export const AllIconsWithColor: Story = {
 
 export const AllIconsWithDifferentSize: Story = {
   args: {
-    iconClassName: "ink-size-4",
+    iconClassName: "ink-size-2",
   },
 };
