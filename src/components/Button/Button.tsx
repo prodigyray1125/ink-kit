@@ -1,5 +1,9 @@
 import React, { type ElementType } from "react";
-import { classNames, variantClassNames } from "../../util/classes";
+import {
+  classNames,
+  resetClasses,
+  variantClassNames,
+} from "../../util/classes";
 import { PolymorphicProps } from "../polymorphic";
 
 const DEFAULT_BUTTON_TAG = "button" as const;
@@ -29,7 +33,8 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
   return (
     <Component
       className={classNames(
-        "ink-rounded-full ink-font-bold ink-transition-colors disabled:ink-cursor-not-allowed ink-duration-100 ink-font-default",
+        resetClasses,
+        "ink-rounded-full ink-font-bold ink-transition-colors disabled:ink-cursor-not-allowed ink-duration-100",
         "ink-flex ink-items-center ink-justify-center ink-gap-1 ink-select-none",
         variantClassNames(variant, {
           primary:

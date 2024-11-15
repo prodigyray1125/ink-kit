@@ -16,7 +16,7 @@ function Colors() {
     "ink-bg-status-alert-bg ink-text-status-alert",
   ];
   return (
-    <div className="ink-flex ink-gap-2 ink-flex-wrap">
+    <div className="ink-flex ink-gap-2 ink-flex-wrap ink-font-default">
       {colors.map((color) => (
         <div
           key={color}

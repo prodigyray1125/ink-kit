@@ -1,6 +1,9 @@
 import { type ClassValue, clsx } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
+/** These classes should be used internally on all `button`, `a`, `input`, etc. native components to apply the "reset" tailwind styles */
+export const resetClasses = "ink-preflight ink-font-default";
+
 const customTwMerge = extendTailwindMerge({
   prefix: "ink-",
   extend: {

@@ -1,5 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { classNames, variantClassNames } from "../../util/classes";
+import {
+  classNames,
+  resetClasses,
+  variantClassNames,
+} from "../../util/classes";
 import { DisplayOnProps } from "../../util/theme";
 
 export interface SegmentedControlProps<T extends string>
@@ -50,7 +54,7 @@ export const SegmentedControl = <T extends string>({
     <div className="ink-relative">
       {isMounted && selectedOption && (
         <div
-          className="ink-absolute ink-transition-all ink-duration-200 ink-p-0.5"
+          className="ink-absolute ink-transition-all ink-duration-200 ink-p-0.5 ink-preflight"
           style={{
             top: 0,
             bottom: 0,
@@ -83,7 +87,8 @@ export const SegmentedControl = <T extends string>({
         {options.map((option, index) => (
           <button
             className={classNames(
-              "ink-px-4 ink-py-2 ink-rounded-full ink-relative ink-z-10 ink-transition-colors ink-duration-200",
+              resetClasses,
+              "ink-px-4 ink-py-2 ink-rounded-full ink-relative ink-z-10 ink-transition-colors ink-duration-200 ink-select-none",
               selectedOption === option.value
                 ? "ink-text-text-default"
                 : "ink-text-text-on-secondary"
