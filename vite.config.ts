@@ -13,14 +13,8 @@ export default defineConfig({
       formats: ["cjs", "es"],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          tailwindcss: "tailwindcss",
-        },
-      },
+      /** "react/jsx-runtime" is needed to support both React 18 and 19, plus it makes the bundle smaller */
+      external: ["react/jsx-runtime", ...Object.keys(peerDependencies)],
     },
     sourcemap: true,
     emptyOutDir: true,

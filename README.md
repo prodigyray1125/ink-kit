@@ -22,6 +22,8 @@ To import the CSS, you can use the `style.css` export:
 import "@inkonchain/ink-kit/style.css";
 ```
 
+Note: Ink-Kit styles should be imported first so that your own custom classes are taking precedence.
+
 Ink Kit classes are prefixed with `ink-`.
 
 You can also use the CSS variables directly in your project instead of the tailwind classes.

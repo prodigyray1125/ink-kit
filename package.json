@@ -1,6 +1,6 @@
 {
   "name": "@inkonchain/ink-kit",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -18,7 +18,7 @@
     "./tailwind.config.mjs": "./tailwind.config.mjs"
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --mode production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint",
@@ -43,7 +43,8 @@
     "@storybook/react": "^8.4.2",
     "@storybook/react-vite": "^8.4.2",
     "@storybook/test": "^8.4.2",
-    "@types/react": "^18.3.12",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
@@ -54,7 +55,8 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "react": "^18.3.1",
+    "react": "19.0.0-rc-7ac8e612-20241113",
+    "react-dom": "19.0.0-rc-7ac8e612-20241113",
     "storybook": "^8.4.2",
     "tailwindcss": "^3.4.14",
     "tslib": "^2.8.1",
@@ -64,8 +66,8 @@
     "vite-plugin-svgr": "^4.3.0"
   },
   "peerDependencies": {
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
     "tailwindcss": "^3"
   },
   "dependencies": {

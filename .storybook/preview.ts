@@ -22,7 +22,7 @@ const preview: Preview = {
         light: "",
         dark: "ink-dark",
       },
-      defaultTheme: "ink-light",
+      defaultTheme: "light",
     }),
   ],
 };

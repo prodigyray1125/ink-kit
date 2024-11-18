@@ -1,8 +1,8 @@
-@import url("./styles/colors.css");
-@import url("./styles/borders.css");
-@import url("./styles/typography.css");
-@import url("./styles/spacing.css");
-@import url("./styles/font.css");
+@import url("./styles/colors.css") layer(ink-kit);
+@import url("./styles/borders.css") layer(ink-kit);
+@import url("./styles/typography.css") layer(ink-kit);
+@import url("./styles/spacing.css") layer(ink-kit);
+@import url("./styles/font.css") layer(ink-kit);
 
 @tailwind base;
 @tailwind components;
