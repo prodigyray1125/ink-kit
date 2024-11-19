@@ -33,7 +33,7 @@ function Colors() {
 }
 
 const meta: Meta = {
-  title: "Example/Colors",
+  title: "Design/Colors",
   component: Colors,
   parameters: {
     layout: "centered",

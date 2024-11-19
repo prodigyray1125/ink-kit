@@ -1,4 +1,7 @@
-.ink-dark body,
-.ink-dark .docs-story {
-  background-color: #160f1f;
+:root {
+  --ink-storybook-theme-color: #ffffff;
+}
+
+.ink-dark:root {
+  --ink-storybook-theme-color: #f0efff;
 }

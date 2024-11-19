@@ -1,15 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { InkIcon } from "../..";
-import { AllButtonVariants, AllButtonVariantsProps } from "./AllButtonVariants";
+import { Button, ButtonProps, InkIcon } from "../..";
+import { MatrixDecorator } from "../../decorators/MatrixDecorator";
 
-const meta: Meta<AllButtonVariantsProps> = {
-  title: "Example/Button",
-  component: AllButtonVariants,
-  parameters: {
-    layout: "centered",
-  },
+const meta: Meta<ButtonProps<"button" | "a">> = {
+  title: "Components/Button",
+  decorators: [
+    MatrixDecorator<ButtonProps>({
+      first: { key: "size", values: ["sm", "md"] },
+      second: { key: "variant", values: ["primary", "secondary"] },
+    }),
+  ],
+  component: Button,
   tags: ["autodocs"],
   argTypes: {
     variant: { control: false },

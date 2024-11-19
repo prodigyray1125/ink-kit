@@ -3,11 +3,8 @@ import { fn } from "@storybook/test";
 import { SegmentedControl, SegmentedControlProps } from "./SegmentedControl";
 
 const meta: Meta<SegmentedControlProps<string>> = {
-  title: "Example/SegmentedControl",
+  title: "Components/SegmentedControl",
   component: SegmentedControl,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   args: {
     onOptionChange: fn(),

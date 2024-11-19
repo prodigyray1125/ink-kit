@@ -6,8 +6,19 @@ import "./theme.css";
 
 const preview: Preview = {
   parameters: {
+    layout: "centered",
     backgrounds: {
-      disable: true,
+      default: "theme",
+      values: [
+        {
+          name: "theme",
+          value: "var(--ink-storybook-theme-color)",
+        },
+        {
+          name: "container",
+          value: "var(--ink-background-container)",
+        },
+      ],
     },
     controls: {
       matchers: {

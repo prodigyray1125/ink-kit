@@ -1,0 +1,65 @@
+import { ElementType } from "react";
+import { classNames, variantClassNames } from "../../util/classes";
+import { ButtonProps } from "./Button";
+
+import { Button } from "./Button";
+
+const DEFAULT_BUTTON_TAG = "button" as const;
+
+export type InternalButtonProps<
+  T extends ElementType = typeof DEFAULT_BUTTON_TAG,
+> = Omit<ButtonProps<T>, "variant" | "size"> & InternalButtonOwnProps;
+
+export type InternalButtonVariant = "wallet" | "wallet-inside";
+
+export interface InternalButtonOwnProps {
+  variant: InternalButtonVariant | ButtonProps["variant"];
+}
+
+export const InternalButton = <
+  T extends ElementType = typeof DEFAULT_BUTTON_TAG,
+>({
+  children,
+  className,
+  variant,
+  iconLeft,
+  ...props
+}: InternalButtonProps<T>) => {
+  return (
+    <Button
+      className={classNames(
+        variantClassNames(variant as InternalButtonVariant, {
+          wallet:
+            "ink-bg-background-light-transparent ink-px-1.5 ink-py-2 ink-text-body-2 ink-font-bold ink-text-default hover:ink-bg-background-light disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+          "wallet-inside":
+            "ink-bg-background-light-invisible ink-px-1.5 ink-rounded-8 ink-text-body-2 ink-font-bold ink-text-default hover:ink-bg-background-container disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+        }),
+        className
+      )}
+      size="sm"
+      variant={
+        variant === "primary" || variant === "secondary" ? variant : undefined
+      }
+      {...(props as ButtonProps<T>)}
+    >
+      <div
+        className={classNames(
+          "ink-w-full ink-flex ink-items-center ink-gap-1.5",
+          variantClassNames(variant as InternalButtonVariant, {
+            wallet: "ink-justify-center",
+            "wallet-inside": "ink-justify-start",
+          })
+        )}
+      >
+        {iconLeft && (
+          <div className="ink-size-4 -ink-my-[10px] ink-flex ink-items-center ink-justify-center">
+            <div className="ink-size-4 ink-flex ink-items-center ink-justify-center ink-rounded-full ink-overflow-hidden">
+              {iconLeft}
+            </div>
+          </div>
+        )}
+        <div>{children}</div>
+      </div>
+    </Button>
+  );
+};

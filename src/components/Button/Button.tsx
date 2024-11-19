@@ -9,13 +9,15 @@ import { PolymorphicProps } from "../polymorphic";
 const DEFAULT_BUTTON_TAG = "button" as const;
 
 export type ButtonProps<T extends ElementType = typeof DEFAULT_BUTTON_TAG> =
-  PolymorphicProps<T> & {
-    variant?: "primary" | "secondary";
-    size?: "sm" | "md";
-    rounded?: "full" | "default";
-    iconLeft?: React.ReactNode;
-    iconRight?: React.ReactNode;
-  };
+  PolymorphicProps<T> & OwnButtonProps;
+
+export interface OwnButtonProps {
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md";
+  rounded?: "full" | "default";
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+}
 
 export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
   as,
@@ -36,12 +38,6 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
         resetClasses,
         "ink-rounded-full ink-font-bold ink-transition-colors disabled:ink-cursor-not-allowed ink-duration-100",
         "ink-flex ink-items-center ink-justify-center ink-gap-1 ink-select-none",
-        variantClassNames(variant, {
-          primary:
-            "ink-bg-primary ink-text-text-on-primary hover:ink-bg-primary-hover disabled:ink-bg-primary-disabled disabled:ink-text-text-on-primary-disabled active:ink-bg-primary-pressed",
-          secondary:
-            "ink-bg-secondary ink-text-text-on-secondary hover:ink-bg-secondary-hover disabled:ink-bg-secondary-disabled disabled:ink-text-text-on-secondary-disabled active:ink-bg-secondary-pressed",
-        }),
         variantClassNames(size, {
           sm: "ink-px-3 ink-py-2 ink-text-body-2",
           md: "ink-px-4 ink-py-2.5 ink-text-h4",
@@ -52,6 +48,12 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
             md: "ink-rounded-full ink-px-2.5 ink-py-2.5",
           }),
           default: "",
+        }),
+        variantClassNames(variant, {
+          primary:
+            "ink-bg-primary ink-text-text-on-primary hover:ink-bg-primary-hover disabled:ink-bg-primary-disabled disabled:ink-text-text-on-primary-disabled active:ink-bg-primary-pressed",
+          secondary:
+            "ink-bg-secondary ink-text-text-on-secondary hover:ink-bg-secondary-hover disabled:ink-bg-secondary-disabled disabled:ink-text-text-on-secondary-disabled active:ink-bg-secondary-pressed",
         }),
         className
       )}
@@ -82,6 +84,7 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
       ) : (
         <div
           className={classNames(
+            "ink-w-full",
             variantClassNames(size, {
               /** This here accomplishes the "snug" spacing, which makes the box height as tight as possible */
               sm: "-ink-my-0.5",
