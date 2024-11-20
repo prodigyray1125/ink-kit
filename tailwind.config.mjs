@@ -1,4 +1,5 @@
 export const spacing = {
+  0: "0px",
   0.5: "var(--ink-spacing-4)",
   1: "var(--ink-spacing-8)",
   1.5: "var(--ink-spacing-12)",
@@ -92,6 +93,7 @@ const config = {
     },
     boxShadow: {
       menu: "var(--ink-box-shadow-menu)",
+      modal: "var(--ink-box-shadow-modal)",
     },
   },
   plugins: [],
