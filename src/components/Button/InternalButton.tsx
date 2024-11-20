@@ -30,9 +30,9 @@ export const InternalButton = <
       className={classNames(
         variantClassNames(variant as InternalButtonVariant, {
           wallet:
-            "ink-bg-background-light-transparent ink-px-1.5 ink-py-2 ink-text-body-2 ink-font-bold ink-text-default hover:ink-bg-background-light disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+            "ink-bg-background-light-transparent ink-px-1.5 ink-py-2 ink-text-body-2 ink-font-bold ink-text-text-default hover:ink-bg-background-light disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
           "wallet-inside":
-            "ink-bg-background-light-invisible ink-px-1.5 ink-rounded-8 ink-text-body-2 ink-font-bold ink-text-default hover:ink-bg-background-container disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+            "ink-bg-background-light-invisible ink-px-1.5 ink-rounded-8 ink-text-body-2 ink-font-bold ink-text-text-default hover:ink-bg-background-container disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
         }),
         className
       )}
@@ -52,8 +52,24 @@ export const InternalButton = <
         )}
       >
         {iconLeft && (
-          <div className="ink-size-4 -ink-my-[10px] ink-flex ink-items-center ink-justify-center">
-            <div className="ink-size-4 ink-flex ink-items-center ink-justify-center ink-rounded-full ink-overflow-hidden">
+          <div
+            className={classNames(
+              "ink-flex ink-items-center ink-justify-center",
+              variantClassNames(variant as InternalButtonVariant, {
+                wallet: "ink-size-4 -ink-my-[10px]",
+                "wallet-inside": "ink-size-3",
+              })
+            )}
+          >
+            <div
+              className={classNames(
+                "ink-flex ink-items-center ink-justify-center ink-rounded-full ink-overflow-hidden",
+                variantClassNames(variant as InternalButtonVariant, {
+                  wallet: "ink-size-4",
+                  "wallet-inside": "ink-size-3",
+                })
+              )}
+            >
               {iconLeft}
             </div>
           </div>

@@ -1,5 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-
 export const spacing = {
   0.5: "var(--ink-spacing-4)",
   1: "var(--ink-spacing-8)",
@@ -15,6 +13,7 @@ export const spacing = {
   16: "var(--ink-spacing-128)",
 };
 
+/** @satisfies {import('tailwindcss').Config} */
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "selector",
@@ -90,6 +89,9 @@ const config = {
       24: "var(--ink-border-radius-24)",
       16: "var(--ink-border-radius-16)",
       8: "var(--ink-border-radius-8)",
+    },
+    boxShadow: {
+      menu: "var(--ink-box-shadow-menu)",
     },
   },
   plugins: [],

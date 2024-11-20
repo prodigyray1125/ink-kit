@@ -37,11 +37,11 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
 
       <PopoverPanel
         className={classNames(
-          "ink-absolute ink-right-0 ink-z-10 ink-min-w-[240px]",
-          "ink-rounded-24 ink-mt-2 ink-rounded-lg ink-bg-background-light ink-p-1.5 ink-shadow-lg",
+          "ink-absolute ink-z-10 ink-min-w-[240px]",
+          "ink-rounded-24 ink-rounded-lg ink-bg-background-light ink-p-1.5 ink-shadow-menu",
           "ink-flex ink-flex-col ink-gap-2"
         )}
-        anchor={{ to: "bottom end", offset: 8 }}
+        anchor={{ to: "bottom end", gap: 8 }}
       >
         {isConnected ? (
           <ConnectedWalletSection address={address!} />
