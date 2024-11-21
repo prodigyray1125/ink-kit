@@ -51,9 +51,9 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
         }),
         variantClassNames(variant, {
           primary:
-            "ink-bg-primary ink-text-text-on-primary hover:ink-bg-primary-hover disabled:ink-bg-primary-disabled disabled:ink-text-text-on-primary-disabled active:ink-bg-primary-pressed",
+            "ink-bg-button-primary ink-text-text-on-button-primary hover:ink-bg-button-primary-hover disabled:ink-bg-button-primary-disabled disabled:ink-text-text-on-button-primary-disabled active:ink-bg-button-primary-pressed",
           secondary:
-            "ink-bg-secondary ink-text-text-on-secondary hover:ink-bg-secondary-hover disabled:ink-bg-secondary-disabled disabled:ink-text-text-on-secondary-disabled active:ink-bg-secondary-pressed",
+            "ink-bg-button-secondary ink-text-text-on-button-secondary hover:ink-bg-button-secondary-hover disabled:ink-bg-button-secondary-disabled disabled:ink-text-text-on-button-secondary-disabled active:ink-bg-button-secondary-pressed",
         }),
         className
       )}

@@ -91,7 +91,7 @@ export const SegmentedControl = <T extends string>({
               "ink-px-4 ink-py-2 ink-rounded-full ink-relative ink-z-10 ink-transition-colors ink-duration-200 ink-select-none",
               selectedOption === option.value
                 ? "ink-text-text-default"
-                : "ink-text-text-on-secondary"
+                : "ink-text-text-on-button-secondary"
             )}
             ref={(el) => {
               itemsRef.current[index] = el;

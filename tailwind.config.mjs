@@ -36,19 +36,23 @@ const config = {
         "light-transparent": "var(--ink-background-light-transparent)",
         "light-invisible": "var(--ink-background-light-invisible)",
       },
-      primary: "var(--ink-button-primary)",
-      "primary-hover": "var(--ink-button-primary-hover)",
-      "primary-pressed": "var(--ink-button-primary-pressed)",
-      secondary: "var(--ink-button-secondary)",
-      "secondary-hover": "var(--ink-button-secondary-hover)",
-      "secondary-pressed": "var(--ink-button-secondary-pressed)",
+      button: {
+        primary: "var(--ink-button-primary)",
+        "primary-hover": "var(--ink-button-primary-hover)",
+        "primary-pressed": "var(--ink-button-primary-pressed)",
+        secondary: "var(--ink-button-secondary)",
+        "secondary-hover": "var(--ink-button-secondary-hover)",
+        "secondary-pressed": "var(--ink-button-secondary-pressed)",
+      },
       text: {
         default: "var(--ink-text-default)",
         muted: "var(--ink-text-muted)",
-        "on-primary": "var(--ink-text-on-primary)",
-        "on-primary-disabled": "var(--ink-text-on-primary-disabled)",
-        "on-secondary": "var(--ink-text-on-secondary)",
-        "on-secondary-disabled": "var(--ink-text-on-secondary-disabled)",
+        "on-button-primary": "var(--ink-text-on-button-primary)",
+        "on-button-primary-disabled":
+          "var(--ink-text-on-button-primary-disabled)",
+        "on-button-secondary": "var(--ink-text-on-button-secondary)",
+        "on-button-secondary-disabled":
+          "var(--ink-text-on-button-secondary-disabled)",
       },
       status: {
         success: "var(--ink-status-success)",
