@@ -1,7 +1,4 @@
-:root {
-  --ink-storybook-theme-color: #ffffff;
-}
-
-.ink-dark:root {
-  --ink-storybook-theme-color: #f0efff;
+.docs-story,
+.sb-show-main {
+  background-color: var(--ink-background-dark);
 }

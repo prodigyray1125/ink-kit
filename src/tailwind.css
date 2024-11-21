@@ -6,7 +6,11 @@
 @import url("./styles/font.css") layer(ink-kit);
 
 @import url("./styles/theme/colors.dark.css") layer(ink-kit);
+@import url("./styles/theme/colors.neo.css") layer(ink-kit);
+@import url("./styles/theme/colors.morpheus.css") layer(ink-kit);
+@import url("./styles/theme/colors.contrast.css") layer(ink-kit);
 @import url("./styles/theme/colors.light.css") layer(ink-kit);
+@import url("./styles/theme/colors.base.css") layer(ink-kit);
 
 @tailwind base;
 @tailwind components;

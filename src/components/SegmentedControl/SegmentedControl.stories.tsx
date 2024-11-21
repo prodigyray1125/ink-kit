@@ -33,6 +33,6 @@ export const Simple: Story = {
   args: {},
 };
 
-export const TransparentVariant: Story = {
-  args: { variant: "transparent" },
+export const DisplayOnDarkBackground: Story = {
+  args: { displayOn: "dark" },
 };

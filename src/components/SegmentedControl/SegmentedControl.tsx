@@ -4,11 +4,12 @@ import {
   resetClasses,
   variantClassNames,
 } from "../../util/classes";
+import { DisplayOnProps } from "../../util/theme";
 
-export interface SegmentedControlProps<T extends string> {
+export interface SegmentedControlProps<T extends string>
+  extends DisplayOnProps {
   options: SegmentedControlOption<T>[];
   onOptionChange: (option: SegmentedControlOption<T>, index: number) => void;
-  variant?: "purple" | "transparent";
 }
 
 export interface SegmentedControlOption<T extends string> {
@@ -20,7 +21,7 @@ export interface SegmentedControlOption<T extends string> {
 export const SegmentedControl = <T extends string>({
   options,
   onOptionChange,
-  variant = "transparent",
+  displayOn = "light",
 }: SegmentedControlProps<T>) => {
   const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const [selectedOption, setSelectedOption] = useState<T | null>(
@@ -64,9 +65,9 @@ export const SegmentedControl = <T extends string>({
           <div
             className={classNames(
               "ink-w-full ink-h-full ink-rounded-full",
-              variantClassNames(variant, {
-                purple: "ink-bg-background-light",
-                transparent: "ink-bg-background-dark",
+              variantClassNames(displayOn, {
+                light: "ink-bg-background-light",
+                dark: "ink-bg-background-dark",
               })
             )}
           />
@@ -75,9 +76,9 @@ export const SegmentedControl = <T extends string>({
       <div
         className={classNames(
           "ink-grid ink-gap-2 ink-grid-flow-col [grid-auto-columns:1fr] ink-text-body-2 ink-font-bold ink-rounded-full",
-          variantClassNames(variant, {
-            purple: "ink-bg-background-container",
-            transparent: "ink-bg-background-light",
+          variantClassNames(displayOn, {
+            light: "ink-bg-background-container",
+            dark: "ink-bg-background-light",
           })
         )}
       >

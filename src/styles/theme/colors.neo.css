@@ -1,0 +1,21 @@
+:root,
+:root.ink-neo-theme {
+  /* Background */
+  --ink-background-dark: rgb(7, 9, 8);
+  --ink-background-light: rgb(19, 28, 23);
+  --ink-background-container: rgb(30, 46, 37);
+
+  /* Button */
+  --ink-button-primary: rgba(6, 254, 110);
+
+  /* Text */
+  --ink-text-default: rgba(255, 255, 255);
+  --ink-text-muted: rgba(6, 254, 110, 0.5);
+  --ink-text-on-primary: rgba(7, 9, 8);
+  --ink-text-on-secondary: rgba(6, 254, 110);
+
+  /* Status */
+  --ink-status-success: rgba(6, 254, 110);
+  --ink-status-alert: rgba(254, 185, 6);
+  --ink-status-error: rgba(248, 97, 97);
+}
