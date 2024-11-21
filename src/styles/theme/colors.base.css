@@ -1,0 +1,84 @@
+:root {
+  /* Background */
+  --ink-background-dark-transparent: color-mix(
+    in srgb,
+    var(--ink-background-dark) 20%,
+    transparent
+  );
+  --ink-background-light-transparent: color-mix(
+    in srgb,
+    var(--ink-background-light) 50%,
+    transparent
+  );
+  --ink-background-light-invisible: color-mix(
+    in srgb,
+    var(--ink-background-light) 0%,
+    transparent
+  );
+  --ink-background-container: color-mix(
+    in srgb,
+    var(--ink-button-primary) 6%,
+    transparent
+  );
+
+  /* Button */
+  --ink-button-primary-hover: color-mix(
+    in srgb,
+    var(--ink-button-primary) 90%,
+    transparent
+  );
+  --ink-button-primary-pressed: color-mix(
+    in srgb,
+    var(--ink-button-primary) 80%,
+    transparent
+  );
+  --ink-button-secondary: color-mix(
+    in srgb,
+    var(--ink-button-primary) 6%,
+    transparent
+  );
+  --ink-button-secondary-hover: color-mix(
+    in srgb,
+    var(--ink-button-secondary) 50%,
+    transparent
+  );
+  --ink-button-secondary-pressed: color-mix(
+    in srgb,
+    var(--ink-button-secondary-hover) 50%,
+    transparent
+  );
+
+  /* Text */
+  --ink-text-muted: color-mix(
+    in srgb,
+    var(--ink-text-default) 50%,
+    transparent
+  );
+  --ink-text-on-primary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-primary) 40%,
+    transparent
+  );
+  --ink-text-on-secondary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-secondary) 50%,
+    transparent
+  );
+
+  /* Status */
+  --ink-status-success-bg: color-mix(
+    in srgb,
+    var(--ink-status-success) 8%,
+    transparent
+  );
+  --ink-status-alert-bg: color-mix(
+    in srgb,
+    var(--ink-status-alert) 8%,
+    transparent
+  );
+  --ink-status-error-bg: color-mix(
+    in srgb,
+    var(--ink-status-error) 8%,
+    transparent
+  );
+}

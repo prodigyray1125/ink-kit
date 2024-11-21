@@ -1,0 +1,22 @@
+:root,
+:root.ink-morpheus-theme {
+  /* Background */
+  --ink-background-dark: rgba(15, 13, 35, 1);
+  --ink-background-light: rgba(27, 23, 73, 1);
+  --ink-background-container: rgba(45, 39, 104, 1);
+
+  /* Button */
+  --ink-button-primary: rgba(205, 54, 96, 1);
+  --ink-button-secondary: rgba(0, 106, 182, 1);
+
+  /* Text */
+  --ink-text-default: rgba(255, 255, 255);
+  --ink-text-muted: rgba(6, 254, 110, 0.5);
+  --ink-text-on-primary: rgba(255, 255, 255, 1);
+  --ink-text-on-secondary: rgba(255, 255, 255, 1);
+
+  /* Status */
+  --ink-status-success: rgba(0, 106, 182, 1);
+  --ink-status-alert: rgba(254, 185, 6, 1);
+  --ink-status-error: rgba(205, 54, 96, 1);
+}

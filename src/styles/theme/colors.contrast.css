@@ -1,0 +1,21 @@
+:root,
+:root.ink-contrast-theme {
+  /* Background */
+  --ink-background-dark: rgba(221, 221, 221, 1);
+  --ink-background-light: rgba(255, 255, 255, 1);
+  --ink-background-container: rgba(0, 0, 0, 0.1);
+
+  /* Button */
+  --ink-button-primary: rgba(0, 0, 0, 1);
+
+  /* Text */
+  --ink-text-default: rgba(0, 0, 0, 1);
+  --ink-text-muted: rgba(6, 254, 110, 0.5);
+  --ink-text-on-primary: rgba(255, 255, 255, 1);
+  --ink-text-on-secondary: rgba(0, 0, 0, 1);
+
+  /* Status */
+  --ink-status-success: rgba(61, 166, 103, 1);
+  --ink-status-alert: rgba(231, 149, 74, 1);
+  --ink-status-error: rgba(236, 109, 109, 1);
+}

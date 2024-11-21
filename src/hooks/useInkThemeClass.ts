@@ -4,6 +4,8 @@ const themeClasses = [
   "ink-dark-theme",
   "ink-light-theme",
   "ink-contrast-theme",
+  "ink-neo-theme",
+  "ink-morpheus-theme",
 ] as const;
 
 export function useInkThemeClass(

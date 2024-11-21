@@ -8,15 +8,15 @@ const preview: Preview = {
   parameters: {
     layout: "centered",
     backgrounds: {
-      default: "theme",
+      default: "light-background",
       values: [
         {
-          name: "theme",
-          value: "var(--ink-storybook-theme-color)",
+          name: "dark-background",
+          value: "var(--ink-background-dark)",
         },
         {
-          name: "container",
-          value: "var(--ink-background-container)",
+          name: "light-background",
+          value: "var(--ink-background-light)",
         },
       ],
     },
@@ -32,6 +32,9 @@ const preview: Preview = {
       themes: {
         light: "ink-light-theme",
         dark: "ink-dark-theme",
+        contrast: "ink-contrast-theme",
+        neo: "ink-neo-theme",
+        morpheus: "ink-morpheus-theme",
       },
       defaultTheme: "light",
     }),
