@@ -82,7 +82,7 @@ const ConnectedWalletSection = ({ address }: { address: Address }) => {
             <div className="ink-text-text-muted ink-text-caption ink-font-bold">
               Balance
             </div>
-            <div className="ink-text-h4 ink-font-bold ">
+            <div className="ink-text-h4 ink-font-bold ink-text-text-default">
               {isSuccess ? `${balance.value} ${balance.symbol}` : "..."}
             </div>
           </div>

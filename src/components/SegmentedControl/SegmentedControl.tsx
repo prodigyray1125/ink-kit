@@ -4,12 +4,11 @@ import {
   resetClasses,
   variantClassNames,
 } from "../../util/classes";
-import { DisplayOnProps } from "../../util/theme";
 
-export interface SegmentedControlProps<T extends string>
-  extends DisplayOnProps {
+export interface SegmentedControlProps<T extends string> {
   options: SegmentedControlOption<T>[];
   onOptionChange: (option: SegmentedControlOption<T>, index: number) => void;
+  variant?: "purple" | "transparent";
 }
 
 export interface SegmentedControlOption<T extends string> {
@@ -21,7 +20,7 @@ export interface SegmentedControlOption<T extends string> {
 export const SegmentedControl = <T extends string>({
   options,
   onOptionChange,
-  displayOn = "auto",
+  variant = "transparent",
 }: SegmentedControlProps<T>) => {
   const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const [selectedOption, setSelectedOption] = useState<T | null>(
@@ -65,10 +64,9 @@ export const SegmentedControl = <T extends string>({
           <div
             className={classNames(
               "ink-w-full ink-h-full ink-rounded-full",
-              variantClassNames(displayOn, {
-                auto: "ink-bg-background-light dark:ink-bg-background-dark",
-                white: "ink-bg-background-light",
-                black: "ink-bg-background-dark",
+              variantClassNames(variant, {
+                purple: "ink-bg-background-light",
+                transparent: "ink-bg-background-dark",
               })
             )}
           />
@@ -77,10 +75,9 @@ export const SegmentedControl = <T extends string>({
       <div
         className={classNames(
           "ink-grid ink-gap-2 ink-grid-flow-col [grid-auto-columns:1fr] ink-text-body-2 ink-font-bold ink-rounded-full",
-          variantClassNames(displayOn, {
-            auto: "ink-bg-background-container dark:ink-bg-background-light",
-            white: "ink-bg-background-container",
-            black: "ink-bg-background-light",
+          variantClassNames(variant, {
+            purple: "ink-bg-background-container",
+            transparent: "ink-bg-background-light",
           })
         )}
       >

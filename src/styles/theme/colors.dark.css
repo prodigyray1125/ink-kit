@@ -1,0 +1,186 @@
+:root,
+:root.ink-dark-theme {
+  /* Background */
+  --ink-background-dark: rgba(22, 15, 31, 1);
+  --ink-background-dark-transparent: color-mix(
+    in srgb,
+    var(--ink-background-dark),
+    transparent 20%
+  );
+  --ink-background-light: rgb(33, 26, 41);
+  --ink-background-light-transparent: color-mix(
+    in srgb,
+    var(--ink-background-light),
+    transparent 50%
+  );
+  --ink-background-light-invisible: color-mix(
+    in srgb,
+    var(--ink-background-light),
+    transparent 100%
+  );
+  --ink-background-container: color-mix(
+    in srgb,
+    rgba(255, 255, 255, 0.059),
+    transparent 94%
+  );
+
+  /* Button */
+  --ink-button-primary: rgb(113, 50, 245);
+  --ink-button-primary-hover: color-mix(
+    in srgb,
+    var(--ink-button-primary),
+    transparent 10%
+  );
+  --ink-button-primary-pressed: color-mix(
+    in srgb,
+    var(--ink-button-primary),
+    transparent 20%
+  );
+  --ink-button-secondary: rgb(255, 255, 255);
+  --ink-button-secondary-hover: color-mix(
+    in srgb,
+    var(--ink-button-secondary),
+    transparent 50%
+  );
+  --ink-button-secondary-pressed: color-mix(
+    in srgb,
+    var(--ink-button-secondary-hover),
+    transparent 90%
+  );
+
+  /* Text */
+  --ink-text-default: rgb(255, 255, 255);
+  --ink-text-muted: color-mix(
+    in srgb,
+    var(--ink-text-default),
+    transparent 50%
+  );
+  --ink-text-on-primary: rgb(255, 255, 255);
+  --ink-text-on-primary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-primary),
+    transparent 60%
+  );
+  --ink-text-on-secondary: rgb(138, 97, 255);
+  --ink-text-on-secondary-disabled: color-mix(
+    in srgb,
+    var(--ink-text-on-secondary),
+    transparent 50%
+  );
+
+  /* Status */
+  --ink-status-success: rgb(61, 166, 103) --ink-status-success-bg:
+    color-mix(in srgb, var(--ink-status-success), transparent 92%);
+  --ink-status-alert: rgb(231, 149, 74);
+  --ink-status-alert-bg: color-mix(
+    in srgb,
+    var(--ink-status-alert),
+    transparent 92%
+  );
+  --ink-status-error: rgb(236, 109, 109);
+  --ink-status-error-bg: color-mix(
+    in srgb,
+    var(--ink-status-error),
+    transparent 92%
+  );
+
+  --ink-default-app-icon-gradient: radial-gradient(
+    111.22% 733.89% at 97.72% -9.91%,
+    #160f1f 0%,
+    #7132f5 100%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background */
+    --ink-background-dark: rgba(22, 15, 31, 1);
+    --ink-background-dark-transparent: color-mix(
+      in srgb,
+      var(--ink-background-dark),
+      transparent 20%
+    );
+    --ink-background-light: rgb(33, 26, 41);
+    --ink-background-light-transparent: color-mix(
+      in srgb,
+      var(--ink-background-light),
+      transparent 50%
+    );
+    --ink-background-light-invisible: color-mix(
+      in srgb,
+      var(--ink-background-light),
+      transparent 100%
+    );
+    --ink-background-container: color-mix(
+      in srgb,
+      rgba(255, 255, 255, 0.059),
+      transparent 94%
+    );
+
+    /* Button */
+    --ink-button-primary: rgb(113, 50, 245);
+    --ink-button-primary-hover: color-mix(
+      in srgb,
+      var(--ink-button-primary),
+      transparent 10%
+    );
+    --ink-button-primary-pressed: color-mix(
+      in srgb,
+      var(--ink-button-primary),
+      transparent 20%
+    );
+    --ink-button-secondary: rgb(255, 255, 255);
+    --ink-button-secondary-hover: color-mix(
+      in srgb,
+      var(--ink-button-secondary),
+      transparent 50%
+    );
+    --ink-button-secondary-pressed: color-mix(
+      in srgb,
+      var(--ink-button-secondary-hover),
+      transparent 90%
+    );
+
+    /* Text */
+    --ink-text-default: rgb(255, 255, 255);
+    --ink-text-muted: color-mix(
+      in srgb,
+      var(--ink-text-default),
+      transparent 50%
+    );
+    --ink-text-on-primary: rgb(255, 255, 255);
+    --ink-text-on-primary-disabled: color-mix(
+      in srgb,
+      var(--ink-text-on-primary),
+      transparent 60%
+    );
+    --ink-text-on-secondary: rgb(138, 97, 255);
+    --ink-text-on-secondary-disabled: color-mix(
+      in srgb,
+      var(--ink-text-on-secondary),
+      transparent 50%
+    );
+
+    /* Status */
+    --ink-status-success: rgb(61, 166, 103) --ink-status-success-bg:
+      color-mix(in srgb, var(--ink-status-success), transparent 92%);
+    --ink-status-alert: rgb(231, 149, 74);
+    --ink-status-alert-bg: color-mix(
+      in srgb,
+      var(--ink-status-alert),
+      transparent 92%
+    );
+    --ink-status-error: rgb(236, 109, 109);
+    --ink-status-error-bg: color-mix(
+      in srgb,
+      var(--ink-status-error),
+      transparent 92%
+    );
+
+    --ink-default-app-icon-gradient: radial-gradient(
+      111.22% 733.89% at 97.72% -9.91%,
+      #160f1f 0%,
+      #7132f5 100%
+    );
+  }
+}

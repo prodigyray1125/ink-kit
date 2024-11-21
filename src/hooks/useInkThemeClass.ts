@@ -1,8 +1,14 @@
 import { useEffect } from "react";
 
-const themeClasses = ["ink-dark", "ink-light"];
+const themeClasses = [
+  "ink-dark-theme",
+  "ink-light-theme",
+  "ink-contrast-theme",
+] as const;
 
-export function useInkThemeClass(theme: "ink-dark" | "ink-light") {
+export function useInkThemeClass(
+  theme: "default" | (typeof themeClasses)[number]
+) {
   useEffect(() => {
     themeClasses.forEach((t) => {
       if (theme === t) {

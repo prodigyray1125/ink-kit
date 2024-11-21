@@ -30,8 +30,8 @@ const preview: Preview = {
   decorators: [
     withThemeByClassName<ReactRenderer>({
       themes: {
-        light: "",
-        dark: "ink-dark",
+        light: "ink-light-theme",
+        dark: "ink-dark-theme",
       },
       defaultTheme: "light",
     }),

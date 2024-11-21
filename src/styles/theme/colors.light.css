@@ -1,4 +1,5 @@
-:root {
+:root,
+:root.ink-light-theme {
   /* Background */
   --ink-background-dark: rgb(240, 239, 255);
   --ink-background-dark-transparent: color-mix(
@@ -7,8 +8,16 @@
     transparent 20%
   );
   --ink-background-light: rgb(255, 255, 255);
-  --ink-background-light-transparent: rgb(255, 255, 255, 0.5);
-  --ink-background-light-invisible: rgb(255, 255, 255, 0);
+  --ink-background-light-transparent: color-mix(
+    in srgb,
+    var(--ink-background-light),
+    transparent 50%
+  );
+  --ink-background-light-invisible: color-mix(
+    in srgb,
+    var(--ink-background-light),
+    transparent 100%
+  );
   --ink-background-container: color-mix(
     in srgb,
     rgb(113, 50, 245),
@@ -68,13 +77,13 @@
   --ink-status-success-bg: color-mix(
     in srgb,
     var(--ink-status-success),
-    transparent 94%
+    transparent 92%
   );
   --ink-status-alert: rgb(231, 149, 74);
   --ink-status-alert-bg: color-mix(
     in srgb,
     var(--ink-status-alert),
-    transparent 94%
+    transparent 92%
   );
   --ink-status-error: rgb(236, 109, 109);
   --ink-status-error-bg: color-mix(
