@@ -3,8 +3,8 @@ import { classNames } from "../util/classes";
 
 function Colors() {
   const colors = [
-    "ink-bg-button-primary ink-text-text-on-button-primary",
-    "ink-bg-button-secondary ink-text-text-on-button-secondary",
+    "ink-bg-button-primary ink-text-text-on-primary",
+    "ink-bg-button-secondary ink-text-text-on-secondary",
     "ink-bg-background-dark",
     "ink-bg-background-dark-transparent",
     "ink-bg-background-light",

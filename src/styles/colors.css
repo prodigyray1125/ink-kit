@@ -50,16 +50,16 @@
     var(--ink-text-default),
     transparent 50%
   );
-  --ink-text-on-button-primary: rgb(255, 255, 255);
-  --ink-text-on-button-primary-disabled: color-mix(
+  --ink-text-on-primary: rgb(255, 255, 255);
+  --ink-text-on-primary-disabled: color-mix(
     in srgb,
-    var(--ink-text-on-button-primary),
+    var(--ink-text-on-primary),
     transparent 60%
   );
-  --ink-text-on-button-secondary: rgb(113, 50, 245);
-  --ink-text-on-button-secondary-disabled: color-mix(
+  --ink-text-on-secondary: rgb(113, 50, 245);
+  --ink-text-on-secondary-disabled: color-mix(
     in srgb,
-    var(--ink-text-on-button-secondary),
+    var(--ink-text-on-secondary),
     transparent 50%
   );
 
