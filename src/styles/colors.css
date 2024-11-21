@@ -16,22 +16,30 @@
   );
 
   /* Button */
-  --ink-primary: rgb(113, 50, 245);
-  --ink-primary-hover: color-mix(in srgb, var(--ink-primary), transparent 10%);
-  --ink-primary-pressed: color-mix(
+  --ink-button-primary: rgb(113, 50, 245);
+  --ink-button-primary-hover: color-mix(
     in srgb,
-    var(--ink-primary),
+    var(--ink-button-primary),
+    transparent 10%
+  );
+  --ink-button-primary-pressed: color-mix(
+    in srgb,
+    var(--ink-button-primary),
     transparent 20%
   );
-  --ink-secondary: color-mix(in srgb, var(--ink-primary), transparent 94%);
-  --ink-secondary-hover: color-mix(
+  --ink-button-secondary: color-mix(
     in srgb,
-    var(--ink-secondary),
+    var(--ink-button-primary),
+    transparent 94%
+  );
+  --ink-button-secondary-hover: color-mix(
+    in srgb,
+    var(--ink-button-secondary),
     transparent 50%
   );
-  --ink-secondary-pressed: color-mix(
+  --ink-button-secondary-pressed: color-mix(
     in srgb,
-    var(--ink-secondary-hover),
+    var(--ink-button-secondary-hover),
     transparent 90%
   );
 
