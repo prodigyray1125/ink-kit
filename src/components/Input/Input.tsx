@@ -13,7 +13,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         className={classNames(
           resetClasses,
-          "ink-w-full ink-rounded-8 ink-bg-background-container ink-p-2 ink-text-body-2",
+          "ink-w-full ink-rounded-8 ink-bg-background-container ink-p-2 ink-text-body-2 ink-text-text-default",
           "focus:ink-outline focus:ink-outline-1 ink-outline-text-on-secondary",
           className
         )}
