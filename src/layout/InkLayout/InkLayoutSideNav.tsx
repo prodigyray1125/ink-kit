@@ -27,7 +27,7 @@ export const InkLayoutSideNav = <T extends React.ElementType = "a">({
             asProps,
             ...rest,
           };
-          return <InkNavLink {...link} {...linkProps} />;
+          return <InkNavLink {...link} {...linkProps} key={link.href} />;
         })}
       </div>
     </nav>
