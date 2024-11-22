@@ -1,6 +1,6 @@
 import React, { ElementType } from "react";
 import { PolymorphicProps } from "../../components/polymorphic";
-import { classNames, resetClasses } from "../../util/classes";
+import { classNames } from "../../util/classes";
 
 const DEFAULT_COMPONENT_TYPE = "a" as const;
 
@@ -34,15 +34,14 @@ export const InkNavLink = <
     <Component
       href={href}
       className={classNames(
-        resetClasses,
         Component === DEFAULT_COMPONENT_TYPE &&
-          "ink-flex ink-items-center ink-gap-1.5 ink-px-1.5 ink-py-1.5 ink-text-inherit ink-no-underline ink-rounded-16 ink-transition-colors ink-duration-200 hover:ink-bg-background-container",
+          "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-16 ink:transition-colors ink:duration-200 ink:hover:bg-background-container",
         className
       )}
       {...asProps}
       {...props}
     >
-      <div className="ink-size-3">{icon}</div>
+      <div className="ink:size-3">{icon}</div>
       <div>{label}</div>
     </Component>
   );

@@ -1,9 +1,5 @@
 import React, { PropsWithChildren, type ElementType } from "react";
-import {
-  classNames,
-  resetClasses,
-  variantClassNames,
-} from "../../util/classes";
+import { classNames, variantClassNames } from "../../util/classes";
 import { PolymorphicProps } from "../polymorphic";
 
 const DEFAULT_BUTTON_TAG = "button" as const;
@@ -37,25 +33,24 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
   return (
     <Component
       className={classNames(
-        resetClasses,
-        "ink-rounded-full ink-font-bold ink-transition-colors disabled:ink-cursor-not-allowed ink-duration-100",
-        "ink-flex ink-items-center ink-justify-center ink-gap-1 ink-select-none",
+        "ink:rounded-full ink:font-bold ink:font-default ink:transition-colors ink:hover:cursor-pointer ink:disabled:cursor-not-allowed ink:duration-100",
+        "ink:flex ink:items-center ink:justify-center ink:gap-1 ink:select-none",
         variantClassNames(size, {
-          sm: "ink-px-3 ink-py-2 ink-text-body-2",
-          md: "ink-px-4 ink-py-2.5 ink-text-h4",
+          sm: "ink:px-3 ink:py-2 ink:text-body-2",
+          md: "ink:px-4 ink:py-3 ink:text-h4",
         }),
         variantClassNames(rounded, {
           full: variantClassNames(size, {
-            sm: "ink-rounded-full ink-px-1.5 ink-py-1.5",
-            md: "ink-rounded-full ink-px-2.5 ink-py-2.5",
+            sm: "ink:rounded-full ink:px-1.5 ink:py-1.5",
+            md: "ink:rounded-full ink:px-2.5 ink:py-2.5",
           }),
           default: "",
         }),
         variantClassNames(variant, {
           primary:
-            "ink-bg-button-primary ink-text-text-on-primary hover:ink-bg-button-primary-hover disabled:ink-bg-button-primary-disabled disabled:ink-text-text-on-primary-disabled active:ink-bg-button-primary-pressed",
+            "ink:bg-button-primary ink:text-text-on-primary ink:hover:bg-button-primary-hover ink:disabled:bg-button-primary-disabled ink:disabled:text-text-on-primary-disabled ink:active:bg-button-primary-pressed",
           secondary:
-            "ink-bg-button-secondary ink-text-text-on-secondary hover:ink-bg-button-secondary-hover disabled:ink-bg-button-secondary-disabled disabled:ink-text-text-on-secondary-disabled active:ink-bg-button-secondary-pressed",
+            "ink:bg-button-secondary ink:text-text-on-secondary ink:hover:bg-button-secondary-hover ink:disabled:bg-button-secondary-disabled ink:disabled:text-text-on-secondary-disabled ink:active:bg-button-secondary-pressed",
         }),
         className
       )}
@@ -65,8 +60,8 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
       {iconLeft && (
         <div
           className={variantClassNames(size, {
-            sm: "ink-size-3 -ink-my-1",
-            md: "ink-size-3",
+            sm: "ink:size-3 ink:-my-1",
+            md: "ink:size-3 ink:-my-1",
           })}
         >
           {iconLeft}
@@ -77,8 +72,8 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
           className={classNames(
             variantClassNames(size, {
               /** This here is a small exception to our spacing design so that the icon is 24px, but also matches the height of the small button */
-              sm: "ink-size-3 -ink-m-[2px]",
-              md: "ink-size-3",
+              sm: "ink:size-3 ink:-m-[2px]",
+              md: "ink:size-3",
             })
           )}
         >
@@ -87,12 +82,12 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
       ) : (
         <div
           className={classNames(
-            "ink-flex ink-items-center ink-justify-center ink-gap-1.5",
-            !iconLeft && !iconRight && "ink-w-full",
+            "ink:flex ink:items-center ink:justify-center ink:gap-1.5",
+            !iconLeft && !iconRight && "ink:w-full",
             variantClassNames(size, {
               /** This here accomplishes the "snug" spacing, which makes the box height as tight as possible */
-              sm: "-ink-my-0.5",
-              md: "",
+              sm: "ink:h-1.5",
+              md: "ink:h-2",
             })
           )}
         >
@@ -102,8 +97,8 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
       {iconRight && (
         <div
           className={variantClassNames(size, {
-            sm: "ink-size-3 -ink-m-[2px]",
-            md: "ink-size-3",
+            sm: "ink:size-3 ink:-my-1",
+            md: "ink:size-3 ink:-my-1",
           })}
         >
           {iconRight}

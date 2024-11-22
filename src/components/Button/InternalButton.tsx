@@ -30,9 +30,9 @@ export const InternalButton = <
       className={classNames(
         variantClassNames(variant as InternalButtonVariant, {
           wallet:
-            "ink-bg-background-light-transparent ink-px-1.5 ink-py-2 ink-text-body-2 ink-font-bold ink-text-text-default hover:ink-bg-background-light disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+            "ink:bg-background-light-transparent ink:px-1.5 ink:py-2 ink:text-body-2 ink:font-bold ink:text-text-default ink:hover:bg-background-light ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
           "wallet-inside":
-            "ink-bg-background-light-invisible ink-px-1.5 ink-rounded-8 ink-text-body-2 ink-font-bold ink-text-text-default hover:ink-bg-background-container disabled:ink-bg-background-light-transparent-disabled disabled:ink-text-muted active:ink-bg-background-light",
+            "ink:bg-background-light-invisible ink:px-1.5 ink:rounded-8 ink:text-body-2 ink:font-bold ink:text-text-default ink:hover:bg-background-container ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
         }),
         className
       )}
@@ -44,29 +44,29 @@ export const InternalButton = <
     >
       <div
         className={classNames(
-          "ink-w-full ink-flex-1 ink-flex ink-items-center ink-gap-1.5",
+          "ink:w-full ink:flex-1 ink:flex ink:items-center ink:gap-1.5",
           variantClassNames(variant as InternalButtonVariant, {
-            wallet: "ink-justify-center",
-            "wallet-inside": "ink-justify-start",
+            wallet: "ink:justify-center",
+            "wallet-inside": "ink:justify-start",
           })
         )}
       >
         {iconLeft && (
           <div
             className={classNames(
-              "ink-flex ink-items-center ink-justify-center",
+              "ink:flex ink:items-center ink:justify-center",
               variantClassNames(variant as InternalButtonVariant, {
-                wallet: "ink-size-4 -ink-my-[10px]",
-                "wallet-inside": "ink-size-3",
+                wallet: "ink:size-4 ink:-my-[10px]",
+                "wallet-inside": "ink:size-3",
               })
             )}
           >
             <div
               className={classNames(
-                "ink-flex ink-items-center ink-justify-center ink-rounded-full ink-overflow-hidden",
+                "ink:flex ink:items-center ink:justify-center ink:rounded-full ink:overflow-hidden",
                 variantClassNames(variant as InternalButtonVariant, {
-                  wallet: "ink-size-4",
-                  "wallet-inside": "ink-size-3",
+                  wallet: "ink:size-4",
+                  "wallet-inside": "ink:size-3",
                 })
               )}
             >

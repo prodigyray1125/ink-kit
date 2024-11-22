@@ -1,8 +1,4 @@
-import {
-  classNames,
-  resetClasses,
-  variantClassNames,
-} from "../../util/classes";
+import { classNames, variantClassNames } from "../../util/classes";
 import { PropsWithChildren } from "react";
 import { PolymorphicProps } from "../polymorphic";
 
@@ -33,18 +29,17 @@ export const Typography = <T extends React.ElementType = "div">({
   return (
     <Component
       className={classNames(
-        resetClasses,
-        "ink-font-default",
+        "ink:font-default",
         variantClassNames(variant, {
-          h1: "ink-text-h1",
-          h2: "ink-text-h2",
-          h3: "ink-text-h3",
-          h4: "ink-text-h4",
-          "body-1": "ink-text-body-1",
-          "body-2": "ink-text-body-2",
-          "body-3": "ink-text-body-3",
-          caption: "ink-text-caption",
-          "caption-2": "ink-text-caption-2",
+          h1: "ink:text-h1",
+          h2: "ink:text-h2",
+          h3: "ink:text-h3",
+          h4: "ink:text-h4",
+          "body-1": "ink:text-body-1",
+          "body-2": "ink:text-body-2",
+          "body-3": "ink:text-body-3",
+          caption: "ink:text-caption",
+          "caption-2": "ink:text-caption-2",
         }),
         className
       )}

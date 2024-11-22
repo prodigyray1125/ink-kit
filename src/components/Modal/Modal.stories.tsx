@@ -14,7 +14,7 @@ const meta: Meta<ModalProps> = {
       function ModalContent() {
         const { isModalOpen, openModal } = useModalContext(args.id);
         return (
-          <div className="ink-p-4">
+          <div className="ink:p-4">
             <Button variant="primary" size="sm" onClick={openModal}>
               {isModalOpen ? "Close Modal" : "Open Modal"}
             </Button>
@@ -60,7 +60,7 @@ const ModalContent = ({
       content="Keep it simple, keep it actionable, give them a goal and they will come"
       button={
         <Button
-          className="ink-w-full"
+          className="ink:w-full"
           variant="primary"
           size="md"
           onClick={() => closeModal(true)}
@@ -111,7 +111,7 @@ export const Nested: Story = {
       return (
         <div>
           <Button
-            className="ink-w-full"
+            className="ink:w-full"
             variant="primary"
             size="md"
             onClick={openModal}

@@ -12,7 +12,7 @@ const meta: Meta<ConnectWalletProps> = {
   },
   decorators: [
     WalletProvider,
-    (Story) => <div className="ink-min-h-[300px]">{Story()}</div>,
+    (Story) => <div className="ink:min-h-[300px]">{Story()}</div>,
   ],
   component: ConnectWallet,
   tags: ["autodocs"],

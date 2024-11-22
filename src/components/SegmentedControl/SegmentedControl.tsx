@@ -1,9 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import {
-  classNames,
-  resetClasses,
-  variantClassNames,
-} from "../../util/classes";
+import { classNames, variantClassNames } from "../../util/classes";
 import { DisplayOnProps } from "../../util/theme";
 
 export interface SegmentedControlProps<T extends string>
@@ -51,10 +47,10 @@ export const SegmentedControl = <T extends string>({
   }, [itemsRef, selectedIndex, isMounted]);
 
   return (
-    <div className="ink-relative">
+    <div className="ink:relative ink:font-default">
       {isMounted && selectedOption && (
         <div
-          className="ink-absolute ink-transition-all ink-duration-200 ink-p-0.5 ink-preflight"
+          className="ink:absolute ink:transition-all ink:duration-200 ink:p-0.5"
           style={{
             top: 0,
             bottom: 0,
@@ -64,10 +60,10 @@ export const SegmentedControl = <T extends string>({
         >
           <div
             className={classNames(
-              "ink-w-full ink-h-full ink-rounded-full",
+              "ink:w-full ink:h-full ink:rounded-full",
               variantClassNames(displayOn, {
-                light: "ink-bg-background-light",
-                dark: "ink-bg-background-dark",
+                light: "ink:bg-background-light",
+                dark: "ink:bg-background-dark",
               })
             )}
           />
@@ -75,21 +71,20 @@ export const SegmentedControl = <T extends string>({
       )}
       <div
         className={classNames(
-          "ink-grid ink-gap-2 ink-grid-flow-col [grid-auto-columns:1fr] ink-text-body-2 ink-font-bold ink-rounded-full",
+          "ink:grid ink:gap-2 ink:grid-flow-col ink:[grid-auto-columns:1fr] ink:text-body-2 ink:font-bold ink:rounded-full",
           variantClassNames(displayOn, {
-            light: "ink-bg-background-container",
-            dark: "ink-bg-background-light",
+            light: "ink:bg-background-container",
+            dark: "ink:bg-background-light",
           })
         )}
       >
         {options.map((option, index) => (
           <button
             className={classNames(
-              resetClasses,
-              "ink-px-4 ink-py-2 ink-rounded-full ink-relative ink-z-10 ink-transition-colors ink-duration-200 ink-select-none",
+              "ink:px-4 ink:py-2 ink:rounded-full ink:relative ink:z-10 ink:transition-colors ink:duration-200 ink:hover:cursor-pointer ink:select-none",
               selectedOption === option.value
-                ? "ink-text-text-default"
-                : "ink-text-text-on-secondary"
+                ? "ink:text-text-default"
+                : "ink:text-text-on-secondary"
             )}
             ref={(el) => {
               itemsRef.current[index] = el;

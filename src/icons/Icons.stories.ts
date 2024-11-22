@@ -21,12 +21,12 @@ export const AllIconsRow: Story = {
 
 export const AllIconsWithColor: Story = {
   args: {
-    containerClassName: "ink-text-primary",
+    containerClassName: "ink:text-primary",
   },
 };
 
 export const AllIconsWithDifferentSize: Story = {
   args: {
-    iconClassName: "ink-size-2",
+    iconClassName: "ink:size-2",
   },
 };

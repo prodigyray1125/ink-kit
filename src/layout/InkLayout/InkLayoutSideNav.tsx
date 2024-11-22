@@ -17,8 +17,8 @@ export const InkLayoutSideNav = <T extends React.ElementType = "a">({
 }: InkLayoutSideNavProps<T>) => {
   const { as, asProps, ...rest } = linkAs ?? {};
   return (
-    <nav className="ink-min-h-screen">
-      <div className="ink-flex ink-flex-col ink-gap-1">
+    <nav className="ink:min-h-screen">
+      <div className="ink:flex ink:flex-col ink:gap-1">
         {links.map((link) => {
           // @ts-expect-error
           const linkProps: PolymorphicProps<T> &

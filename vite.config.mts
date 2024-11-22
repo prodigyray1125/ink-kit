@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
-import tailwindcss from "tailwindcss";
+import tailwindcss from "@tailwindcss/vite";
 import { peerDependencies } from "./package.json";
 import { Plugin } from "vite";
 import fs from "fs";
@@ -44,15 +44,11 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
+    tailwindcss(),
     dts(),
     svgr({
       include: "**/*.svg?react",
     }),
     base64Loader,
   ],
-  css: {
-    postcss: {
-      plugins: [tailwindcss("./tailwind.config.mjs")],
-    },
-  },
 });

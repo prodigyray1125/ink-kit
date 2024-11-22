@@ -21,9 +21,9 @@ export const MatrixDecorator =
   }): Decorator =>
   (Story, { args }) => {
     return (
-      <div className="ink-flex ink-flex-col ink-items-center ink-gap-2">
+      <div className="ink:flex ink:flex-col ink:items-center ink:gap-2">
         {firstValues.map((firstValue, i) => (
-          <div key={`${String(firstKey)}-${i}`} className="ink-flex ink-gap-2">
+          <div key={`${String(firstKey)}-${i}`} className="ink:flex ink:gap-2">
             {secondValues.map((secondValue, j) => {
               return (
                 <Story

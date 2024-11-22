@@ -17,7 +17,7 @@ const meta: Meta<TypographyProps<"button" | "h1" | "h2" | "h3" | "h4">> = {
   title: "Design/Typography",
   decorators: [
     (Story, { args }) => (
-      <div className="ink-p-4 ink-flex ink-flex-col ink-gap-4 ink-text-text-default">
+      <div className="ink:p-4 ink:flex ink:flex-col ink:gap-4 ink:text-text-default">
         {variants.map((variant) => (
           <Story
             key={variant}

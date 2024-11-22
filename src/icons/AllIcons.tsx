@@ -10,13 +10,13 @@ export const AllIcons: React.FC<{
   return (
     <div
       className={classNames(
-        "ink-flex ink-flex-wrap ink-gap-2",
+        "ink:flex ink:flex-wrap ink:gap-2",
         containerClassName
       )}
     >
       {icons.map((Icon) => (
         <Icon
-          className={classNames("ink-size-4", iconClassName)}
+          className={classNames("ink:size-4", iconClassName)}
           key={Icon.name}
         />
       ))}
