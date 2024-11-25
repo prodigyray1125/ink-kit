@@ -30,7 +30,7 @@ export const InternalButton = <
       className={classNames(
         variantClassNames(variant as InternalButtonVariant, {
           wallet:
-            "ink:bg-background-light-transparent ink:px-1.5 ink:py-2 ink:text-body-2 ink:font-bold ink:text-text-default ink:hover:bg-background-light ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
+            "ink:bg-background-light-transparent ink:pl-1 ink:pr-1.5 ink:py-2 ink:text-body-2 ink:font-bold ink:text-text-default ink:hover:bg-background-light ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
           "wallet-inside":
             "ink:bg-background-light-invisible ink:px-1.5 ink:rounded-xs ink:text-body-2 ink:font-bold ink:text-text-default ink:hover:bg-background-container ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
         }),
@@ -56,7 +56,7 @@ export const InternalButton = <
             className={classNames(
               "ink:flex ink:items-center ink:justify-center",
               variantClassNames(variant as InternalButtonVariant, {
-                wallet: "ink:size-4 ink:-my-[10px]",
+                wallet: "ink:size-4",
                 "wallet-inside": "ink:size-3",
               })
             )}

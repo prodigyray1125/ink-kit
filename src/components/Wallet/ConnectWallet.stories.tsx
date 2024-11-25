@@ -5,11 +5,6 @@ import { WalletProvider } from "../../decorators/WalletProvider";
 
 const meta: Meta<ConnectWalletProps> = {
   title: "Components/ConnectWallet",
-  parameters: {
-    backgrounds: {
-      default: "container",
-    },
-  },
   decorators: [
     WalletProvider,
     (Story) => <div className="ink:min-h-[300px]">{Story()}</div>,

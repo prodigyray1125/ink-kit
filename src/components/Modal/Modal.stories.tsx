@@ -31,11 +31,6 @@ const meta: Meta<ModalProps> = {
     },
   ],
   component: Modal,
-  parameters: {
-    backgrounds: {
-      default: "container",
-    },
-  },
   tags: ["autodocs"],
   argTypes: {},
   args: {
