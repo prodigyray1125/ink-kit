@@ -73,7 +73,7 @@
     "wagmi": "^2.12.33"
   },
   "peerDependencies": {
-    "@tanstack/react-query": "5^",
+    "@tanstack/react-query": "^5",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19",
     "tailwindcss": "^3",
