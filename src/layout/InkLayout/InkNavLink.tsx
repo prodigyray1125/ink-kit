@@ -4,10 +4,11 @@ import { classNames } from "../../util/classes";
 
 const DEFAULT_COMPONENT_TYPE = "a" as const;
 
-export interface InkLayoutLink {
+export interface InkLayoutLink extends React.ComponentPropsWithoutRef<"a"> {
   label: string;
   href: string;
   icon: React.ReactNode;
+  target?: StringWithAutocomplete<"_blank" | "_self">;
 }
 
 export type InkNavLinkProps<
@@ -38,6 +39,7 @@ export const InkNavLink = <
           "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-md ink:transition-colors ink:duration-200 ink:hover:bg-background-container",
         className
       )}
+      draggable={false}
       {...asProps}
       {...props}
     >

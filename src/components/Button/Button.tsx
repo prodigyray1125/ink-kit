@@ -34,7 +34,7 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
     <Component
       className={classNames(
         "ink:rounded-full ink:font-bold ink:font-default ink:transition-colors ink:hover:cursor-pointer ink:disabled:cursor-not-allowed ink:duration-100",
-        "ink:flex ink:items-center ink:justify-center ink:gap-1 ink:select-none",
+        "ink:flex ink:items-center ink:justify-center ink:gap-1 ink:select-none ink:no-underline",
         variantClassNames(size, {
           sm: "ink:px-3 ink:py-2 ink:text-body-2",
           md: "ink:px-4 ink:py-3 ink:text-h4",

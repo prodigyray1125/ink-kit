@@ -1,26 +1,41 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { classNames, variantClassNames } from "../../util/classes";
 import { DisplayOnProps } from "../../util/theme";
+import { PolymorphicDefinition } from "../polymorphic";
 
-export interface SegmentedControlProps<T extends string>
-  extends DisplayOnProps {
-  options: SegmentedControlOption<T>[];
-  onOptionChange: (option: SegmentedControlOption<T>, index: number) => void;
-}
+export type SegmentedControlProps<
+  TOptionValue extends string,
+  TButtonAs extends React.ElementType = "button",
+> = DisplayOnProps & {
+  options: SegmentedControlOption<TOptionValue, TButtonAs>[];
+  onOptionChange: (
+    option: SegmentedControlOption<TOptionValue, TButtonAs>,
+    index: number
+  ) => void;
+  variableTabWidth?: boolean;
+};
 
-export interface SegmentedControlOption<T extends string> {
+export interface SegmentedControlOption<
+  TOptionValue extends string,
+  TButtonAs extends React.ElementType = "button",
+> {
   label: React.ReactNode;
-  value: T;
+  value: TOptionValue;
   selectedByDefault?: boolean;
+  props?: PolymorphicDefinition<TButtonAs>;
 }
 
-export const SegmentedControl = <T extends string>({
+export const SegmentedControl = <
+  TOptionValue extends string,
+  TButtonAs extends React.ElementType = "button",
+>({
   options,
   onOptionChange,
+  variableTabWidth,
   displayOn = "light",
-}: SegmentedControlProps<T>) => {
+}: SegmentedControlProps<TOptionValue, TButtonAs>) => {
   const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
-  const [selectedOption, setSelectedOption] = useState<T | null>(
+  const [selectedOption, setSelectedOption] = useState<TOptionValue | null>(
     options.find((opt) => opt.selectedByDefault)?.value ?? null
   );
   const selectedIndex = useMemo(
@@ -73,33 +88,47 @@ export const SegmentedControl = <T extends string>({
       )}
       <div
         className={classNames(
-          "ink:grid ink:gap-2 ink:h-6 ink:grid-flow-col ink:[grid-auto-columns:1fr] ink:text-body-2 ink:font-bold ink:rounded-full",
+          "ink:grid ink:h-6 ink:grid-flow-col ink:text-body-2 ink:font-bold ink:rounded-full",
           variantClassNames(displayOn, {
             light: "ink:bg-background-container",
             dark: "ink:bg-background-light",
-          })
+          }),
+          variableTabWidth
+            ? "ink:[grid-auto-columns:auto]"
+            : "ink:[grid-auto-columns:1fr]"
         )}
       >
-        {options.map((option, index) => (
-          <button
-            className={classNames(
-              "ink:px-4 ink:h-full ink:box-border ink:rounded-full ink:relative ink:z-10 ink:transition-colors ink:duration-200 ink:hover:cursor-pointer ink:select-none",
-              selectedOption === option.value
-                ? "ink:text-text-default"
-                : "ink:text-text-on-secondary"
-            )}
-            ref={(el) => {
-              itemsRef.current[index] = el;
-            }}
-            key={option.value}
-            onClick={() => {
-              setSelectedOption(option.value);
-              onOptionChange(option, index);
-            }}
-          >
-            {option.label}
-          </button>
-        ))}
+        {options.map((option, index) => {
+          const { as, asProps } = option.props ?? {};
+
+          const ButtonComponent = as ?? "button";
+
+          return (
+            <ButtonComponent
+              {...asProps}
+              className={classNames(
+                "ink:h-full ink:box-border ink:rounded-full ink:relative ink:z-10 ink:transition-colors ink:duration-200 ink:hover:cursor-pointer ink:select-none ink:no-underline ink:flex ink:items-center ink:justify-center",
+                selectedOption === option.value
+                  ? "ink:text-text-default"
+                  : "ink:text-text-on-secondary",
+                variableTabWidth ? "ink:px-3" : "ink:px-4",
+                asProps?.className
+              )}
+              ref={(el) => {
+                itemsRef.current[index] = el;
+              }}
+              key={option.value}
+              onClick={(event) => {
+                setSelectedOption(option.value);
+                onOptionChange(option, index);
+                asProps?.onClick?.(event);
+              }}
+              draggable={false}
+            >
+              {option.label}
+            </ButtonComponent>
+          );
+        })}
       </div>
     </div>
   );

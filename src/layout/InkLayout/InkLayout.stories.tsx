@@ -9,13 +9,15 @@ const SideNav = () => {
       links={[
         {
           label: "Home",
-          href: "/",
+          href: "#home",
           icon: <InkIcon.Home />,
+          target: "_self",
         },
         {
           label: "Settings",
-          href: "/settings",
+          href: "#settings",
           icon: <InkIcon.Settings />,
+          target: "_self",
         },
       ]}
     />
@@ -64,18 +66,20 @@ export const SideNavWithCustomButtons: Story = {
       <InkLayoutSideNav
         linkAs={{
           as: Button,
-          asProps: { variant: "primary", as: "a", target: "_blank" },
+          asProps: { variant: "primary", as: "a", target: "_self" },
         }}
         links={[
           {
             label: "Home",
-            href: "/",
+            href: "#home",
             icon: <InkIcon.Home />,
+            target: "_self",
           },
           {
             label: "Settings",
-            href: "/settings",
+            href: "#settings",
             icon: <InkIcon.Settings />,
+            target: "_self",
           },
         ]}
       />
