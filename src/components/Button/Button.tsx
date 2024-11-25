@@ -57,53 +57,20 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
       {...asProps}
       {...restProps}
     >
-      {iconLeft && (
-        <div
-          className={variantClassNames(size, {
-            sm: "ink:size-3 ink:-my-1",
-            md: "ink:size-3 ink:-my-1",
-          })}
-        >
-          {iconLeft}
-        </div>
-      )}
+      {iconLeft && <div className="ink:size-3 ink:-my-1">{iconLeft}</div>}
       {rounded === "full" ? (
-        <div
-          className={classNames(
-            variantClassNames(size, {
-              /** This here is a small exception to our spacing design so that the icon is 24px, but also matches the height of the small button */
-              sm: "ink:size-3 ink:-m-[2px]",
-              md: "ink:size-3",
-            })
-          )}
-        >
-          {children}
-        </div>
+        <div className="ink:size-3">{children}</div>
       ) : (
         <div
           className={classNames(
-            "ink:flex ink:items-center ink:justify-center ink:gap-1.5",
-            !iconLeft && !iconRight && "ink:w-full",
-            variantClassNames(size, {
-              /** This here accomplishes the "snug" spacing, which makes the box height as tight as possible */
-              sm: "ink:h-1.5",
-              md: "ink:h-2",
-            })
+            "ink:flex ink:items-center ink:justify-center ink:gap-1.5 ink:h-2",
+            !iconLeft && !iconRight && "ink:w-full"
           )}
         >
           {children}
         </div>
       )}
-      {iconRight && (
-        <div
-          className={variantClassNames(size, {
-            sm: "ink:size-3 ink:-my-1",
-            md: "ink:size-3 ink:-my-1",
-          })}
-        >
-          {iconRight}
-        </div>
-      )}
+      {iconRight && <div className="ink:size-3 ink:-my-1">{iconRight}</div>}
     </Component>
   );
 };
