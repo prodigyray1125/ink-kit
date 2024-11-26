@@ -46,6 +46,11 @@
     margin: 0;
     padding: 0;
   }
+
+  .ink\:font-default * {
+    /** Required for Safari to have proper font weights */
+    font-synthesis: none;
+  }
 }
 
 @theme {

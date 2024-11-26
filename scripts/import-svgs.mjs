@@ -25,12 +25,8 @@ await Promise.all(
     })
 );
 
-const iconNameMapping = {
-  home: "Home",
-  "link-discord": "LinkDiscord",
-  "link-github": "LinkGithub",
-  "link-x-social": "LinkXSocial",
-};
+/** Use this to map an invalid name temporarily (until it is fixed in the Figma)  */
+const iconNameMapping = {};
 
 function getIconName(svg) {
   const result = svg.replace(".svg", "").replace("Type=", "");

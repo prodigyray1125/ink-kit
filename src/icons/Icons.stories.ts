@@ -21,7 +21,7 @@ export const AllIconsRow: Story = {
 
 export const AllIconsWithColor: Story = {
   args: {
-    containerClassName: "ink:text-primary",
+    containerClassName: "ink:text-button-primary",
   },
 };
 

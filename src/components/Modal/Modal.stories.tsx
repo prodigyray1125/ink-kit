@@ -15,7 +15,7 @@ const meta: Meta<ModalProps> = {
         const { isModalOpen, openModal } = useModalContext(args.id);
         return (
           <div className="ink:p-4">
-            <Button variant="primary" size="sm" onClick={openModal}>
+            <Button variant="primary" size="md" onClick={openModal}>
               {isModalOpen ? "Close Modal" : "Open Modal"}
             </Button>
             <Story />
@@ -57,7 +57,7 @@ const ModalContent = ({
         <Button
           className="ink:w-full"
           variant="primary"
-          size="md"
+          size="lg"
           onClick={() => closeModal(true)}
         >
           Let's go
@@ -79,7 +79,7 @@ export const Nested: Story = {
       return (
         <>
           <Story />
-          <Modal id="nested" title="Nested modal" size="md" hasBackdrop>
+          <Modal id="nested" title="Nested modal" size="lg" hasBackdrop>
             {({ closeModal }) => (
               <ModalLayout.CallToAction
                 title="A nested modal example"
@@ -87,7 +87,7 @@ export const Nested: Story = {
                 button={
                   <Button
                     variant="primary"
-                    size="md"
+                    size="lg"
                     onClick={() => closeModal()}
                   >
                     Close Nested
@@ -108,7 +108,7 @@ export const Nested: Story = {
           <Button
             className="ink:w-full"
             variant="primary"
-            size="md"
+            size="lg"
             onClick={openModal}
           >
             Open Nested

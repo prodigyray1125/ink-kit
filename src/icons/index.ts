@@ -3,6 +3,8 @@
  */
 
 export { default as Arrow } from "./Type=Arrow.svg?react";
+export { default as Check } from "./Type=Check.svg?react";
+export { default as CheckFill } from "./Type=CheckFill.svg?react";
 export { default as Chevron } from "./Type=Chevron.svg?react";
 export { default as Close } from "./Type=Close.svg?react";
 export { default as Copy } from "./Type=Copy.svg?react";
@@ -10,14 +12,16 @@ export { default as DefaultAppIcon } from "./Type=DefaultAppIcon.svg?react";
 export { default as Deposit } from "./Type=Deposit.svg?react";
 export { default as Disconnect } from "./Type=Disconnect.svg?react";
 export { default as Error } from "./Type=Error.svg?react";
+export { default as Home } from "./Type=Home.svg?react";
 export { default as Loading } from "./Type=Loading.svg?react";
 export { default as Menu } from "./Type=Menu.svg?react";
+export { default as Moon } from "./Type=Moon.svg?react";
 export { default as Profile } from "./Type=Profile.svg?react";
 export { default as Search } from "./Type=Search.svg?react";
 export { default as Settings } from "./Type=Settings.svg?react";
+export { default as SocialDiscord } from "./Type=SocialDiscord.svg?react";
+export { default as SocialGithub } from "./Type=SocialGithub.svg?react";
+export { default as SocialX } from "./Type=SocialX.svg?react";
 export { default as Success } from "./Type=Success.svg?react";
+export { default as Sun } from "./Type=Sun.svg?react";
 export { default as Swap } from "./Type=Swap.svg?react";
-export { default as Home } from "./Type=home.svg?react";
-export { default as LinkDiscord } from "./Type=link-discord.svg?react";
-export { default as LinkGithub } from "./Type=link-github.svg?react";
-export { default as LinkXSocial } from "./Type=link-x-social.svg?react";

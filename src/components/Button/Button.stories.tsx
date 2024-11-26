@@ -8,7 +8,7 @@ const meta: Meta<ButtonProps<"button" | "a">> = {
   title: "Components/Button",
   decorators: [
     MatrixDecorator<ButtonProps>({
-      first: { key: "size", values: ["sm", "md"] },
+      first: { key: "size", values: ["sm", "md", "lg"] },
       second: { key: "variant", values: ["primary", "secondary"] },
     }),
   ],

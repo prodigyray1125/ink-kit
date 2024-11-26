@@ -36,7 +36,7 @@ export const InternalButton = <
         }),
         className
       )}
-      size="sm"
+      size="md"
       variant={
         variant === "primary" || variant === "secondary" ? variant : undefined
       }

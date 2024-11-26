@@ -10,7 +10,7 @@ export type ButtonProps<T extends ElementType = typeof DEFAULT_BUTTON_TAG> =
 export interface OwnButtonProps extends PropsWithChildren {
   className?: string;
   variant?: "primary" | "secondary";
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
   rounded?: "full" | "default";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
@@ -36,13 +36,15 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
         "ink:rounded-full ink:font-default ink:transition-colors ink:hover:cursor-pointer ink:disabled:cursor-not-allowed ink:duration-100",
         "ink:flex ink:items-center ink:justify-center ink:gap-1 ink:select-none ink:no-underline",
         variantClassNames(size, {
-          sm: "ink:px-3 ink:py-2 ink:text-body-2-bold",
-          md: "ink:px-4 ink:py-3 ink:text-h4",
+          sm: "ink:px-2 ink:py-1.5 ink:text-body-2-bold",
+          md: "ink:px-3 ink:py-2 ink:text-body-2-bold",
+          lg: "ink:px-4 ink:py-3 ink:text-h4",
         }),
         variantClassNames(rounded, {
           full: variantClassNames(size, {
-            sm: "ink:rounded-full ink:p-1.5",
-            md: "ink:rounded-full ink:p-2",
+            sm: "ink:rounded-full ink:p-1",
+            md: "ink:rounded-full ink:p-1.5",
+            lg: "ink:rounded-full ink:p-2",
           }),
           default: "",
         }),
@@ -62,7 +64,8 @@ export const Button = <T extends ElementType = typeof DEFAULT_BUTTON_TAG>({
         <div
           className={variantClassNames(size, {
             sm: "ink:size-3",
-            md: "ink:size-3 ink:m-0.5",
+            md: "ink:size-3",
+            lg: "ink:size-3 ink:m-0.5",
           })}
         >
           {children}
