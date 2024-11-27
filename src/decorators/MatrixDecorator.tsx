@@ -19,7 +19,9 @@ export const MatrixDecorator =
     first: MatrixDefinition<TProps, TFirst>;
     second: MatrixDefinition<TProps, TSecond>;
   }): Decorator =>
-  (Story, { args }) => {
+  (Story, { args, parameters }) => {
+    if (parameters.disableMatrix) return <Story />;
+
     return (
       <div className="ink:flex ink:flex-col ink:items-center ink:gap-2">
         {firstValues.map((firstValue, i) => (

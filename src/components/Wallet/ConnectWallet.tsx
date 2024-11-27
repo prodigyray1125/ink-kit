@@ -1,14 +1,17 @@
 import { useAccount, useBalance, useConnect, useDisconnect } from "wagmi";
 import { Button } from "../Button";
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { InkIcon } from "../..";
+import {
+  InkIcon,
+  Popover,
+  PopoverButton,
+  PopoverContent,
+  PopoverPanel,
+} from "../..";
 import { Address } from "viem";
-import { classNames } from "../../util/classes";
 import { trimAddress } from "../../util/trim";
 import { inkSepolia } from "wagmi/chains";
 import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
-import { InternalButton } from "../Button/InternalButton";
 
 export interface ConnectWalletProps {
   className?: string;
@@ -21,41 +24,39 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
   const ensImage = useEnsImageOrDefault({ address });
 
   return (
-    <Popover className="ink:relative ink:font-default">
-      <PopoverButton
-        as={InternalButton}
-        variant={isConnected ? "wallet" : "primary"}
-        className={className}
-        iconLeft={
-          isConnected && address ? (
-            <img src={ensImage} alt={`avatar for ${ensName}`} />
-          ) : undefined
-        }
-      >
-        {isConnected && address ? ensName : "Connect"}
+    <Popover>
+      <PopoverButton asChild>
+        <Button
+          variant={isConnected ? "wallet" : "primary"}
+          className={className}
+          iconLeft={
+            isConnected && address ? (
+              <img src={ensImage} alt={`avatar for ${ensName}`} />
+            ) : undefined
+          }
+        >
+          {isConnected && address ? ensName : "Connect"}
+        </Button>
       </PopoverButton>
 
       <PopoverPanel
-        className={classNames(
-          "ink:absolute ink:z-10 ink:min-w-[240px]",
-          "ink:rounded-lg ink:bg-background-light ink:p-1.5 ink:shadow-menu",
-          "ink:flex ink:flex-col ink:gap-2"
-        )}
-        anchor={{ to: "bottom end", gap: 8 }}
+        headerContent={
+          isConnected ? (
+            <ConnectedWalletPopupHeader address={address!} />
+          ) : undefined
+        }
       >
         {isConnected ? (
           <ConnectedWalletSection address={address!} />
         ) : (
           <div className="ink:flex ink:flex-col ink:gap-2">
             {connectors.map((connector) => (
-              <InternalButton
+              <PopoverContent.ListItem
                 key={connector.uid}
-                variant="wallet-inside"
-                className="ink:w-full"
                 onClick={() => connect({ connector })}
               >
                 {connector.name}
-              </InternalButton>
+              </PopoverContent.ListItem>
             ))}
           </div>
         )}
@@ -64,8 +65,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
   );
 };
 
-const ConnectedWalletSection = ({ address }: { address: Address }) => {
-  const { disconnect } = useDisconnect();
+const ConnectedWalletPopupHeader = ({ address }: { address: Address }) => {
   const {
     isLoading,
     isSuccess,
@@ -74,59 +74,55 @@ const ConnectedWalletSection = ({ address }: { address: Address }) => {
     address,
     chainId: inkSepolia.id,
   });
+
+  if (isLoading) {
+    return null;
+  }
+
+  return (
+    <div className="ink:text-body-2-bold ink:p-1.5 ink:bg-background-container ink:rounded-md ink:flex ink:gap-1.5 ink:font-default">
+      <div className="ink:flex ink:flex-col ink:flex-1">
+        <div className="ink:text-text-muted ink:text-caption-1-bold">
+          Balance
+        </div>
+        <div className="ink:text-h4 ink:text-text-default">
+          {isSuccess ? `${balance.value} ${balance.symbol}` : "..."}
+        </div>
+      </div>
+      <div>
+        <Button asChild variant="primary" rounded="full">
+          <a href="https://inkonchain.com/bridge" target="_blank">
+            <InkIcon.Deposit />
+          </a>
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+const ConnectedWalletSection = ({ address }: { address: Address }) => {
+  const { disconnect } = useDisconnect();
   return (
     <>
-      {(isLoading || isSuccess) && (
-        <div className="ink:text-body-2-bold ink:p-1.5 ink:bg-background-container ink:rounded-md ink:flex ink:gap-1.5 ink:font-default">
-          <div className="ink:flex ink:flex-col ink:flex-1">
-            <div className="ink:text-text-muted ink:text-caption-1-bold">
-              Balance
-            </div>
-            <div className="ink:text-h4 ink:text-text-default">
-              {isSuccess ? `${balance.value} ${balance.symbol}` : "..."}
-            </div>
-          </div>
-          <div>
-            <Button asChild variant="primary" rounded="full">
-              <a href="https://inkonchain.com/bridge" target="_blank">
-                <InkIcon.Deposit />
-              </a>
-            </Button>
-          </div>
-        </div>
-      )}
-      <div className="ink:flex ink:flex-col ink:gap-0.5">
-        <InternalButton
-          variant="wallet-inside"
-          className="ink:w-full"
-          iconLeft={<InkIcon.Profile />}
-        >
-          Profile
-        </InternalButton>
-        <InternalButton
-          variant="wallet-inside"
-          className="ink:w-full"
-          iconLeft={<InkIcon.Settings />}
-        >
-          Settings
-        </InternalButton>
-        <InternalButton
-          variant="wallet-inside"
-          className="ink:w-full"
-          iconLeft={<InkIcon.Copy />}
-          onClick={() => navigator.clipboard.writeText(address)}
-        >
-          {trimAddress(address)}
-        </InternalButton>
-        <InternalButton
-          variant="wallet-inside"
-          className="ink:w-full ink:text-status-error ink:hover:bg-status-error-bg"
-          iconLeft={<InkIcon.Disconnect />}
-          onClick={() => disconnect()}
-        >
-          Disconnect
-        </InternalButton>
-      </div>
+      <PopoverContent.ListItem iconLeft={<InkIcon.Profile />}>
+        Profile
+      </PopoverContent.ListItem>
+      <PopoverContent.ListItem iconLeft={<InkIcon.Settings />}>
+        Settings
+      </PopoverContent.ListItem>
+      <PopoverContent.ListItem
+        iconLeft={<InkIcon.Copy />}
+        onClick={() => navigator.clipboard.writeText(address)}
+      >
+        {trimAddress(address)}
+      </PopoverContent.ListItem>
+      <PopoverContent.ListItem
+        variant="error"
+        iconLeft={<InkIcon.Disconnect />}
+        onClick={() => disconnect()}
+      >
+        Disconnect
+      </PopoverContent.ListItem>
     </>
   );
 };

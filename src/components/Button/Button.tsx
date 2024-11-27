@@ -7,7 +7,7 @@ export interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
   className?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "wallet";
   size?: "sm" | "md" | "lg";
   rounded?: "full" | "default";
   iconLeft?: React.ReactNode;
@@ -26,6 +26,18 @@ export const Button: React.FC<ButtonProps> = ({
   ...restProps
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button";
+  const iconClasses = classNames(
+    "ink:size-3 ink:-my-1",
+    variant === "wallet" &&
+      classNames(
+        "*:ink:object-cover ink:*:w-full ink:*:h-full ink:*:rounded-full",
+        variantClassNames(size, {
+          sm: "ink:size-4",
+          md: "ink:size-5",
+          lg: "ink:size-6",
+        })
+      )
+  );
   return (
     <Component
       className={classNames(
@@ -49,6 +61,12 @@ export const Button: React.FC<ButtonProps> = ({
             "ink:bg-button-primary ink:text-text-on-primary ink:hover:bg-button-primary-hover ink:disabled:bg-button-primary-disabled ink:disabled:text-text-on-primary-disabled ink:active:bg-button-primary-pressed",
           secondary:
             "ink:bg-button-secondary ink:text-text-on-secondary ink:hover:bg-button-secondary-hover ink:disabled:bg-button-secondary-disabled ink:disabled:text-text-on-secondary-disabled ink:active:bg-button-secondary-pressed",
+          wallet: classNames(
+            "ink:bg-background-light-transparent ink:text-body-2-bold ink:text-text-default ink:hover:bg-background-light ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
+            "ink:border-background-container ink:border",
+            iconLeft && "ink:pl-1",
+            iconRight && "ink:pr-1"
+          ),
         }),
         className
       )}
@@ -57,11 +75,9 @@ export const Button: React.FC<ButtonProps> = ({
       <Slottable child={children}>
         {(child) => (
           <>
-            {iconLeft && <div className="ink:size-3 ink:-my-1">{iconLeft}</div>}
+            {iconLeft && <div className={iconClasses}>{iconLeft}</div>}
             {child}
-            {iconRight && (
-              <div className="ink:size-3 ink:-my-1">{iconRight}</div>
-            )}
+            {iconRight && <div className={iconClasses}>{iconRight}</div>}
           </>
         )}
       </Slottable>
