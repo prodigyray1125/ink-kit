@@ -165,6 +165,7 @@
 
   /* Shadows */
   --shadow-*: initial;
+  --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.04);
   --shadow-menu: 0px 8px 24px -8px #160f1f1a;
   --shadow-modal: 0px 16px 64px -32px #160f1f1a;
   --shadow-layout: 0px 16px 64px -32px #160f1f0d;
