@@ -17,6 +17,11 @@
     font-family: "Plus Jakarta Sans";
     src: url("./styles/fonts/PlusJakartaSans-VariableFont_wght.ttf");
   }
+
+  @font-face {
+    font-family: "Departure Mono";
+    src: url("./styles/fonts/DepartureMono-Regular.woff");
+  }
 }
 
 @layer base {
@@ -56,7 +61,15 @@
 @theme {
   /* Fonts */
   --font-*: initial;
-  --font-default: "Plus Jakarta Sans";
+  --font-default: var(--ink-base-font-default);
+
+  /* Radius */
+  --radius-*: initial;
+  --radius-full: var(--ink-base-radius-full);
+  --radius-lg: var(--ink-base-radius-lg);
+  --radius-md: var(--ink-base-radius-md);
+  --radius-sm: var(--ink-base-radius-sm);
+  --radius-xs: var(--ink-base-radius-xs);
 
   /* Colors */
   --color-*: initial;
@@ -154,14 +167,6 @@
   --spacing-8: 64px;
   --spacing-12: 96px;
   --spacing-16: 128px;
-
-  /* Radius */
-  --radius-*: initial;
-  --radius-full: 9999px;
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
-  --radius-xs: 8px;
 
   /* Shadows */
   --shadow-*: initial;

@@ -4,6 +4,8 @@
 */
 
 :root {
+  --ink-base-font-default: "Plus Jakarta Sans";
+
   /* Background */
   --ink-background-dark-transparent: color-mix(
     in srgb,
@@ -86,4 +88,10 @@
     var(--ink-status-error) 8%,
     transparent
   );
+
+  --ink-base-radius-full: 9999px;
+  --ink-base-radius-lg: 24px;
+  --ink-base-radius-md: 16px;
+  --ink-base-radius-sm: 12px;
+  --ink-base-radius-xs: 8px;
 }

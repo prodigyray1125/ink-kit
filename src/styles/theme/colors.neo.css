@@ -1,5 +1,7 @@
 :root,
 :root.ink\:neo-theme {
+  --ink-base-font-default: "Departure Mono";
+
   /* Background */
   --ink-background-dark: rgb(7, 9, 8);
   --ink-background-light: rgb(19, 28, 23);
@@ -18,4 +20,10 @@
   --ink-status-success: rgba(6, 254, 110);
   --ink-status-alert: rgba(254, 185, 6);
   --ink-status-error: rgba(248, 97, 97);
+
+  --ink-base-radius-full: 0px;
+  --ink-base-radius-lg: 0px;
+  --ink-base-radius-md: 0px;
+  --ink-base-radius-sm: 0px;
+  --ink-base-radius-xs: 0px;
 }
