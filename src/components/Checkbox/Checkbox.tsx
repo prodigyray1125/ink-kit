@@ -19,7 +19,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       indeterminate={!checked && indeterminate}
       className={classNames(
         "ink:group ink:relative ink:flex ink:items-center ink:justify-center ink:size-3 ink:shrink-0 ink:cursor-pointer ink:rounded-xs ink:box-border",
-        "ink:transition-colors ink:duration-200 ink:ease-in-out",
+        "ink:transition-colors ink:transition-default-animation",
         "ink:border-2 ink:border-transparent ink:bg-background-container ink:shadow-xs",
         "ink:ring-text-on-secondary ink:focus-visible:outline-none ink:focus-visible:text-on-primary ink:focus-visible:ring-2 ink:focus-visible:ring-offset-2",
         "ink:data-checked:bg-button-primary ink:data-checked:hover:bg-button-primary-hover",
@@ -30,7 +30,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <div className="ink:absolute ink:inset-0 ink:flex ink:items-center ink:justify-center">
         {/** See if those SVGs should be icons in our standard icon library. */}
         <svg
-          className="ink:size-1.5 ink:text-text-on-primary ink:group-data-indeterminate:opacity-0 ink:transition-opacity ink:duration-200 ink:ease-in-out opacity-0 starting:opacity-100"
+          className="ink:size-1.5 ink:text-text-on-primary ink:group-data-indeterminate:opacity-0 ink:transition-opacity ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
           width="12"
           height="12"
           viewBox="0 0 12 12"
@@ -47,7 +47,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       </div>
 
       <svg
-        className="ink:size-1.5 ink:text-text-on-primary ink:group-not-data-indeterminate:opacity-0 ink:transition-opacity ink:duration-200 ink:ease-in-out opacity-0 starting:opacity-100"
+        className="ink:size-1.5 ink:text-text-on-primary ink:group-not-data-indeterminate:opacity-0 ink:transition-opacity ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
         width="12"
         height="2"
         viewBox="0 0 12 2"

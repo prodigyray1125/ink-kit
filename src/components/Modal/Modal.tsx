@@ -60,7 +60,7 @@ export const Modal = <TOnCloseProps,>({
         {hasBackdrop && (
           <DialogBackdrop
             transition
-            className="ink:fixed ink:inset-0 ink:transition-opacity ink:duration-200 ink:backdrop-blur-lg ink:data-closed:opacity-0"
+            className="ink:fixed ink:inset-0 ink:transition-opacity ink:transition-default-animation ink:backdrop-blur-lg ink:data-closed:opacity-0"
           />
         )}
         <div
@@ -74,7 +74,7 @@ export const Modal = <TOnCloseProps,>({
             className={classNames(
               "ink:flex ink:flex-col ink:justify-between ink:gap-3 ink:p-3",
               "ink:bg-background-light ink:shadow-modal ink:rounded-lg",
-              "ink:duration-200 ink:ease-out ink:data-closed:scale-95 ink:data-closed:opacity-0",
+              "ink:transition-default-animation ink:data-closed:scale-95 ink:data-closed:opacity-0",
               variantClassNames(size, {
                 lg: "ink:min-w-[320px] ink:sm:min-w-[640px] ink:min-h-[480px] ink:max-w-4xl",
                 md: "ink:min-w-[200px] ink:sm:min-w-[300px] ink:min-h-[300px]",
