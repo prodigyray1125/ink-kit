@@ -26,7 +26,7 @@ export const InkNavLink: React.FC<InkNavLinkProps> = ({
     <Component
       href={href}
       className={classNames(
-        "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-md ink:transition-colors ink:duration-200 ink:hover:bg-background-container",
+        "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-md ink:transition-colors ink:transition-default-animation ink:hover:bg-background-container",
         className
       )}
       draggable={false}

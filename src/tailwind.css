@@ -173,3 +173,7 @@
   --shadow-modal: 0px 16px 64px -32px #160f1f1a;
   --shadow-layout: 0px 16px 64px -32px #160f1f0d;
 }
+
+@utility transition-default-animation {
+  @apply ink:duration-200 ink:ease-in-out;
+}
