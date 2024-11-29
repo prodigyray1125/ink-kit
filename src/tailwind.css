@@ -22,9 +22,7 @@
     font-family: "Departure Mono";
     src: url("./styles/fonts/DepartureMono-Regular.woff");
   }
-}
 
-@layer base {
   input,
   textarea,
   select,
