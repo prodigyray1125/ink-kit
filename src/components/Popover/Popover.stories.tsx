@@ -36,10 +36,16 @@ const meta: Meta<PopoverProps> = {
           >
             Copy Compliment To Clipboard
           </PopoverContent.ListItem>
-          <PopoverContent.ListItem variant="error">
+          <PopoverContent.ListItem
+            variant="error"
+            iconRight={<InkIcon.Error />}
+          >
             Error Item
           </PopoverContent.ListItem>
-          <PopoverContent.ListItem asChild>
+          <PopoverContent.ListItem
+            asChild
+            iconRight={<InkIcon.Arrow className="ink:rotate-[225deg]" />}
+          >
             <a href="#something" target="_self">
               Link Item
             </a>
