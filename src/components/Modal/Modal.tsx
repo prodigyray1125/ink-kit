@@ -5,9 +5,11 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { useModalContext } from "./ModalContext";
-import { classNames, variantClassNames } from "../../util/classes";
+import { classNames } from "../../util/classes";
 import { InkIcon } from "../..";
 import { useEffect, useRef } from "react";
+import { InkHeader } from "../../layout/InkParts";
+import { InkPanel } from "../../layout/InkParts/InkPanel";
 
 export interface ModalProps<TOnCloseProps = boolean> {
   id: string;
@@ -69,32 +71,22 @@ export const Modal = <TOnCloseProps,>({
             "ink:flex ink:items-center ink:justify-center"
           )}
         >
-          <DialogPanel
-            transition
-            className={classNames(
-              "ink:flex ink:flex-col ink:justify-between ink:gap-3 ink:p-3",
-              "ink:bg-background-light ink:shadow-modal ink:rounded-lg",
-              "ink:transition-default-animation ink:data-closed:scale-95 ink:data-closed:opacity-0",
-              variantClassNames(size, {
-                lg: "ink:min-w-[320px] ink:sm:min-w-[640px] ink:min-h-[480px] ink:max-w-4xl",
-                md: "ink:min-w-[200px] ink:sm:min-w-[300px] ink:min-h-[300px]",
-              })
-            )}
-          >
-            <DialogTitle
-              className={classNames(
-                "ink:w-full ink:flex ink:items-center ink:justify-between"
-              )}
-            >
-              <div className="ink:text-h4">{title}</div>
-              <InkIcon.Close
-                className="ink:cursor-pointer ink:size-3"
-                onClick={() => handleClose()}
+          <DialogPanel transition>
+            <InkPanel size={size} centered>
+              <DialogTitle
+                as={InkHeader}
+                title={title}
+                icon={
+                  <InkIcon.Close
+                    className="ink:cursor-pointer ink:size-3"
+                    onClick={() => handleClose()}
+                  />
+                }
               />
-            </DialogTitle>
-            <div className="ink:flex-1 ink:flex ink:flex-col ink:justify-center ink:items-center">
-              {children({ closeModal: handleClose })}
-            </div>
+              <div className="ink:flex-1 ink:flex ink:flex-col ink:justify-center ink:items-center">
+                {children({ closeModal: handleClose })}
+              </div>
+            </InkPanel>
           </DialogPanel>
         </div>
       </Dialog>

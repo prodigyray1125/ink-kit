@@ -1,40 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { InkIcon, SegmentedControl } from "../..";
+import { InkIcon } from "../..";
 import { InkLayout, InkLayoutProps, InkLayoutSideNav } from "./index";
+import { InkPageLayout } from "../InkParts/InkPageLayout";
+import { ExampleSideNav } from "../ForStories/ExampleSideNav";
+import { ExampleTopNav } from "../ForStories/ExampleTopNav";
+import { InkPanel } from "../InkParts/InkPanel";
 
-const SideNav = () => {
-  return (
-    <InkLayoutSideNav
-      links={[
-        {
-          children: "Home",
-          href: "#home",
-          icon: <InkIcon.Home />,
-          target: "_self",
-        },
-        {
-          children: "Settings",
-          href: "#settings",
-          icon: <InkIcon.Settings />,
-          target: "_self",
-        },
-      ]}
-    />
-  );
-};
-
-const TopNav = () => {
-  return (
-    <SegmentedControl
-      options={[
-        { children: "Home", value: "home", selectedByDefault: true },
-        { children: "Settings", value: "settings" },
-      ]}
-      onOptionChange={() => {}}
-    />
-  );
-};
-
+/**
+ * This layout component provides a unified layout that can be used for most pages.
+ * <br/>
+ * It's content is defined by the children prop, which can be used with the [InkPageLayout component](?path=/docs/layouts-inkpagelayout--docs)
+ */
 const meta: Meta<InkLayoutProps> = {
   title: "Layouts/InkLayout",
   component: InkLayout,
@@ -43,10 +19,16 @@ const meta: Meta<InkLayoutProps> = {
   },
   tags: ["autodocs"],
   args: {
-    children: <div>Some content</div>,
+    children: (
+      <InkPageLayout>
+        <InkPanel>
+          <div>Some content</div>
+        </InkPanel>
+      </InkPageLayout>
+    ),
     headerContent: <div>Header content</div>,
-    topNavigation: <TopNav />,
-    sideNavigation: <SideNav />,
+    topNavigation: <ExampleTopNav />,
+    sideNavigation: <ExampleSideNav />,
   },
 };
 
@@ -57,8 +39,9 @@ export const Simple: Story = {
   args: {},
 };
 
-// Serves as a fun example of how to use `linkAs` to customize the underlying component of `InkNavLink`.
-// It is necessary to allow users to pass `Link`
+/**
+ * The side nav can be a custom component for routing, for instance, if you want to use NextJS' own {`<Link />`} component.
+ */
 export const SideNavWithCustomButtons: Story = {
   args: {
     sideNavigation: (
@@ -82,10 +65,12 @@ export const SideNavWithCustomButtons: Story = {
       />
     ),
     children: (
-      <div>
-        The side nav can be a custom component for routing, for instance, if you
-        want to use NextJS' own {`<Link />`} component.
-      </div>
+      <InkPageLayout>
+        <InkPanel>
+          The side nav can be a custom component for routing, for instance, if
+          you want to use NextJS' own {`<Link />`} component.
+        </InkPanel>
+      </InkPageLayout>
     ),
   },
 };

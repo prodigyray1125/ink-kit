@@ -82,7 +82,7 @@ export const Nested: Story = {
       return (
         <>
           <Story />
-          <Modal id="nested" title="Nested modal" size="lg" hasBackdrop>
+          <Modal id="nested" title="Nested modal" size="md" hasBackdrop>
             {({ closeModal }) => (
               <ModalLayout.CallToAction
                 title="A nested modal example"

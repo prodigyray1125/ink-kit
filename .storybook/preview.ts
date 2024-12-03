@@ -8,7 +8,7 @@ const preview: Preview = {
   parameters: {
     layout: "centered",
     backgrounds: {
-      default: "light-background",
+      default: "dark-background",
       values: [
         {
           name: "dark-background",

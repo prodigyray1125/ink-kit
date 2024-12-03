@@ -65,7 +65,7 @@ export function classNames(...classes: ClassValue[]) {
   return customTwMerge(clsx(...classes));
 }
 
-export function variantClassNames<T extends string>(
+export function variantClassNames<T extends string | number>(
   variant: T,
   classes: Required<Record<T, string>>
 ) {
