@@ -54,6 +54,15 @@
     /** Required for Safari to have proper font weights */
     font-synthesis: none;
   }
+
+  @keyframes svg-path-dash {
+    from {
+      stroke-dashoffset: var(--svg-path-dash-offset);
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 }
 
 @theme {
@@ -176,4 +185,27 @@
 
 @utility transition-default-animation {
   @apply ink:duration-200 ink:ease-in-out;
+}
+
+/**
+ * For this animation to work, the SVG path must have a stroke attribute.
+ * Set `animate-svg-path` on the Icon element, then apply `animate-svg-path-start` when you want the animation to play (e.g. on hover).
+ */
+@utility animate-svg-path {
+  --svg-path-dash-duration: 0.25s;
+  --svg-path-dash-offset: 24;
+  --svg-path-dash-delay: 0.1s;
+  --svg-path-dash-easing: ease-in-out;
+
+  > path[stroke] {
+    stroke-dasharray: var(--svg-path-dash-offset);
+    stroke-dashoffset: var(--svg-path-dash-offset);
+  }
+}
+
+@utility animate-svg-path-start {
+  > path[stroke] {
+    animation: svg-path-dash var(--svg-path-dash-duration)
+      var(--svg-path-dash-delay) var(--svg-path-dash-easing) forwards;
+  }
 }

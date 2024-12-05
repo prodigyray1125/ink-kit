@@ -12,7 +12,7 @@ export const FieldLabel: React.FC<FieldLabelProps> = ({
   children,
 }) => {
   return (
-    <Field className="ink:flex ink:flex-col ink:font-default">
+    <Field className="ink:flex ink:flex-col ink:font-default ink:group">
       <div className="ink:flex ink:items-center ink:gap-1">
         {children}
         <Label className="ink:cursor-pointer ink:h-3 ink:flex ink:items-center ink:justify-center ink:text-body-2 ink:text-text-default">

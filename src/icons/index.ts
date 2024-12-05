@@ -15,6 +15,7 @@ export { default as Error } from "./Type=Error.svg?react";
 export { default as Home } from "./Type=Home.svg?react";
 export { default as Loading } from "./Type=Loading.svg?react";
 export { default as Menu } from "./Type=Menu.svg?react";
+export { default as Minus } from "./Type=Minus.svg?react";
 export { default as Moon } from "./Type=Moon.svg?react";
 export { default as Profile } from "./Type=Profile.svg?react";
 export { default as Search } from "./Type=Search.svg?react";
