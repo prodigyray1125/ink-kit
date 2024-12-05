@@ -86,6 +86,7 @@
   --color-background-light: var(--ink-background-light);
   --color-background-light-transparent: var(--ink-background-light-transparent);
   --color-background-light-invisible: var(--ink-background-light-invisible);
+  --color-background-shadow: var(--ink-background-shadow);
 
   --color-button-primary: var(--ink-button-primary);
   --color-button-primary-hover: var(--ink-button-primary-hover);

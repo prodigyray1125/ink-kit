@@ -97,20 +97,19 @@
   --ink-base-radius-xs: 8px;
 
   /* Shadows */
-  --ink-base-shadow-color: var(--ink-text-default);
   --ink-base-shadow-xs-color: color-mix(
     in srgb,
-    var(--ink-base-shadow-color) 6%,
+    var(--ink-background-shadow) 6%,
     transparent
   );
   --ink-base-shadow-md-color: color-mix(
     in srgb,
-    var(--ink-base-shadow-color) 8%,
+    var(--ink-background-shadow) 8%,
     transparent
   );
   --ink-base-shadow-lg-color: color-mix(
     in srgb,
-    var(--ink-base-shadow-color) 10%,
+    var(--ink-background-shadow) 10%,
     transparent
   );
 }

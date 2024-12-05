@@ -3,6 +3,7 @@
   /* Background */
   --ink-background-dark: rgb(240, 239, 255);
   --ink-background-light: rgb(255, 255, 255);
+  --ink-background-shadow: rgba(22, 15, 31, 1);
 
   /* Button */
   --ink-button-primary: rgb(113, 50, 245);
