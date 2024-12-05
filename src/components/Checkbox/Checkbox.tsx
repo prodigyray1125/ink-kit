@@ -23,8 +23,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         "ink:transition-colors ink:transition-default-animation",
         "ink:bg-background-container ink:shadow-xs",
         "ink:ring-text-on-secondary ink:focus-visible:outline-none ink:focus-visible:text-on-primary ink:focus-visible:ring-2 ink:focus-visible:ring-offset-2",
-        "ink:data-checked:bg-button-primary ink:data-checked:hover:bg-button-primary-hover",
-        "ink:data-indeterminate:bg-button-primary ink:data-indeterminate:hover:bg-button-primary-hover",
+        "ink:data-checked:bg-button-primary",
+        "ink:data-indeterminate:bg-button-primary",
         "ink:flex ink:items-center",
         "ink:text-button-primary ink:data-checked:text-text-on-primary ink:data-indeterminate:text-text-on-primary"
       )}
@@ -33,7 +33,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         <InkIcon.Check
           className={classNames(
             "ink:size-3",
-            "ink:animate-svg-path ink:group-hover:not-in-data-indeterminate:animate-svg-path-start ink:in-data-checked:not-in-data-indeterminate:animate-svg-path-start"
+            "ink:animate-svg-path ink:in-data-checked:not-in-data-indeterminate:animate-svg-path-start"
           )}
         />
       </div>

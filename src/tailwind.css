@@ -194,7 +194,7 @@
 @utility animate-svg-path {
   --svg-path-dash-duration: 0.25s;
   --svg-path-dash-offset: 24;
-  --svg-path-dash-delay: 0.2s;
+  --svg-path-dash-delay: 0.1s;
   --svg-path-dash-easing: ease-in-out;
 
   > path[stroke] {
