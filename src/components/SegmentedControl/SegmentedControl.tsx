@@ -59,7 +59,7 @@ export const SegmentedControl = <TOptionValue extends string>({
     <div className="ink:relative ink:font-default">
       {isMounted && selectedOption && (
         <div
-          className="ink:absolute ink:p-0.5 ink:box-border ink:transition-all ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
+          className="ink:absolute ink:py-0.5 ink:box-border ink:transition-all ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
           style={{
             top: 0,
             bottom: 0,
@@ -69,7 +69,7 @@ export const SegmentedControl = <TOptionValue extends string>({
         >
           <div
             className={classNames(
-              "ink:w-full ink:h-full ink:rounded-full",
+              "ink:w-full ink:h-full ink:rounded-sm",
               variantClassNames(displayOn, {
                 light: "ink:bg-background-light",
                 dark: "ink:bg-background-dark",
@@ -80,7 +80,7 @@ export const SegmentedControl = <TOptionValue extends string>({
       )}
       <div
         className={classNames(
-          "ink:grid ink:h-6 ink:grid-flow-col ink:text-body-2-bold ink:rounded-full",
+          "ink:grid ink:h-5 ink:grid-flow-col ink:text-body-2-bold ink:rounded-md ink:p-0.5",
           variantClassNames(displayOn, {
             light: "ink:bg-background-container",
             dark: "ink:bg-background-light",
@@ -96,7 +96,7 @@ export const SegmentedControl = <TOptionValue extends string>({
           return (
             <ButtonComponent
               className={classNames(
-                "ink:h-full ink:box-border ink:rounded-full ink:relative ink:z-10 ink:transition-colors ink:transition-default-animation ink:hover:cursor-pointer ink:select-none ink:no-underline ink:flex ink:items-center ink:justify-center",
+                "ink:h-full ink:box-border ink:rounded-sm ink:relative ink:z-10 ink:transition-colors ink:transition-default-animation ink:hover:cursor-pointer ink:select-none ink:no-underline ink:flex ink:items-center ink:justify-center",
                 selectedOption === option.value
                   ? "ink:text-text-default"
                   : "ink:text-text-on-secondary",

@@ -14,10 +14,10 @@ export const Toggle: React.FC<ToggleProps> = ({ checked, onChange }) => {
       className={classNames(
         "ink:group ink:relative ink:inline-flex ink:h-4 ink:w-6 ink:shrink-0 ink:cursor-pointer ink:rounded-full ink:box-border",
         "ink:transition-colors ink:transition-default-animation",
-        "ink:border-2 ink:border-transparent ink:bg-background-container",
+        "ink:bg-background-container",
         "ink:ring-text-on-secondary ink:focus-visible:outline-none ink:focus-visible:text-on-primary ink:focus-visible:ring-2 ink:focus-visible:ring-offset-2",
         "ink:data-checked:bg-status-success",
-        "ink:p-0.5 ink:flex ink:items-center"
+        "ink:flex ink:items-center ink:p-0.5"
       )}
     >
       <span
@@ -27,7 +27,7 @@ export const Toggle: React.FC<ToggleProps> = ({ checked, onChange }) => {
            * So this is a small workaround to make it work.
            */
           {
-            "--ink-translate-x": "calc(100% - var(--ink-spacing-1_5))",
+            "--ink-translate-x": "calc(100% - var(--ink-spacing-1))",
           } as React.CSSProperties
         }
         className={classNames(
