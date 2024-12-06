@@ -89,9 +89,27 @@
     transparent
   );
 
+  /* Radius */
   --ink-base-radius-full: 9999px;
   --ink-base-radius-lg: 24px;
   --ink-base-radius-md: 16px;
   --ink-base-radius-sm: 12px;
   --ink-base-radius-xs: 8px;
+
+  /* Shadows */
+  --ink-base-shadow-xs-color: color-mix(
+    in srgb,
+    var(--ink-background-shadow) 6%,
+    transparent
+  );
+  --ink-base-shadow-md-color: color-mix(
+    in srgb,
+    var(--ink-background-shadow) 8%,
+    transparent
+  );
+  --ink-base-shadow-lg-color: color-mix(
+    in srgb,
+    var(--ink-background-shadow) 10%,
+    transparent
+  );
 }

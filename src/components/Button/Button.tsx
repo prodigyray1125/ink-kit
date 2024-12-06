@@ -64,8 +64,18 @@ export const Button: React.FC<ButtonProps> = ({
           wallet: classNames(
             "ink:bg-background-light-transparent ink:text-body-2-bold ink:text-text-default ink:hover:bg-background-light ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-light",
             "ink:border-background-container ink:border",
-            iconLeft && "ink:pl-0.5",
-            iconRight && "ink:pr-0.5"
+            iconLeft &&
+              variantClassNames(size, {
+                sm: "ink:pl-0.5",
+                md: "ink:pl-0.5",
+                lg: "ink:pl-1",
+              }),
+            iconRight &&
+              variantClassNames(size, {
+                sm: "ink:pr-0.5",
+                md: "ink:pr-0.5",
+                lg: "ink:pr-1",
+              })
           ),
         }),
         className

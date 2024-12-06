@@ -18,7 +18,7 @@ export const InkPageLayout: React.FC<InkPageLayoutProps> = ({
           2: "ink:grid-cols-[minmax(260px,1fr)_400px]",
           3: "ink:grid-cols-[260px_minmax(260px,1fr)_400px]",
         }),
-        "ink:*:bg-background-light ink:*:rounded-lg ink:*:shadow-layout"
+        "ink:*:bg-background-light ink:*:rounded-lg"
       )}
     >
       {children}

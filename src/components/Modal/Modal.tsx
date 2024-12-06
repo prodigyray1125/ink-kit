@@ -72,7 +72,7 @@ export const Modal = <TOnCloseProps,>({
           )}
         >
           <DialogPanel transition>
-            <InkPanel size={size} centered>
+            <InkPanel size={size} centered shadow>
               <DialogTitle
                 as={InkHeader}
                 title={title}

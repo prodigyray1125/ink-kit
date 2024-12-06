@@ -4,6 +4,7 @@
   --ink-background-dark: rgba(221, 221, 221, 1);
   --ink-background-light: rgba(255, 255, 255, 1);
   --ink-background-container: rgba(0, 0, 0, 0.1);
+  --ink-background-shadow: rgba(0, 0, 0, 1);
 
   /* Button */
   --ink-button-primary: rgba(0, 0, 0, 1);

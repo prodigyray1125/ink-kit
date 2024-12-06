@@ -86,6 +86,7 @@
   --color-background-light: var(--ink-background-light);
   --color-background-light-transparent: var(--ink-background-light-transparent);
   --color-background-light-invisible: var(--ink-background-light-invisible);
+  --color-background-shadow: var(--ink-background-shadow);
 
   --color-button-primary: var(--ink-button-primary);
   --color-button-primary-hover: var(--ink-button-primary-hover);
@@ -177,10 +178,9 @@
 
   /* Shadows */
   --shadow-*: initial;
-  --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.04);
-  --shadow-menu: 0px 8px 24px -8px #160f1f1a;
-  --shadow-modal: 0px 16px 64px -32px #160f1f1a;
-  --shadow-layout: 0px 16px 64px -32px #160f1f0d;
+  --shadow-xs: 0px 4px 8px -2px var(--ink-base-shadow-xs-color);
+  --shadow-md: 0px 12px 16px -4px var(--ink-base-shadow-md-color);
+  --shadow-lg: 0px 32px 64px -12px var(--ink-base-shadow-lg-color);
 }
 
 @utility transition-default-animation {
