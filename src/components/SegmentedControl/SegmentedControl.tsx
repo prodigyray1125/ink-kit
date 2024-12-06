@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { classNames, variantClassNames } from "../../util/classes";
 import { DisplayOnProps } from "../../util/theme";
 import { Slot } from "../Slot";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export type SegmentedControlProps<TOptionValue extends string> =
   DisplayOnProps & {
@@ -34,6 +35,7 @@ export const SegmentedControl = <TOptionValue extends string>({
     () => options.findIndex((opt) => opt.value === selectedOption),
     [options, selectedOption]
   );
+  const windowWidth = useWindowSize();
 
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
@@ -53,13 +55,13 @@ export const SegmentedControl = <TOptionValue extends string>({
       left: selectedElement?.offsetLeft || 0,
       width: selectedElement?.offsetWidth || 0,
     };
-  }, [itemsRef, selectedIndex, isMounted]);
+  }, [itemsRef, selectedIndex, isMounted, windowWidth]);
 
   return (
     <div className="ink:relative ink:font-default">
       {isMounted && selectedOption && (
         <div
-          className="ink:absolute ink:py-0.5 ink:box-border ink:transition-all ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
+          className="ink:absolute ink:py-0.5 ink:box-border ink:transition-[left,width] ink:transition-default-animation"
           style={{
             top: 0,
             bottom: 0,

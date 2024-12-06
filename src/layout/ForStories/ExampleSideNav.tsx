@@ -1,23 +1,6 @@
-import { InkIcon } from "../..";
 import { InkLayoutSideNav } from "../InkLayout";
+import { EXAMPLE_LINKS } from "./ExampleLayoutLinks";
 
 export const ExampleSideNav = () => {
-  return (
-    <InkLayoutSideNav
-      links={[
-        {
-          children: "Home",
-          href: "#home",
-          icon: <InkIcon.Home />,
-          target: "_self",
-        },
-        {
-          children: "Settings",
-          href: "#settings",
-          icon: <InkIcon.Settings />,
-          target: "_self",
-        },
-      ]}
-    />
-  );
+  return <InkLayoutSideNav links={EXAMPLE_LINKS} />;
 };

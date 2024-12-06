@@ -4,6 +4,7 @@ import { Slot, Slottable } from "../../components/Slot";
 
 export interface InkLayoutLink extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLElement>;
   href: string;
   icon?: React.ReactNode;
   target?: StringWithAutocomplete<"_blank" | "_self">;
@@ -18,6 +19,7 @@ export const InkNavLink: React.FC<InkNavLinkProps> = ({
   children,
   className = "",
   asChild,
+  onClick,
   ...props
 }) => {
   const Component = asChild ? Slot : "a";
@@ -26,10 +28,11 @@ export const InkNavLink: React.FC<InkNavLinkProps> = ({
     <Component
       href={href}
       className={classNames(
-        "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-md ink:transition-colors ink:transition-default-animation ink:hover:bg-background-container",
+        "ink:flex ink:items-center ink:gap-1.5 ink:px-1.5 ink:py-1.5 ink:text-inherit ink:no-underline ink:rounded-md ink:transition-colors ink:transition-default-animation ink:hover:bg-background-container ink:box-border",
         className
       )}
       draggable={false}
+      onClick={onClick}
       {...props}
     >
       <Slottable child={children}>

@@ -5,6 +5,7 @@ import { InkPageLayout } from "../InkParts/InkPageLayout";
 import { ExampleSideNav } from "../ForStories/ExampleSideNav";
 import { ExampleTopNav } from "../ForStories/ExampleTopNav";
 import { InkPanel } from "../InkParts/InkPanel";
+import { ExampleMobileNav } from "../ForStories/ExampleMobileNav";
 
 /**
  * This layout component provides a unified layout that can be used for most pages.
@@ -29,6 +30,9 @@ const meta: Meta<InkLayoutProps> = {
     headerContent: <div>Header content</div>,
     topNavigation: <ExampleTopNav />,
     sideNavigation: <ExampleSideNav />,
+    mobileNavigation: (props) => (
+      <ExampleMobileNav onLinkClick={props.closeMobileNavigation} />
+    ),
   },
 };
 
