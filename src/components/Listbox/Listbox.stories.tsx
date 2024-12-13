@@ -104,7 +104,11 @@ export const WithIcons: Story = {
     children: (
       <ListboxOptions>
         {defaultItems.map((item) => (
-          <ListboxOption key={item.value} value={item} iconRight={item.iconLeft}>
+          <ListboxOption
+            key={item.value}
+            value={item}
+            iconRight={item.iconLeft}
+          >
             {item.label}
           </ListboxOption>
         ))}
@@ -115,7 +119,9 @@ export const WithIcons: Story = {
     const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
     return (
       <Listbox value={item} onChange={setValue}>
-        <ListboxButton iconLeft={item.iconLeft}>Selected: {item.label}</ListboxButton>
+        <ListboxButton iconLeft={item.iconLeft}>
+          Selected: {item.label}
+        </ListboxButton>
         {args.children}
       </Listbox>
     );

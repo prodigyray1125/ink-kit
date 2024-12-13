@@ -23,7 +23,9 @@ export const ListboxOption = <T,>({
       as={ListItem}
       iconRight={
         <div className="ink:flex ink:items-center ink:justify-center ink:gap-1.5">
-          {iconRight && <div className="ink:in-data-selected:hidden">{iconRight}</div>}
+          {iconRight && (
+            <div className="ink:in-data-selected:hidden">{iconRight}</div>
+          )}
           <InkIcon.Check className="ink:not-in-data-selected:hidden" />
         </div>
       }
