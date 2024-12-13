@@ -1,9 +1,9 @@
 import { ListboxButton as HeadlessListboxButton } from "@headlessui/react";
-import { forwardRef, PropsWithChildren } from "react";
+import { forwardRef } from "react";
 import { InkIcon } from "../..";
-import { ListItem } from "../ListItem";
+import { ListItem, ListItemProps } from "../ListItem";
 
-interface ListboxButtonProps extends PropsWithChildren {
+interface ListboxButtonProps extends ListItemProps {
   className?: string;
 }
 

@@ -90,6 +90,9 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-7ac8e612-20241113
         version: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      rollup-plugin-preserve-use-client:
+        specifier: ^3.0.1
+        version: 3.0.1(rollup@4.24.4)
       storybook:
         specifier: 8.2.9
         version: 8.2.9(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@5.0.10)
@@ -5007,6 +5010,11 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
+
+  rollup-plugin-preserve-use-client@3.0.1:
+    resolution: {integrity: sha512-4WKtGnQsgeCzT/PnA82V4knXVTKxNrxJFcPVa1Kero2XaLs1yazGSCUwxv6NzVmeNeURqE+A5wLbI+zlPKVgMg==}
+    peerDependencies:
+      rollup: ^4.0.0
 
   rollup@4.24.4:
     resolution: {integrity: sha512-vGorVWIsWfX3xbcyAS+I047kFKapHYivmkaT63Smj77XwvLSJos6M1xGqZnBPFQFBRZDOcG1QnYEIxAvTr/HjA==}
@@ -12026,6 +12034,10 @@ snapshots:
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
+
+  rollup-plugin-preserve-use-client@3.0.1(rollup@4.24.4):
+    dependencies:
+      rollup: 4.24.4
 
   rollup@4.24.4:
     dependencies:

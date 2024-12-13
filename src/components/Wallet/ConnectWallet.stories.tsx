@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ConnectWallet, type ConnectWalletProps } from "./index";
 import { WalletProvider } from "../../decorators/WalletProvider";
+import { PopoverContent } from "../Popover";
+import { InkIcon } from "../..";
 
 const meta: Meta<ConnectWalletProps> = {
   title: "Components/ConnectWallet",
@@ -20,4 +22,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Simple: Story = {
   args: {},
+};
+
+export const WithProfileAndSettings: Story = {
+  args: {
+    listItems: (
+      <>
+        <PopoverContent.ListItem iconLeft={<InkIcon.Profile />}>
+          Profile
+        </PopoverContent.ListItem>
+        <PopoverContent.ListItem iconLeft={<InkIcon.Settings />}>
+          Settings
+        </PopoverContent.ListItem>
+      </>
+    ),
+  },
 };

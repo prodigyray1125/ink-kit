@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
+import preserveUseClientDirective from "rollup-plugin-preserve-use-client";
 import tailwindcss from "@tailwindcss/vite";
 import { peerDependencies } from "./package.json";
 import { Plugin } from "vite";
@@ -44,6 +45,7 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
+    preserveUseClientDirective(),
     tailwindcss(),
     dts(),
     svgr({

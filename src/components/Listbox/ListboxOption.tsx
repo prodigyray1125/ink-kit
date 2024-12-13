@@ -1,10 +1,9 @@
 import { ListboxOption as HeadlessListboxOption } from "@headlessui/react";
-import { PropsWithChildren } from "react";
 import { classNames } from "../../util/classes";
-import { ListItem } from "../ListItem";
+import { ListItem, ListItemProps } from "../ListItem";
 import { InkIcon } from "../..";
 
-interface ListboxOptionProps<T> extends PropsWithChildren {
+interface ListboxOptionProps<T> extends Omit<ListItemProps, "value"> {
   value: T;
   disabled?: boolean;
 }
@@ -12,6 +11,7 @@ interface ListboxOptionProps<T> extends PropsWithChildren {
 export const ListboxOption = <T,>({
   children,
   disabled,
+  iconRight,
   ...props
 }: ListboxOptionProps<T>) => {
   return (
@@ -21,7 +21,12 @@ export const ListboxOption = <T,>({
       )}
       disabled={disabled}
       as={ListItem}
-      iconRight={<InkIcon.Check className="ink:not-in-data-selected:hidden" />}
+      iconRight={
+        <div className="ink:flex ink:items-center ink:justify-center ink:gap-1.5">
+          {iconRight && <div className="ink:in-data-selected:hidden">{iconRight}</div>}
+          <InkIcon.Check className="ink:not-in-data-selected:hidden" />
+        </div>
+      }
       {...props}
     >
       {children}

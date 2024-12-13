@@ -4,6 +4,7 @@ import { classNames } from "../../util/classes";
 import { Button, InkIcon } from "../..";
 
 export interface InkLayoutProps extends PropsWithChildren {
+  className?: string;
   mainIcon?: React.ReactNode;
   headerContent?: React.ReactNode;
   sideNavigation?: React.ReactNode;
@@ -13,14 +14,18 @@ export interface InkLayoutProps extends PropsWithChildren {
   }: {
     closeMobileNavigation: () => void;
   }) => React.ReactNode;
+  /** Makes the layout really close to the edges of the screen, meaning you will have to handle the padding yourself. */
+  snug?: boolean;
 }
 
 export const InkLayout: React.FC<InkLayoutProps> = ({
+  className,
   mainIcon = <DefaultAppIcon className="ink:size-6" />,
   headerContent,
   sideNavigation,
   topNavigation,
   mobileNavigation,
+  snug = false,
   children,
 }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -29,10 +34,11 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
     <>
       <div
         className={classNames(
-          "ink:flex ink:flex-col ink:h-full ink:pb-5 ink:min-w-[320px] ink:font-default ink:text-text-default ink:gap-5 ink:box-border"
+          "ink:flex ink:flex-col ink:h-full ink:pb-5 ink:min-w-[320px] ink:font-default ink:text-text-default ink:gap-5 ink:box-border ink:w-full",
+          className
         )}
       >
-        <div className="ink:w-full ink:flex ink:justify-between ink:items-center ink:gap-3 ink:px-5 ink:pt-4 ink:box-border">
+        <div className="ink:w-full ink:flex ink:justify-between ink:items-center ink:gap-3 ink:px-3 ink:sm:px-5 ink:pt-4 ink:box-border ink:sticky ink:top-0 ink:z-10">
           <div className="ink:flex ink:items-center ink:justify-start ink:size-6 ink:gap-2">
             {mainIcon}
           </div>
@@ -67,8 +73,9 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
         </div>
         <div
           className={classNames(
-            "ink:flex ink:flex-1 ink:mx-5 ink:box-border ink:shrink-0",
-            sideNavigation && "ink:lg:ml-0"
+            "ink:flex ink:flex-1 ink:box-border ink:shrink-0 ink:w-full",
+            !snug && "ink:px-3 ink:sm:px-5",
+            sideNavigation && "ink:lg:pl-0"
           )}
         >
           {sideNavigation && (
