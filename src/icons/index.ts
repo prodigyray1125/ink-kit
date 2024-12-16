@@ -26,3 +26,4 @@ export { default as SocialX } from "./Type=SocialX.svg?react";
 export { default as Success } from "./Type=Success.svg?react";
 export { default as Sun } from "./Type=Sun.svg?react";
 export { default as Swap } from "./Type=Swap.svg?react";
+export { default as Wallet } from "./Type=Wallet.svg?react";

@@ -12,8 +12,10 @@ import { trimAddress } from "../../util/trim";
 import { inkSepolia } from "wagmi/chains";
 import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
-import { useEffect, useState } from "react";
 import { PlaceholderUntilLoaded } from "../Effects";
+import { useIsUnderWindowBreakpoint } from "../../hooks/useWindowBreakpoint";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export interface ConnectWalletProps {
   className?: string;
@@ -24,39 +26,54 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
   className,
   listItems,
 }) => {
-  const { address, isConnecting, isConnected } = useAccount();
+  const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const ensName = useEnsNameOrDefault({ address });
   const ensImage = useEnsImageOrDefault({ address });
+  const isSmallWindow = useIsUnderWindowBreakpoint({ size: "sm" });
 
   const [hasLoaded, setHasLoaded] = useState(false);
   useEffect(() => {
     setHasLoaded(true);
   }, []);
 
-  const isLoading = isConnecting || !hasLoaded;
-
   return (
     <Popover>
       <PopoverButton asChild>
         <Button
-          variant={isConnected || isLoading ? "wallet" : "primary"}
+          variant={isConnected ? "wallet" : "primary"}
           className={className}
           iconLeft={
-            isConnected || isLoading ? (
+            isConnected && !isSmallWindow ? (
               <img src={ensImage} alt={`avatar for ${ensName}`} />
             ) : undefined
           }
+          rounded={isSmallWindow ? "full" : "default"}
         >
           <PlaceholderUntilLoaded
             placeholder={
-              <div className="flex items-center justify-center">
-                Connecting...
-              </div>
+              <>
+                <div className="ink:hidden ink:sm:flex ink:items-center ink:justify-center">
+                  Connecting...
+                </div>
+                <span className="ink:inline ink:sm:hidden">···</span>
+              </>
             }
-            isLoading={isLoading}
+            isLoading={!hasLoaded}
           >
-            {isConnected && address ? ensName : "Connect"}
+            {isConnected ? (
+              <>
+                <div className="ink:size-4 ink:*:w-4 ink:*:rounded-full ink:block ink:sm:hidden">
+                  <img src={ensImage} alt={`avatar for ${ensName}`} />
+                </div>
+                <span className="ink:hidden ink:sm:inline">{ensName}</span>
+              </>
+            ) : (
+              <>
+                <span className="ink:hidden ink:sm:inline">Connect</span>
+                <InkIcon.Wallet className="ink:block ink:sm:hidden" />
+              </>
+            )}
           </PlaceholderUntilLoaded>
         </Button>
       </PopoverButton>
