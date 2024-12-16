@@ -12,7 +12,6 @@ import { trimAddress } from "../../util/trim";
 import { inkSepolia } from "wagmi/chains";
 import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
-import { useEffect, useState } from "react";
 import { PlaceholderUntilLoaded } from "../Effects";
 import { useIsUnderWindowBreakpoint } from "../../hooks/useWindowBreakpoint";
 
@@ -31,21 +30,14 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
   const ensImage = useEnsImageOrDefault({ address });
   const isSmallWindow = useIsUnderWindowBreakpoint({ size: "sm" });
 
-  const [hasLoaded, setHasLoaded] = useState(false);
-  useEffect(() => {
-    setHasLoaded(true);
-  }, []);
-
-  const isLoading = isConnecting || !hasLoaded;
-
   return (
     <Popover>
       <PopoverButton asChild>
         <Button
-          variant={isConnected || isLoading ? "wallet" : "primary"}
+          variant={isConnected ? "wallet" : "primary"}
           className={className}
           iconLeft={
-            (isConnected || isLoading) && !isSmallWindow ? (
+            isConnected && !isSmallWindow ? (
               <img src={ensImage} alt={`avatar for ${ensName}`} />
             ) : undefined
           }
@@ -60,7 +52,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
                 <span className="ink:inline ink:sm:hidden">···</span>
               </>
             }
-            isLoading={isLoading}
+            isLoading={isConnecting}
           >
             {isConnected ? (
               <>
