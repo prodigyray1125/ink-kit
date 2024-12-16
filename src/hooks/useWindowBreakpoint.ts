@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useWindowSize } from "./useWindowSize";
 
 const BREAKPOINTS = {
+  sm: 640,
   md: 768,
   lg: 1024,
 };

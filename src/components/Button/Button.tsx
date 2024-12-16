@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
     "ink:size-3 ink:-my-1",
     variant === "wallet" &&
       classNames(
-        "*:ink:object-cover ink:*:w-full ink:*:h-full ink:*:rounded-full",
+        "ink:*:object-cover ink:*:w-full ink:*:h-full ink:*:rounded-full",
         variantClassNames(size, {
           sm: "ink:size-4",
           md: "ink:size-5",

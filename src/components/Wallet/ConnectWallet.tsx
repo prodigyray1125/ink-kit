@@ -14,6 +14,7 @@ import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
 import { useEffect, useState } from "react";
 import { PlaceholderUntilLoaded } from "../Effects";
+import { useIsUnderWindowBreakpoint } from "../../hooks/useWindowBreakpoint";
 
 export interface ConnectWalletProps {
   className?: string;
@@ -28,6 +29,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
   const { connect, connectors } = useConnect();
   const ensName = useEnsNameOrDefault({ address });
   const ensImage = useEnsImageOrDefault({ address });
+  const isSmallWindow = useIsUnderWindowBreakpoint({ size: "sm" });
 
   const [hasLoaded, setHasLoaded] = useState(false);
   useEffect(() => {
@@ -43,10 +45,11 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
           variant={isConnected || isLoading ? "wallet" : "primary"}
           className={className}
           iconLeft={
-            isConnected || isLoading ? (
+            (isConnected || isLoading) && !isSmallWindow ? (
               <img src={ensImage} alt={`avatar for ${ensName}`} />
             ) : undefined
           }
+          rounded={isSmallWindow ? "full" : "default"}
         >
           <PlaceholderUntilLoaded
             placeholder={
@@ -56,7 +59,19 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
             }
             isLoading={isLoading}
           >
-            {isConnected && address ? ensName : "Connect"}
+            {isConnected ? (
+              <>
+                <div className="ink:size-4 ink:*:w-4 ink:*:rounded-full ink:block ink:sm:hidden">
+                  <img src={ensImage} alt={`avatar for ${ensName}`} />
+                </div>
+                <span className="ink:hidden ink:sm:inline">{ensName}</span>
+              </>
+            ) : (
+              <>
+                <span className="ink:hidden ink:sm:inline">Connect</span>
+                <InkIcon.Wallet className="ink:block ink:sm:hidden" />
+              </>
+            )}
           </PlaceholderUntilLoaded>
         </Button>
       </PopoverButton>
