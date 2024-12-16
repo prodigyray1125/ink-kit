@@ -4,7 +4,7 @@ import { classNames, variantClassNames } from "../../util/classes";
 
 export interface ListItemProps
   extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>> {
-  variant?: "default" | "secondary" | "error";
+  variant?: "default" | "secondary" | "error" | "muted";
   disabled?: boolean;
   asChild?: boolean;
   className?: string;
@@ -35,6 +35,8 @@ export const ListItem: React.FC<ListItemProps> = ({
           secondary:
             "ink:bg-button-secondary ink:hover:bg-button-secondary-hover ink:active:bg-button-secondary-pressed ink:data-active:bg-button-secondary-pressed ink:text-button-secondary-text",
           error: "ink:text-status-error ink:hover:bg-status-error-bg",
+          muted:
+            "ink:bg-background-container ink:text-text-muted ink:border-1 ink:border-transparent ink:focus:border-text-on-secondary ink:transition-colors ink:transition-default-animation",
         }),
         "ink:data-disabled:text-text-muted ink:data-disabled:cursor-not-allowed",
         className

@@ -4,7 +4,6 @@ import { PropsWithChildren } from "react";
 export interface ListboxProps<T> extends PropsWithChildren {
   value: T;
   onChange: (value: T) => void;
-  className?: string;
   /** If you provide `multiple`, then `value` and `onChange` must use an array. */
   multiple?: boolean;
 }

@@ -81,7 +81,7 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
           {sideNavigation && (
             <div
               className={classNames(
-                "ink:w-[260px] ink:px-4 ink:hidden ink:lg:block ink:shrink-0"
+                "ink:w-[244px] ink:px-4 ink:hidden ink:lg:block ink:shrink-0 ink:box-border"
               )}
             >
               {sideNavigation}
