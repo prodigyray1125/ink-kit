@@ -127,3 +127,35 @@ export const WithIcons: Story = {
     );
   },
 };
+
+const moreItems: ListboxStoryItem[] = [
+  { value: "4", label: "Option 4", iconLeft: <InkIcon.Home /> },
+  { value: "5", label: "Option 5", iconLeft: <InkIcon.Settings /> },
+  { value: "6", label: "Option 6", iconLeft: <InkIcon.Deposit /> },
+  { value: "7", label: "Option 7", iconLeft: <InkIcon.Home /> },
+  { value: "8", label: "Option 8", iconLeft: <InkIcon.Settings /> },
+  { value: "9", label: "Option 9", iconLeft: <InkIcon.Deposit /> },
+];
+
+export const WithManyOptions: Story = {
+  args: {
+    children: (
+      <ListboxOptions>
+        {[...defaultItems, ...moreItems].map((item) => (
+          <ListboxOption key={item.value} value={item}>
+            {item.label}
+          </ListboxOption>
+        ))}
+      </ListboxOptions>
+    ),
+  },
+  render: (args) => {
+    const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
+    return (
+      <Listbox value={item} onChange={setValue}>
+        <ListboxButton>Selected: {item.label}</ListboxButton>
+        {args.children}
+      </Listbox>
+    );
+  },
+};

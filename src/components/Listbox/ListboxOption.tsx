@@ -9,6 +9,7 @@ interface ListboxOptionProps<T> extends Omit<ListItemProps, "value"> {
 }
 
 export const ListboxOption = <T,>({
+  className,
   children,
   disabled,
   iconRight,
@@ -17,7 +18,8 @@ export const ListboxOption = <T,>({
   return (
     <HeadlessListboxOption
       className={classNames(
-        "ink:flex ink:items-center ink:px-3 ink:py-2 ink:text-sm ink:cursor-pointer"
+        "ink:flex ink:items-center ink:px-3 ink:py-2 ink:text-sm ink:cursor-pointer",
+        className
       )}
       disabled={disabled}
       as={ListItem}
