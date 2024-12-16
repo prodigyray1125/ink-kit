@@ -3,9 +3,10 @@ import { classNames } from "../../util/classes";
 import { InkIcon } from "../..";
 
 export interface CheckboxProps {
-  checked: boolean;
+  defaultChecked?: boolean;
+  checked?: boolean;
   indeterminate?: boolean;
-  onChange: (enabled: boolean) => void;
+  onChange?: (enabled: boolean) => void;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
@@ -13,21 +14,30 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   indeterminate,
   onChange,
 }) => {
+  const Component = onChange ? HeadlessCheckbox : "span";
   return (
-    <HeadlessCheckbox
+    <Component
       checked={checked}
-      onChange={onChange}
       indeterminate={!checked && indeterminate}
+      onChange={(eventOrValue) => {
+        /* Only happens when we're using the HeadlessCheckbox component. If we are not, then we don't track changes. */
+        if (typeof eventOrValue === "boolean") {
+          onChange?.(eventOrValue);
+        }
+      }}
       className={classNames(
-        "ink:group ink:relative ink:flex ink:items-center ink:justify-center ink:size-3 ink:shrink-0 ink:cursor-pointer ink:rounded-xs ink:box-border",
+        "ink:group ink:relative ink:flex ink:items-center ink:justify-center ink:size-3 ink:shrink-0 ink:rounded-xs ink:box-border",
         "ink:transition-colors ink:transition-default-animation",
         "ink:bg-background-container ink:shadow-xs",
         "ink:ring-text-on-secondary ink:focus-visible:outline-none ink:focus-visible:text-on-primary ink:focus-visible:ring-2 ink:focus-visible:ring-offset-2",
         "ink:data-checked:bg-button-primary",
         "ink:data-indeterminate:bg-button-primary",
         "ink:flex ink:items-center",
-        "ink:text-button-primary ink:data-checked:text-text-on-primary ink:data-indeterminate:text-text-on-primary"
+        "ink:text-button-primary ink:data-checked:text-text-on-primary ink:data-indeterminate:text-text-on-primary",
+        "ink:cursor-pointer"
       )}
+      data-checked={checked ? "true" : undefined}
+      data-indeterminate={indeterminate ? "true" : undefined}
     >
       <div className="ink:absolute ink:inset-0 ink:flex ink:items-center ink:justify-center ink:box-border">
         <InkIcon.Check
@@ -44,6 +54,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           "ink:animate-svg-path ink:in-data-indeterminate:animate-svg-path-start"
         )}
       />
-    </HeadlessCheckbox>
+    </Component>
   );
 };
