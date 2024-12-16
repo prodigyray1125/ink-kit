@@ -14,6 +14,8 @@ import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
 import { PlaceholderUntilLoaded } from "../Effects";
 import { useIsUnderWindowBreakpoint } from "../../hooks/useWindowBreakpoint";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export interface ConnectWalletProps {
   className?: string;
@@ -24,11 +26,16 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
   className,
   listItems,
 }) => {
-  const { address, isConnecting, isConnected } = useAccount();
+  const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const ensName = useEnsNameOrDefault({ address });
   const ensImage = useEnsImageOrDefault({ address });
   const isSmallWindow = useIsUnderWindowBreakpoint({ size: "sm" });
+
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    setHasLoaded(true);
+  }, []);
 
   return (
     <Popover>
@@ -52,7 +59,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({
                 <span className="ink:inline ink:sm:hidden">···</span>
               </>
             }
-            isLoading={isConnecting}
+            isLoading={!hasLoaded}
           >
             {isConnected ? (
               <>
