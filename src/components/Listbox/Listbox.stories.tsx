@@ -7,16 +7,18 @@ import {
   ListboxProps,
 } from "./index";
 import { useState } from "react";
+import { InkIcon } from "../..";
 
 interface ListboxStoryItem {
   value: string;
   label: string;
+  iconLeft?: React.ReactNode;
 }
 
 const defaultItems: ListboxStoryItem[] = [
-  { value: "1", label: "Option 1" },
-  { value: "2", label: "Option 2" },
-  { value: "3", label: "Option 3" },
+  { value: "1", label: "Option 1", iconLeft: <InkIcon.Home /> },
+  { value: "2", label: "Option 2", iconLeft: <InkIcon.Settings /> },
+  { value: "3", label: "Option 3", iconLeft: <InkIcon.Deposit /> },
 ];
 
 const meta: Meta<ListboxProps<ListboxStoryItem>> = {
@@ -90,6 +92,35 @@ export const MultipleValues: Story = {
         <ListboxButton>
           Selected:{" "}
           {items.length ? items.map((item) => item.label).join(", ") : "None"}
+        </ListboxButton>
+        {args.children}
+      </Listbox>
+    );
+  },
+};
+
+export const WithIcons: Story = {
+  args: {
+    children: (
+      <ListboxOptions>
+        {defaultItems.map((item) => (
+          <ListboxOption
+            key={item.value}
+            value={item}
+            iconRight={item.iconLeft}
+          >
+            {item.label}
+          </ListboxOption>
+        ))}
+      </ListboxOptions>
+    ),
+  },
+  render: (args) => {
+    const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
+    return (
+      <Listbox value={item} onChange={setValue}>
+        <ListboxButton iconLeft={item.iconLeft}>
+          Selected: {item.label}
         </ListboxButton>
         {args.children}
       </Listbox>

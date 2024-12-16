@@ -12,34 +12,57 @@ import { trimAddress } from "../../util/trim";
 import { inkSepolia } from "wagmi/chains";
 import { useEnsImageOrDefault } from "../../hooks/useEnsImageOrDefault";
 import { useEnsNameOrDefault } from "../../hooks/useEnsNameOrDefault";
+import { useEffect, useState } from "react";
+import { PlaceholderUntilLoaded } from "../Effects";
 
 export interface ConnectWalletProps {
   className?: string;
+  listItems?: React.ReactNode;
 }
 
-export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
-  const { address, isConnected } = useAccount();
+export const ConnectWallet: React.FC<ConnectWalletProps> = ({
+  className,
+  listItems,
+}) => {
+  const { address, isConnecting, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const ensName = useEnsNameOrDefault({ address });
   const ensImage = useEnsImageOrDefault({ address });
+
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    setHasLoaded(true);
+  }, []);
+
+  const isLoading = isConnecting || !hasLoaded;
 
   return (
     <Popover>
       <PopoverButton asChild>
         <Button
-          variant={isConnected ? "wallet" : "primary"}
+          variant={isConnected || isLoading ? "wallet" : "primary"}
           className={className}
           iconLeft={
-            isConnected && address ? (
+            isConnected || isLoading ? (
               <img src={ensImage} alt={`avatar for ${ensName}`} />
             ) : undefined
           }
         >
-          {isConnected && address ? ensName : "Connect"}
+          <PlaceholderUntilLoaded
+            placeholder={
+              <div className="flex items-center justify-center">
+                Connecting...
+              </div>
+            }
+            isLoading={isLoading}
+          >
+            {isConnected && address ? ensName : "Connect"}
+          </PlaceholderUntilLoaded>
         </Button>
       </PopoverButton>
 
       <PopoverPanel
+        className="ink:z-100"
         headerContent={
           isConnected ? (
             <ConnectedWalletPopupHeader address={address!} />
@@ -47,7 +70,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
         }
       >
         {isConnected ? (
-          <ConnectedWalletSection address={address!} />
+          <ConnectedWalletSection address={address!} listItems={listItems} />
         ) : (
           <div className="ink:flex ink:flex-col ink:gap-2">
             {connectors.map((connector) => (
@@ -100,16 +123,17 @@ const ConnectedWalletPopupHeader = ({ address }: { address: Address }) => {
   );
 };
 
-const ConnectedWalletSection = ({ address }: { address: Address }) => {
+const ConnectedWalletSection = ({
+  address,
+  listItems,
+}: {
+  address: Address;
+  listItems?: React.ReactNode;
+}) => {
   const { disconnect } = useDisconnect();
   return (
     <>
-      <PopoverContent.ListItem iconLeft={<InkIcon.Profile />}>
-        Profile
-      </PopoverContent.ListItem>
-      <PopoverContent.ListItem iconLeft={<InkIcon.Settings />}>
-        Settings
-      </PopoverContent.ListItem>
+      {listItems}
       <PopoverContent.ListItem
         iconLeft={<InkIcon.Copy />}
         onClick={() => navigator.clipboard.writeText(address)}

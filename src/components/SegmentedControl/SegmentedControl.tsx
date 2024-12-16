@@ -58,7 +58,7 @@ export const SegmentedControl = <TOptionValue extends string>({
   }, [itemsRef, selectedIndex, isMounted, windowWidth]);
 
   return (
-    <div className="ink:relative ink:font-default">
+    <div className="ink:relative ink:font-default ink:h-fit">
       {isMounted && selectedOption && (
         <div
           className="ink:absolute ink:py-0.5 ink:box-border ink:transition-[left,width] ink:transition-default-animation"
