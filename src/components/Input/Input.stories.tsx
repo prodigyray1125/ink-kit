@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input, type InputProps } from "./index";
+import { InkIcon } from "../..";
 
 const meta: Meta<InputProps> = {
   title: "Components/Input",
@@ -16,4 +17,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Simple: Story = {
   args: {},
+};
+
+export const WithIconLeft: Story = {
+  args: {
+    iconLeft: <InkIcon.Search />,
+  },
+};
+
+export const WithIconRight: Story = {
+  args: {
+    iconRight: <InkIcon.Deposit />,
+  },
 };
