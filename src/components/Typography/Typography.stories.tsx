@@ -27,7 +27,7 @@ const meta: Meta<TypographyProps> = {
             args={{
               children: (
                 <div>
-                  ink-text-{variant}: The quick brown fox jumps over the lazy
+                  ink:text-{variant} - The quick brown fox jumps over the lazy
                   dog
                 </div>
               ),

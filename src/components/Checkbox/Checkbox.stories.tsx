@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox, CheckboxProps, CheckboxLabel } from "./index";
 import { fn } from "@storybook/test";
 import { useEffect, useMemo, useState } from "react";
+import { ListItem } from "../ListItem";
 const meta: Meta<CheckboxProps> = {
   title: "Components/Checkbox",
   component: Checkbox,
@@ -115,6 +116,30 @@ export const NestingWithIndeterminateState: Story = {
           </CheckboxLabel>
         </div>
       </div>
+    );
+  },
+};
+
+/** If you want to use the Checkbox without it's own managed state, don't set `onChange` and simply pass `checked={value}`. */
+export const ManagedByAParentItem: Story = {
+  argTypes: {
+    onChange: {
+      control: false,
+    },
+  },
+  args: {},
+  render: (args) => {
+    const [checked, setChecked] = useState(args.checked);
+    useEffect(() => {
+      setChecked(args.checked);
+    }, [args.checked]);
+    return (
+      <ListItem
+        onClick={() => setChecked(!checked)}
+        iconLeft={<Checkbox {...args} checked={checked} onChange={undefined} />}
+      >
+        <div>Checkbox</div>
+      </ListItem>
     );
   },
 };
