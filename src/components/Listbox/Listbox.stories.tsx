@@ -159,3 +159,26 @@ export const WithManyOptions: Story = {
     );
   },
 };
+
+export const WithADifferentButtonVariant: Story = {
+  args: {
+    children: (
+      <ListboxOptions>
+        {[...defaultItems, ...moreItems].map((item) => (
+          <ListboxOption key={item.value} value={item}>
+            {item.label}
+          </ListboxOption>
+        ))}
+      </ListboxOptions>
+    ),
+  },
+  render: (args) => {
+    const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
+    return (
+      <Listbox value={item} onChange={setValue}>
+        <ListboxButton variant="muted">Selected: {item.label}</ListboxButton>
+        {args.children}
+      </Listbox>
+    );
+  },
+};
