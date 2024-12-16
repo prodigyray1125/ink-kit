@@ -11,7 +11,7 @@ export interface InputProps
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, iconLeft, iconRight, ...props }, ref) => {
     const iconClasses =
-      "ink:shrink-0 ink:size-3 ink:-my-1 ink:flex ink:items-center ink:justify-center ink:group-focus-within:text-text-on-secondary ink:transition-colors ink:transition-default-animation";
+      "ink:shrink-0 ink:size-3 ink:-my-1 ink:flex ink:items-center ink:justify-center ink:text-text-muted ink:group-focus-within:text-text-on-secondary ink:transition-colors ink:transition-default-animation";
     return (
       <label
         className={classNames(
