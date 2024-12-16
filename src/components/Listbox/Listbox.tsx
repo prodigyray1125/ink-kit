@@ -15,11 +15,7 @@ export const Listbox = <T extends object>({
   multiple,
 }: ListboxProps<T>) => {
   return (
-    <HeadlessListbox
-      multiple={multiple}
-      value={value}
-      onChange={onChange}
-    >
+    <HeadlessListbox multiple={multiple} value={value} onChange={onChange}>
       {children}
     </HeadlessListbox>
   );
