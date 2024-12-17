@@ -136,7 +136,10 @@ export const ManagedByAParentItem: Story = {
     return (
       <ListItem
         onClick={() => setChecked(!checked)}
-        iconLeft={<Checkbox {...args} checked={checked} onChange={undefined} />}
+        data-checked={checked ? "true" : undefined}
+        iconLeft={
+          <Checkbox {...args} checked={undefined} onChange={undefined} />
+        }
       >
         <div>Checkbox</div>
       </ListItem>

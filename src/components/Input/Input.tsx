@@ -24,7 +24,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         {iconLeft && <div className={iconClasses}>{iconLeft}</div>}
         <input
-          className="ink:w-full ink:outline-none ink:box-border ink:-my-1 ink:placeholder:text-body-2-regular ink:placeholder:text-text-muted"
+          className="ink:w-full ink:outline-none ink:box-border ink:-my-1 ink:placeholder:font-default ink:placeholder:text-body-2-regular ink:placeholder:text-text-muted"
           ref={ref}
           {...props}
         />

@@ -3,7 +3,6 @@ import { classNames } from "../../util/classes";
 import { InkIcon } from "../..";
 
 export interface CheckboxProps {
-  defaultChecked?: boolean;
   checked?: boolean;
   indeterminate?: boolean;
   onChange?: (enabled: boolean) => void;
@@ -30,10 +29,13 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         "ink:transition-colors ink:transition-default-animation",
         "ink:bg-background-container ink:shadow-xs",
         "ink:ring-text-on-secondary ink:focus-visible:outline-none ink:focus-visible:text-on-primary ink:focus-visible:ring-2 ink:focus-visible:ring-offset-2",
-        "ink:data-checked:bg-button-primary",
-        "ink:data-indeterminate:bg-button-primary",
+        "ink:data-checked:bg-button-primary ink:group-data-checked:bg-button-primary",
+        "ink:data-indeterminate:bg-button-primary ink:group-data-indeterminate:bg-button-primary",
+        "ink:data-selected:bg-button-primary ink:group-data-selected:bg-button-primary",
         "ink:flex ink:items-center",
         "ink:text-button-primary ink:data-checked:text-text-on-primary ink:data-indeterminate:text-text-on-primary",
+        "ink:group-data-checked:text-text-on-primary ink:group-data-indeterminate:text-text-on-primary",
+        "ink:group-data-selected:text-text-on-primary",
         "ink:cursor-pointer"
       )}
       data-checked={checked ? "true" : undefined}
@@ -43,7 +45,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         <InkIcon.Check
           className={classNames(
             "ink:size-3",
-            "ink:animate-svg-path ink:in-data-checked:not-in-data-indeterminate:animate-svg-path-start"
+            "ink:animate-svg-path ink:group-data-checked:not-in-data-indeterminate:animate-svg-path-start",
+            "ink:group-data-selected:animate-svg-path-start"
           )}
         />
       </div>
@@ -51,7 +54,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <InkIcon.Minus
         className={classNames(
           "ink:size-3",
-          "ink:animate-svg-path ink:in-data-indeterminate:animate-svg-path-start"
+          "ink:animate-svg-path ink:group-data-indeterminate:animate-svg-path-start"
         )}
       />
     </Component>

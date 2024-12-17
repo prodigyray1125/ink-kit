@@ -99,8 +99,34 @@ export const MultipleValues: Story = {
   },
 };
 
-export const WithIcons: Story = {
+export const WithIconsOnTheLeft: Story = {
   args: {
+    children: (
+      <ListboxOptions>
+        {defaultItems.map((item) => (
+          <ListboxOption key={item.value} value={item} iconLeft={item.iconLeft}>
+            {item.label}
+          </ListboxOption>
+        ))}
+      </ListboxOptions>
+    ),
+  },
+  render: (args) => {
+    const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
+    return (
+      <Listbox value={item} onChange={setValue}>
+        <ListboxButton iconLeft={item.iconLeft}>
+          Selected: {item.label}
+        </ListboxButton>
+        {args.children}
+      </Listbox>
+    );
+  },
+};
+
+export const MultipleValuesWithIconsOnTheRight: Story = {
+  args: {
+    multiple: true,
     children: (
       <ListboxOptions>
         {defaultItems.map((item) => (
@@ -116,11 +142,23 @@ export const WithIcons: Story = {
     ),
   },
   render: (args) => {
-    const [item, setValue] = useState<ListboxStoryItem>(defaultItems[0]);
+    const [items, setValues] = useState<ListboxStoryItem[]>([
+      defaultItems[0],
+      defaultItems[1],
+    ]);
     return (
-      <Listbox value={item} onChange={setValue}>
-        <ListboxButton iconLeft={item.iconLeft}>
-          Selected: {item.label}
+      <Listbox {...args} value={items} onChange={setValues}>
+        <ListboxButton>
+          Selected:{" "}
+          {items.length ? (
+            <div className="ink:flex ink:items-center ink:gap-1 ink:mx-0.5">
+              {items.map((item) => (
+                <div className="ink:size-3">{item.iconLeft}</div>
+              ))}
+            </div>
+          ) : (
+            "None"
+          )}
         </ListboxButton>
         {args.children}
       </Listbox>
