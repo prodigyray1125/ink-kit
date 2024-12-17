@@ -12,6 +12,7 @@ export type SegmentedControlProps<TOptionValue extends string> =
       index: number
     ) => void;
     variableTabWidth?: boolean;
+    variant?: "default" | "primary";
   };
 
 export interface SegmentedControlOption<TOptionValue extends string> {
@@ -26,6 +27,7 @@ export const SegmentedControl = <TOptionValue extends string>({
   onOptionChange,
   variableTabWidth,
   displayOn = "light",
+  variant = "default",
 }: SegmentedControlProps<TOptionValue>) => {
   const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const [selectedOption, setSelectedOption] = useState<TOptionValue | null>(
@@ -75,6 +77,10 @@ export const SegmentedControl = <TOptionValue extends string>({
               variantClassNames(displayOn, {
                 light: "ink:bg-background-light",
                 dark: "ink:bg-background-dark",
+              }),
+              variantClassNames(variant, {
+                default: "",
+                primary: "ink:bg-button-primary",
               })
             )}
           />
@@ -100,7 +106,10 @@ export const SegmentedControl = <TOptionValue extends string>({
               className={classNames(
                 "ink:h-full ink:box-border ink:rounded-sm ink:relative ink:z-10 ink:transition-colors ink:transition-default-animation ink:hover:cursor-pointer ink:select-none ink:no-underline ink:flex ink:items-center ink:justify-center",
                 selectedOption === option.value
-                  ? "ink:text-text-default"
+                  ? variantClassNames(variant, {
+                      default: "ink:text-text-default",
+                      primary: "ink:text-text-on-primary",
+                    })
                   : "ink:text-text-on-secondary",
                 variableTabWidth ? "ink:px-3" : "ink:px-4"
               )}

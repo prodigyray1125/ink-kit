@@ -82,3 +82,41 @@ export const AsLinks: Story = {
     ],
   },
 };
+
+export const PrimaryVariant: Story = {
+  args: {
+    displayOn: "light",
+    variant: "primary",
+    variableTabWidth: true,
+    options: [
+      {
+        children: <span>Home</span>,
+        value: "yeah",
+        selectedByDefault: true,
+      },
+      {
+        children: <span>Apps</span>,
+        value: "done",
+      },
+    ],
+  },
+};
+
+export const PrimaryVariantOnDark: Story = {
+  args: {
+    displayOn: "dark",
+    variant: "primary",
+    variableTabWidth: true,
+    options: [
+      {
+        children: <span>Home</span>,
+        value: "yeah",
+        selectedByDefault: true,
+      },
+      {
+        children: <span>Apps</span>,
+        value: "done",
+      },
+    ],
+  },
+};
