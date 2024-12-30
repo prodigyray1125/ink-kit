@@ -8,7 +8,8 @@ const meta: Meta<AlertProps> = {
   tags: ["autodocs"],
   args: {
     title: "This is an alert title",
-    description: "This is a longer description that explains more about the alert.",
+    description:
+      "This is a longer description that explains more about the alert.",
   },
 };
 

@@ -37,9 +37,7 @@ export const Alert: React.FC<AlertProps> = ({
         className
       )}
     >
-      <div className="ink:size-4 ink:shrink-0">
-        {icon || defaultIcon}
-      </div>
+      <div className="ink:size-4 ink:shrink-0">{icon || defaultIcon}</div>
       <div className="ink:flex ink:flex-col ink:gap-1">
         <div className="ink:text-body-2-bold">{title}</div>
         {description && (
