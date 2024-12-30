@@ -9,3 +9,4 @@ export * from "./SegmentedControl";
 export * from "./Toggle";
 export * from "./Typography";
 export * from "./Wallet";
+export * from "./Alert";
