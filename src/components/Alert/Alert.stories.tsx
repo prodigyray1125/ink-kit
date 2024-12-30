@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Alert, AlertProps } from "./Alert";
 import { InkIcon } from "../..";
+import { fn } from "@storybook/test";
 
 const meta: Meta<AlertProps> = {
   title: "Components/Alert",
@@ -51,5 +52,17 @@ export const TitleOnly: Story = {
   args: {
     title: "Just a title",
     description: undefined,
+  },
+};
+
+export const Dismissable: Story = {
+  args: {
+    variant: "info",
+    title: "This alert can be dismissed",
+    description:
+      "Click the X to dismiss. The state will persist across refreshes.",
+    dismissable: true,
+    id: "example-alert",
+    onDismiss: fn(),
   },
 };
