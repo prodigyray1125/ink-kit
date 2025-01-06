@@ -113,21 +113,34 @@
 
   /* Typography */
   --text-*: initial;
+
+  --text-display-1: 118px;
+  --text-display-1--line-height: 112px;
+  --text-display-1--font-weight: 500;
+
+  --text-display-2: 96px;
+  --text-display-2--line-height: 96px;
+  --text-display-2--font-weight: 500;
+
   --text-h1: 72px;
   --text-h1--line-height: 72px;
-  --text-h1--font-weight: 400;
+  --text-h1--font-weight: 500;
 
-  --text-h2: 32px;
-  --text-h2--line-height: 36px;
-  --text-h2--font-weight: 700;
+  --text-h2: 48px;
+  --text-h2--line-height: 48px;
+  --text-h2--font-weight: 500;
 
-  --text-h3: 24px;
-  --text-h3--line-height: 28px;
+  --text-h3: 32px;
+  --text-h3--line-height: 36px;
   --text-h3--font-weight: 700;
 
-  --text-h4: 20px;
-  --text-h4--line-height: 24px;
+  --text-h4: 24px;
+  --text-h4--line-height: 28px;
   --text-h4--font-weight: 700;
+
+  --text-h5: 20px;
+  --text-h5--line-height: 24px;
+  --text-h5--font-weight: 700;
 
   --text-body-1: 18px;
   --text-body-1--line-height: 24px;
@@ -157,9 +170,13 @@
   --text-caption-1-bold--line-height: 16px;
   --text-caption-1-bold--font-weight: 700;
 
-  --text-caption-2: 11px;
-  --text-caption-2--line-height: 16px;
-  --text-caption-2--font-weight: 400;
+  --text-caption-2-regular: 11px;
+  --text-caption-2-regular--line-height: 16px;
+  --text-caption-2-regular--font-weight: 400;
+
+  --text-caption-2-bold: 11px;
+  --text-caption-2-bold--line-height: 16px;
+  --text-caption-2-bold--font-weight: 700;
 
   /* Spacing */
   --spacing-*: initial;

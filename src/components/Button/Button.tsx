@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <Component
       className={classNames(
-        "ink:rounded-full ink:font-default ink:transition-colors ink:hover:cursor-pointer ink:disabled:cursor-not-allowed ink:transition-default-animation ink:box-border",
+        "ink:rounded-full ink:font-default ink:transition-colors ink:hover:cursor-pointer ink:disabled:cursor-not-allowed ink:transition-default-animation ink:box-border ink:backdrop-blur-xl",
         "ink:flex ink:items-center ink:justify-center ink:gap-1 ink:shrink-0 ink:select-none ink:no-underline",
         variantClassNames(size, {
           sm: "ink:px-2 ink:py-1.5 ink:text-body-2-bold ink:h-5",

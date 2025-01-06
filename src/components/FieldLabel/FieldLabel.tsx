@@ -21,7 +21,7 @@ export const FieldLabel: React.FC<FieldLabelProps> = ({
       </div>
 
       {description && (
-        <Description className="ink:text-caption-2 ink:text-text-default">
+        <Description className="ink:text-caption-2-regular ink:text-text-default">
           {description}
         </Description>
       )}

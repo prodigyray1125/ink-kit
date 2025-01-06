@@ -2,10 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Typography, TypographyProps } from "./Typography";
 
 const variants = [
+  "display-1",
+  "display-2",
   "h1",
   "h2",
   "h3",
   "h4",
+  "h5",
   "body-1",
   "body-2-regular",
   "body-2-bold",
@@ -13,7 +16,8 @@ const variants = [
   "body-3-bold",
   "caption-1-regular",
   "caption-1-bold",
-  "caption-2",
+  "caption-2-regular",
+  "caption-2-bold",
 ] as const;
 
 const meta: Meta<TypographyProps> = {

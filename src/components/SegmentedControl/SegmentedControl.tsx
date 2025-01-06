@@ -61,34 +61,9 @@ export const SegmentedControl = <TOptionValue extends string>({
 
   return (
     <div className="ink:relative ink:font-default ink:h-fit">
-      {isMounted && selectedOption && (
-        <div
-          className="ink:absolute ink:py-0.5 ink:box-border ink:transition-[left,width] ink:transition-default-animation"
-          style={{
-            top: 0,
-            bottom: 0,
-            left: `${left}px`,
-            width: `${width}px`,
-          }}
-        >
-          <div
-            className={classNames(
-              "ink:w-full ink:h-full ink:rounded-sm",
-              variantClassNames(displayOn, {
-                light: "ink:bg-background-light",
-                dark: "ink:bg-background-dark",
-              }),
-              variantClassNames(variant, {
-                default: "",
-                primary: "ink:bg-button-primary",
-              })
-            )}
-          />
-        </div>
-      )}
       <div
         className={classNames(
-          "ink:grid ink:h-5 ink:grid-flow-col ink:text-body-2-bold ink:rounded-md ink:p-0.5",
+          "ink:grid ink:h-6 ink:grid-flow-col ink:text-body-2-bold ink:rounded-md ink:p-0.5 ink:box-border ink:backdrop-blur-xl",
           variantClassNames(displayOn, {
             light: "ink:bg-background-container",
             dark: "ink:bg-background-light",
@@ -127,6 +102,31 @@ export const SegmentedControl = <TOptionValue extends string>({
             </ButtonComponent>
           );
         })}
+        {isMounted && selectedOption && (
+          <div
+            className="ink:absolute ink:py-0.5 ink:box-border ink:transition-[left,width] ink:transition-default-animation"
+            style={{
+              top: 0,
+              bottom: 0,
+              left: `${left}px`,
+              width: `${width}px`,
+            }}
+          >
+            <div
+              className={classNames(
+                "ink:w-full ink:h-full ink:rounded-sm",
+                variantClassNames(displayOn, {
+                  light: "ink:bg-background-light",
+                  dark: "ink:bg-background-dark",
+                }),
+                variantClassNames(variant, {
+                  default: "",
+                  primary: "ink:bg-button-primary",
+                })
+              )}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
