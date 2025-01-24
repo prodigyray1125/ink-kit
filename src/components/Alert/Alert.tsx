@@ -9,13 +9,13 @@ export interface AlertProps {
   icon?: React.ReactNode;
   className?: string;
   /**
-   * Unique identifier for the alert. Required if dismissable is true.
+   * Unique identifier for the alert. Required if dismissible is true.
    */
   id?: string;
   /**
    * Whether the alert can be dismissed. If true, id is required.
    */
-  dismissable?: boolean;
+  dismissible?: boolean;
   /**
    * Callback fired when the alert is dismissed
    */
@@ -29,17 +29,17 @@ export const Alert: React.FC<AlertProps> = ({
   icon,
   className,
   id,
-  dismissable,
+  dismissible,
   onDismiss,
 }) => {
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    if (dismissable && id) {
+    if (dismissible && id) {
       const isDismissedStored = localStorage.getItem(`ink-alert-${id}`);
       setIsDismissed(isDismissedStored === "true");
     }
-  }, [dismissable, id]);
+  }, [dismissible, id]);
 
   if (isDismissed) {
     return null;
@@ -53,7 +53,7 @@ export const Alert: React.FC<AlertProps> = ({
   }[variant];
 
   const handleDismiss = () => {
-    if (dismissable && id) {
+    if (dismissible && id) {
       localStorage.setItem(`ink-alert-${id}`, "true");
       setIsDismissed(true);
       onDismiss?.();
