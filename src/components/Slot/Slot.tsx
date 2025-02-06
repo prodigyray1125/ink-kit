@@ -105,7 +105,7 @@ SlotClone.displayName = "SlotClone";
 
 type SlottableProps = {
   child: React.ReactNode;
-  children: (child: React.ReactNode) => JSX.Element;
+  children: (child: React.ReactNode) => React.JSX.Element;
 };
 
 const Slottable = ({ child, children }: SlottableProps) => {

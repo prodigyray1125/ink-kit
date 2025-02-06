@@ -1,0 +1,8 @@
+{
+  // Enables tailwind autocompletion in cva function
+  // https://cva.style/docs/getting-started/installation#tailwind-css
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
+}

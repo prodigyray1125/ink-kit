@@ -14,6 +14,7 @@ export { default as Disconnect } from "./Type=Disconnect.svg?react";
 export { default as Error } from "./Type=Error.svg?react";
 export { default as History } from "./Type=History.svg?react";
 export { default as Home } from "./Type=Home.svg?react";
+export { default as InkLogo } from "./Type=InkLogo.svg?react";
 export { default as Loading } from "./Type=Loading.svg?react";
 export { default as Menu } from "./Type=Menu.svg?react";
 export { default as Minus } from "./Type=Minus.svg?react";
