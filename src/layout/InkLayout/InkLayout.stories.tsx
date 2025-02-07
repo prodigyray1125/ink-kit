@@ -78,3 +78,24 @@ export const SideNavWithCustomButtons: Story = {
     ),
   },
 };
+
+/**
+ * The side nav can be a custom component for routing, for instance, if you want to use NextJS' own {`<Link />`} component.
+ */
+export const StickySideNav: Story = {
+  args: {
+    children: (
+      <InkPageLayout>
+        <InkPanel className="ink:h-[2000px]">
+          <div className="ink:flex ink:flex-col ink:flex-1">
+            <div className="ink:flex-grow">
+              If the main content is bigger than the screen, the side nav will
+              be sticky.
+            </div>
+            <div className="ink:flex ink:flex-0">Bottom</div>
+          </div>
+        </InkPanel>
+      </InkPageLayout>
+    ),
+  },
+};
