@@ -12,7 +12,7 @@ export const InkPageLayout: React.FC<InkPageLayoutProps> = ({
   return (
     <div
       className={classNames(
-        "ink:grid ink:gap-1 ink:*:h-full ink:auto-rows-min ink:md:auto-rows-auto ink:flex-1",
+        "ink:grid ink:gap-1 ink:*:min-h-full ink:auto-rows-min ink:md:auto-rows-auto ink:flex-1",
         variantClassNames(columns, {
           1: "ink:grid-cols-1",
           2: "ink:md:grid-cols-[minmax(240px,1fr)_360px]",

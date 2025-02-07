@@ -34,7 +34,7 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
     <>
       <div
         className={classNames(
-          "ink:flex ink:flex-col ink:h-full ink:pb-5 ink:min-w-[320px] ink:font-default ink:text-text-default ink:gap-5 ink:box-border ink:w-full",
+          "ink:flex ink:flex-col ink:min-h-full ink:min-w-[320px] ink:font-default ink:text-text-default ink:gap-5 ink:box-border ink:w-full",
           className
         )}
       >
@@ -73,21 +73,30 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
         </div>
         <div
           className={classNames(
-            "ink:flex ink:flex-1 ink:box-border ink:shrink-0 ink:w-full",
+            "ink:flex ink:flex-1 ink:box-border ink:shrink-0 ink:w-full ink:relative",
             !snug && "ink:px-3 ink:sm:px-5",
             sideNavigation && "ink:lg:pl-0"
           )}
         >
           {sideNavigation && (
             <div
+              style={
+                {
+                  /** Header height + header top padding + header-content gap */
+                  "--ink-side-nav-height":
+                    "calc(var(--ink-spacing-6) + var(--ink-spacing-5) + var(--ink-spacing-4))",
+                } as React.CSSProperties
+              }
               className={classNames(
-                "ink:w-[244px] ink:px-4 ink:hidden ink:lg:block ink:shrink-0 ink:box-border"
+                "ink:w-[244px] ink:px-4 ink:hidden ink:lg:block ink:shrink-0 ink:box-border ink:sticky ink:z-10 ink:bottom-0 ink:top-(--ink-side-nav-height) ink:max-h-[calc(100vh-var(--ink-side-nav-height))]"
               )}
             >
               {sideNavigation}
             </div>
           )}
-          {children}
+          <div className="ink:flex-grow ink:flex ink:box-border ink:pb-5">
+            {children}
+          </div>
         </div>
       </div>
       {isMobileNavOpen && (
