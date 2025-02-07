@@ -94,7 +94,7 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
               {sideNavigation}
             </div>
           )}
-          <div className="ink:flex-grow ink:flex ink:box-border ink:pb-5">
+          <div className="ink:flex-grow ink:flex ink:box-border ink:pb-5 ink:overflow-hidden">
             {children}
           </div>
         </div>
