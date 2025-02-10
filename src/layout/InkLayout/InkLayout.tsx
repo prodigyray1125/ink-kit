@@ -109,7 +109,7 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
           }
           className={classNames(
             "ink:fixed ink:lg:hidden ink:lg:pointer-events-none ink:inset-0 ink:top-[var(--ink-mobile-nav-height)] ink:z-50",
-            "ink:bg-background-light/20 ink:backdrop-blur-xl",
+            "ink:bg-background-light/20 ink:backdrop-blur-lg",
             "ink:transition-default-animation ink:opacity-100 ink:starting:opacity-0"
           )}
         >

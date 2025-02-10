@@ -111,6 +111,10 @@
 
   --color-default-app-icon-gradient: var(--ink-default-app-icon-gradient);
 
+  /* Independent Colors */
+  --color-ink-light-purple: var(--ink-color-light-purple);
+  --color-ink-dark-purple: var(--ink-color-dark-purple);
+
   /* Typography */
   --text-*: initial;
 
@@ -142,9 +146,13 @@
   --text-h5--line-height: 24px;
   --text-h5--font-weight: 700;
 
-  --text-body-1: 18px;
-  --text-body-1--line-height: 24px;
-  --text-body-1--font-weight: 400;
+  --text-body-1-regular: 18px;
+  --text-body-1-regular--line-height: 24px;
+  --text-body-1-regular--font-weight: 400;
+
+  --text-body-1-bold: 18px;
+  --text-body-1-bold--line-height: 24px;
+  --text-body-1-bold--font-weight: 600;
 
   --text-body-2-regular: 16px;
   --text-body-2-regular--line-height: 20px;
@@ -198,6 +206,15 @@
   --shadow-xs: 0px 4px 8px -2px var(--ink-base-shadow-xs-color);
   --shadow-md: 0px 12px 16px -4px var(--ink-base-shadow-md-color);
   --shadow-lg: 0px 32px 64px -12px var(--ink-base-shadow-lg-color);
+
+  /* Blur */
+  --blur-*: initial;
+  --blur-sm: var(--ink-base-blur-sm);
+  --blur-lg: var(--ink-base-blur-lg);
+
+  /* Rotation */
+  --rotation-225: 225deg;
+  --rotation-270: 270deg;
 }
 
 @utility transition-default-animation {

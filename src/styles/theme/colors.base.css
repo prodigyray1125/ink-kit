@@ -112,4 +112,12 @@
     var(--ink-background-shadow) 10%,
     transparent
   );
+
+  /* Blur */
+  --ink-base-blur-sm: 48px;
+  --ink-base-blur-lg: 128px;
+
+  /* Independent Colors */
+  --ink-color-light-purple: #b9aaef;
+  --ink-color-dark-purple: #5c479d;
 }

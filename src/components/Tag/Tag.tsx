@@ -14,6 +14,8 @@ const tagVariants = cva(
           "ink:text-text-muted ink:hover:text-text-default ink:duration-200 ink:cursor-pointer ink:h-5 ink:px-1.5",
         featured:
           "ink:bg-background-container ink:text-text-on-secondary ink:text-caption-2-bold ink:h-2 ink:px-1",
+        event:
+          "ink:bg-button-secondary ink:backdrop-blur-lg ink:text-text-on-primary ink:text-caption-3-bold ink:h-5 ink:px-2",
       },
       selected: {
         true: "",
