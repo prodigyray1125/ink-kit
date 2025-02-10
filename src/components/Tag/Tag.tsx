@@ -3,23 +3,25 @@ import * as React from "react";
 import { classNames } from "../../util/classes";
 
 const tagVariants = cva(
-  "ink:inline-flex ink:font-default ink:items-center ink:gap-1 ink:flex-shrink-0 ink:rounded-full ink:text-body-3-bold ink:font-bold ink:leading-[18px] ink:px-1.5",
+  "ink:inline-flex ink:font-default ink:items-center ink:gap-1 ink:flex-shrink-0 ink:rounded-full ink:text-body-3-bold ink:font-bold ink:leading-[18px]",
   {
     variants: {
       variant: {
-        fill: "ink:bg-background-container ink:text-text-muted",
+        fill: "ink:bg-background-container ink:text-text-muted ink:h-4 ink:px-1.5",
         outline:
-          "ink:text-text-muted ink:border-background-container ink:border-[1.5px]",
+          "ink:text-text-muted ink:border-background-container ink:border-[1.5px] ink:h-4 ink:px-1.5",
         filter:
-          "ink:text-text-muted ink:hover:text-text-default ink:duration-200 ink:cursor-pointer",
+          "ink:text-text-muted ink:hover:text-text-default ink:duration-200 ink:cursor-pointer ink:h-5 ink:px-1.5",
+        featured:
+          "ink:bg-background-container ink:text-text-on-secondary ink:text-caption-2-bold ink:h-2 ink:px-1",
       },
       selected: {
         true: "",
         false: "",
       },
       hasIcon: {
-        true: "ink:py-1",
-        false: "ink:py-1.5",
+        true: "",
+        false: "",
       },
     },
     compoundVariants: [
@@ -52,7 +54,16 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
         )}
         {...props}
       >
-        {icon && <div className="ink:size-3">{icon}</div>}
+        {icon && (
+          <div
+            className={classNames(
+              "ink:flex ink:items-center ink:justify-center",
+              variant === "featured" ? "ink:size-1.5" : "ink:size-2"
+            )}
+          >
+            {icon}
+          </div>
+        )}
         {children}
       </div>
     );

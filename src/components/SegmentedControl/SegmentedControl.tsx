@@ -63,7 +63,7 @@ export const SegmentedControl = <TOptionValue extends string>({
     <div className="ink:relative ink:font-default ink:h-fit">
       <div
         className={classNames(
-          "ink:grid ink:h-6 ink:grid-flow-col ink:text-body-2-bold ink:rounded-md ink:p-0.5 ink:box-border ink:backdrop-blur-xl",
+          "ink:grid ink:h-5 ink:grid-flow-col ink:text-body-3-bold ink:rounded-md ink:p-0.5 ink:box-border ink:backdrop-blur-xl",
           variantClassNames(displayOn, {
             light: "ink:bg-background-container",
             dark: "ink:bg-background-light",
@@ -85,7 +85,7 @@ export const SegmentedControl = <TOptionValue extends string>({
                       default: "ink:text-text-default",
                       primary: "ink:text-text-on-primary",
                     })
-                  : "ink:text-text-on-secondary",
+                  : "ink:text-text-muted ink:hover:text-text-default",
                 variableTabWidth ? "ink:px-3" : "ink:px-4"
               )}
               ref={(el) => {

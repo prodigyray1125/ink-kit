@@ -28,8 +28,8 @@ export const ListItem: React.FC<ListItemProps> = ({
       disabled={disabled}
       className={classNames(
         "ink:group ink:font-default ink:text-body-2-bold ink:cursor-pointer ink:box-border ink:no-underline",
-        "ink:bg-background-light-invisible ink:px-1.5 ink:py-2 ink:rounded-md ink:text-body-2-bold ink:text-text-default ink:hover:bg-background-container ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-container/80 ink:data-active:bg-background-container/80",
-        "ink:w-full ink:flex ink:items-center ink:justify-start ink:gap-1.5 ink:h-6",
+        "ink:bg-background-light-invisible ink:px-1.5 ink:py-2 ink:rounded-md ink:text-body-3-bold ink:text-text-default ink:hover:bg-background-container ink:disabled:bg-background-light-transparent-disabled ink:disabled:text-muted ink:active:bg-background-container/80 ink:data-active:bg-background-container/80",
+        "ink:w-full ink:flex ink:items-center ink:justify-start ink:gap-1.5 ink:h-5",
         variantClassNames(variant, {
           default: "",
           secondary:

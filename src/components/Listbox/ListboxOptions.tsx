@@ -16,7 +16,7 @@ export const ListboxOptions = ({
       className={classNames("ink:absolute ink:z-10 ink:box-border", className)}
       anchor="bottom end"
     >
-      <Panel className="ink:max-h-[300px]">{children}</Panel>
+      <Panel className="ink:max-h-[300px] ink:gap-px">{children}</Panel>
     </HeadlessListboxOptions>
   );
 };

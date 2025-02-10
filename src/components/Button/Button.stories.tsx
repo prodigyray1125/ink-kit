@@ -10,7 +10,7 @@ const meta: Meta<ButtonProps> = {
   title: "Components/Button",
   decorators: [
     MatrixDecorator<ButtonProps>({
-      first: { key: "size", values: ["sm", "md", "lg"] },
+      first: { key: "size", values: ["md", "lg"] },
       second: { key: "variant", values: ["primary", "secondary"] },
     }),
   ],
@@ -77,7 +77,6 @@ export const WalletVariant: Story = {
   decorators: [
     (Story, { args }) => (
       <div className="ink:flex ink:flex-col ink:items-center ink:justify-center ink:gap-2">
-        <Story args={{ ...args, size: "sm" }} />
         <Story args={{ ...args, size: "md" }} />
         <Story args={{ ...args, size: "lg" }} />
       </div>

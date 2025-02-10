@@ -19,7 +19,7 @@ export interface InkLayoutProps extends PropsWithChildren {
 
 export const InkLayout: React.FC<InkLayoutProps> = ({
   className,
-  mainIcon = <InkIcon.Logo.Placeholder className="ink:size-6" />,
+  mainIcon = <InkIcon.Logo.Placeholder className="ink:size-5" />,
   headerContent,
   sideNavigation,
   topNavigation,
@@ -38,7 +38,7 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
         )}
       >
         <div className="ink:w-full ink:grid ink:grid-cols-[1fr_auto_1fr] ink:justify-between ink:items-center ink:gap-3 ink:px-3 ink:sm:px-5 ink:pt-4 ink:box-border ink:sticky ink:top-0 ink:z-10">
-          <div className="ink:flex ink:items-center ink:justify-start ink:size-6 ink:gap-2">
+          <div className="ink:flex ink:items-center ink:justify-start ink:size-5 ink:gap-2">
             {mainIcon}
           </div>
           <div className="ink:flex ink:flex-1 ink:justify-center ink:items-center">

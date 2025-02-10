@@ -14,7 +14,7 @@ export const ListboxButton = forwardRef<HTMLButtonElement, ListboxButtonProps>(
       <HeadlessListboxButton
         className={classNames(
           className,
-          "ink:focus-visible:outline-none ink:data-active:border-text-on-secondary"
+          "ink:focus-visible:outline-none ink:data-active:border-text-on-secondary ink:rounded-full ink:text-body-3-bold ink:text-text-muted ink:hover:text-text-default"
         )}
         ref={ref}
         as={ListItem}
