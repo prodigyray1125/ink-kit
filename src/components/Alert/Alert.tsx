@@ -80,7 +80,7 @@ export const Alert: React.FC<AlertProps> = ({
           <div className="ink:text-body-2-regular">{description}</div>
         )}
       </div>
-      {dismissable && (
+      {dismissible && (
         <button
           onClick={handleDismiss}
           className="ink:size-4 ink:shrink-0 ink:opacity-60 hover:ink:opacity-100 ink:cursor-pointer"

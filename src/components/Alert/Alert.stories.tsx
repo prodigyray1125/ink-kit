@@ -61,7 +61,7 @@ export const Dismissable: Story = {
     title: "This alert can be dismissed",
     description:
       "Click the X to dismiss. The state will persist across refreshes.",
-    dismissable: true,
+    dismissible: true,
     id: "example-alert",
     onDismiss: fn(),
   },
