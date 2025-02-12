@@ -10,7 +10,7 @@ export const CardInfo = ({ children, className }: CardInfoProps) => {
   return (
     <div
       className={classNames(
-        "ink:grid ink:grid-cols-[minmax(200px,1fr)] ink:lg:grid-cols-2 ink:gap-1 ink:box-border",
+        "ink:grid ink:grid-cols-[repeat(auto-fit,minmax(max(200px,calc(100%/3)),1fr))] ink:xl:grid-cols-2 ink:gap-1 ink:box-border",
         className
       )}
     >

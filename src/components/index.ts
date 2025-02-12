@@ -8,6 +8,7 @@ export * from "./Listbox";
 export * from "./Modal";
 export * from "./Popover";
 export * from "./SegmentedControl";
+export * from "./Tag";
 export * from "./Toggle";
 export * from "./Typography";
 export * from "./Wallet";
