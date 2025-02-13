@@ -264,3 +264,59 @@ export const LargeCardInfo: Story = {
     ),
   },
 };
+
+export const FullCard: Story = {
+  args: {
+    size: "noPadding",
+    image: (
+      <CardContent.Image>
+        <img
+          src="https://picsum.photos/1024/576"
+          alt="Card Image"
+          width={1024}
+          height={580}
+        />
+      </CardContent.Image>
+    ),
+  },
+};
+
+export const FullCardWithImageOnTheRight: Story = {
+  args: {
+    size: "noPadding",
+    imageLocation: "right",
+    image: (
+      <CardContent.Image>
+        <img
+          src="https://picsum.photos/1024/576"
+          alt="Card Image"
+          width={1024}
+          height={580}
+        />
+      </CardContent.Image>
+    ),
+  },
+};
+
+export const CardWithSmallImage: Story = {
+  args: {
+    size: "small",
+    children: (
+      <TitleAndDescription
+        title="Card with small image"
+        description="This is a card with a small image."
+        size="small"
+      />
+    ),
+    image: (
+      <CardContent.Image variant="square">
+        <img
+          src="https://picsum.photos/1024/576"
+          alt="Card Image"
+          width={128}
+          height={128}
+        />
+      </CardContent.Image>
+    ),
+  },
+};
