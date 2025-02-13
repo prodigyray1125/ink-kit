@@ -102,9 +102,9 @@ export const InkLayout: React.FC<InkLayoutProps> = ({
         <div
           style={
             {
-              /** 48px components height + 32px top spacing + 32px spacing between header and content */
+              /** 40px components height + 32px top spacing + 32px spacing between header and content */
               "--ink-mobile-nav-height":
-                "calc(var(--ink-spacing-6) + var(--ink-spacing-4) + var(--ink-spacing-4))",
+                "calc(var(--ink-spacing-5) + var(--ink-spacing-4) + var(--ink-spacing-4))",
             } as React.CSSProperties
           }
           className={classNames(
