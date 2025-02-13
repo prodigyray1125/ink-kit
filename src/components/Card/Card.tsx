@@ -14,11 +14,12 @@ export interface CardProps extends VariantProps<typeof cardVariants> {
 const cardVariants = cva(
   `
 ink:grid ink:grid-cols-1
-ink:p-2 ink:pb-3 ink:sm:p-3 ink:gap-3
+ink:gap-3
 ink:relative 
 ink:bg-background-container 
 ink:font-default
 ink:box-border
+ink:overflow-hidden
 `,
   {
     variants: {
@@ -36,10 +37,10 @@ ink:box-border
         true: "ink:cursor-pointer",
         false: "",
       },
-      rounded: {
-        lg: "ink:rounded-lg",
-        xl: "ink:rounded-xl",
-        xxl: "ink:rounded-xxl",
+      size: {
+        noPadding: "ink:rounded-lg",
+        small: "ink:p-2 ink:pb-3 ink:sm:p-3 ink:rounded-lg",
+        default: "ink:p-2 ink:pb-3 ink:sm:p-3 ink:rounded-xl",
       },
     },
     compoundVariants: [
@@ -48,9 +49,14 @@ ink:box-border
         clickable: true,
         className: "ink:hover:bg-button-secondary-hover",
       },
+      {
+        size: "small",
+        imageLocation: "left",
+        className: "ink:grid-cols-[128px_1fr] ink:sm:grid-cols-[128px_1fr]",
+      },
     ],
     defaultVariants: {
-      rounded: "xl",
+      size: "default",
     },
   }
 );
@@ -63,10 +69,9 @@ export const Card: React.FC<CardProps> = ({
   asChild,
   variant,
   clickable,
-  rounded,
+  size,
 }) => {
   const Component = asChild ? Slot : "div";
-  const roundedValue = rounded || (image ? "xxl" : "lg");
   return (
     <Component
       className={classNames(
@@ -74,7 +79,7 @@ export const Card: React.FC<CardProps> = ({
           variant,
           imageLocation: image ? imageLocation : undefined,
           clickable,
-          rounded: roundedValue,
+          size: size || (image ? "default" : "small"),
           className,
         }),
         className
@@ -89,10 +94,10 @@ export const Card: React.FC<CardProps> = ({
             variant === "light-purple"
               ? "var(--ink-background-light)"
               : "var(--ink-text-muted)",
-          "--ink-card-rounded": variantClassNames(roundedValue, {
-            lg: "var(--ink-base-radius-sm)",
-            xl: "var(--ink-base-radius-lg)",
-            xxl: "var(--ink-base-radius-xl)",
+          "--ink-card-rounded": variantClassNames(size || "default", {
+            noPadding: "",
+            small: "var(--ink-base-radius-sm)",
+            default: "var(--ink-base-radius-lg)",
           }),
         } as React.CSSProperties
       }
@@ -103,10 +108,17 @@ export const Card: React.FC<CardProps> = ({
             {image}
             <div
               className={classNames(
-                "ink:flex ink:flex-col ink:gap-2 ink:sm:gap-6 ink:text-text-default ink:box-border",
+                "ink:flex ink:flex-col ink:gap-2 ink:sm:gap-6 ink:justify-center",
+                "ink:text-text-default ink:box-border",
                 !!image && "ink:p-2 ink:sm:p-3",
                 imageLocation === "right" && "ink:sm:-order-1",
-                imageLocation !== "top" && !!image && "ink:sm:py-[100px]"
+                imageLocation !== "top" &&
+                  !!image &&
+                  variantClassNames(size || "default", {
+                    default: "ink:sm:py-[100px]",
+                    noPadding: "ink:sm:py-[100px]",
+                    small: "",
+                  })
               )}
             >
               {child}

@@ -3,6 +3,7 @@ import { classNames } from "../../../util/classes";
 import { Slot } from "../../Slot";
 
 export interface ImageProps extends React.PropsWithChildren {
+  variant?: "default" | "square";
   className?: string;
   mainLabels?: React.ReactNode;
   secondaryLabels?: React.ReactNode;
@@ -10,6 +11,7 @@ export interface ImageProps extends React.PropsWithChildren {
 
 export const Image: React.FC<ImageProps> = ({
   className,
+  variant,
   mainLabels,
   secondaryLabels,
   children,
@@ -40,7 +42,12 @@ export const Image: React.FC<ImageProps> = ({
           )}
         </div>
       )}
-      <Slot className="ink:object-cover ink:object-center ink:w-full ink:h-full">
+      <Slot
+        className={classNames(
+          "ink:object-cover ink:object-center ink:w-full ink:h-full",
+          variant === "square" && "ink:aspect-square"
+        )}
+      >
         {children}
       </Slot>
     </div>
