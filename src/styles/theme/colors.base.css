@@ -91,6 +91,8 @@
 
   /* Radius */
   --ink-base-radius-full: 9999px;
+  --ink-base-radius-xxl: 64px;
+  --ink-base-radius-xl: 48px;
   --ink-base-radius-lg: 24px;
   --ink-base-radius-md: 16px;
   --ink-base-radius-sm: 12px;

@@ -14,7 +14,7 @@ export const Tagline: React.FC<TaglineProps> = ({
   return (
     <div
       className={classNames(
-        "ink:flex ink:flex-col ink:gap-4 sm:gap-8 ink:text-text-default ink:px-0 ink:py-6 ink:sm:px-16 ink:sm:py-12 ink:justify-between",
+        "ink:flex ink:flex-col ink:gap-4 sm:gap-8 ink:text-(--ink-card-default-color) ink:px-0 ink:py-6 ink:sm:px-16 ink:sm:py-12 ink:justify-between",
         className
       )}
     >

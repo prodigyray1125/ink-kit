@@ -19,12 +19,20 @@ export const Link = ({
   return (
     <Tiny
       className={className}
-      icon={icon ? <div className="ink:size-6">{icon}</div> : undefined}
+      icon={
+        icon ? (
+          <div className="ink:size-6 ink:text-(--ink-card-muted-color)">
+            {icon}
+          </div>
+        ) : undefined
+      }
       title={title}
       description={description}
     >
       {linkIcon && (
-        <div className="ink:absolute ink:top-3 ink:right-3">{linkIcon}</div>
+        <div className="ink:absolute ink:top-3 ink:right-3 ink:text-(--ink-card-default-color)">
+          {linkIcon}
+        </div>
       )}
     </Tiny>
   );

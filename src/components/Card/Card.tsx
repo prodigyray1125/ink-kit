@@ -13,7 +13,7 @@ export interface CardProps extends VariantProps<typeof cardVariants> {
 
 const cardVariants = cva(
   `
-ink:rounded-md lg:ink:rounded-lg
+ink:rounded-xl
 ink:grid ink:grid-cols-1
 ink:p-2 ink:pb-3 ink:sm:p-3 ink:gap-3
 ink:relative 
@@ -69,6 +69,18 @@ export const Card: React.FC<CardProps> = ({
         }),
         className
       )}
+      style={
+        {
+          "--ink-card-default-color":
+            variant === "light-purple"
+              ? "var(--ink-background-light)"
+              : "var(--ink-text-default)",
+          "--ink-card-muted-color":
+            variant === "light-purple"
+              ? "var(--ink-background-light)"
+              : "var(--ink-text-muted)",
+        } as React.CSSProperties
+      }
     >
       <Slottable child={children}>
         {(child) => (

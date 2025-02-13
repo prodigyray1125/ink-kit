@@ -1,9 +1,9 @@
 :root,
 :root.ink\:dark-theme {
   /* Background */
-  --ink-background-dark: rgb(22, 15, 31);
-  --ink-background-light: rgb(33, 26, 41);
-  --ink-background-container: rgba(255, 255, 255, 0.06);
+  --ink-background-dark: rgba(18, 17, 24);
+  --ink-background-light: rgb(45, 45, 52);
+  --ink-background-container: rgba(187, 180, 255, 0.05);
 
   /* Button */
   --ink-button-primary: rgb(113, 50, 245);
@@ -26,9 +26,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Background */
-    --ink-background-dark: rgb(22, 15, 31);
-    --ink-background-light: rgb(33, 26, 41);
-    --ink-background-container: rgba(255, 255, 255, 0.06);
+    --ink-background-dark: rgba(18, 17, 24);
+    --ink-background-light: rgb(45, 45, 52);
+    --ink-background-container: rgba(187, 180, 255, 0.05);
 
     /* Button */
     --ink-button-primary: rgb(113, 50, 245);

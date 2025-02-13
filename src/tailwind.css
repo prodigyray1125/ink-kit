@@ -73,6 +73,8 @@
   /* Radius */
   --radius-*: initial;
   --radius-full: var(--ink-base-radius-full);
+  --radius-xxl: var(--ink-base-radius-xxl);
+  --radius-xl: var(--ink-base-radius-xl);
   --radius-lg: var(--ink-base-radius-lg);
   --radius-md: var(--ink-base-radius-md);
   --radius-sm: var(--ink-base-radius-sm);

@@ -5,7 +5,6 @@ interface CallToActionProps {
   title: React.ReactNode;
   description: React.ReactNode;
   button: React.ReactNode;
-  variant: "default" | "light";
   className?: string;
 }
 
@@ -13,19 +12,10 @@ export const CallToAction: React.FC<CallToActionProps> = ({
   title,
   description,
   button,
-  variant,
   className,
 }) => {
   return (
-    <div
-      className={classNames(
-        "ink:flex ink:flex-col ink:gap-3",
-        variant === "light"
-          ? "ink:text-background-light"
-          : "ink:text-text-default",
-        className
-      )}
-    >
+    <div className={classNames("ink:flex ink:flex-col ink:gap-3", className)}>
       <TitleAndDescription title={title} description={description} />
       <div className="ink:flex ink:gap-2 ink:box-border">{button}</div>
     </div>

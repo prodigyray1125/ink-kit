@@ -20,7 +20,6 @@ const meta: Meta<CardProps> = {
             Button
           </Button>
         }
-        variant="default"
       />
     ),
     image: (
@@ -109,6 +108,13 @@ export const ImageWithMainAndSecondaryLabels: Story = {
   },
 };
 
+/** This variant has a color independent of the theme. */
+export const PurpleLightVariant: Story = {
+  args: {
+    variant: "light-purple",
+  },
+};
+
 /** For a Tagline card, use `CardContent.Tagline` and no image. */
 export const WithTagline: Story = {
   args: {
@@ -142,7 +148,7 @@ export const Link: Story = {
     children: (
       <a href="#something" target="_self" className="ink:no-underline">
         <CardContent.Link
-          icon={<InkIcon.InkLogo />}
+          icon={<InkIcon.Logo.Ink />}
           title="Join the Ink Revolution!"
           description="Did you know that Ink's design system is like a chameleon for your UI? Just like these color-changing lizards adapt to their environment, Ink components seamlessly blend into any design while maintaining their unique personality. Just fabulous, adaptable UI!"
         />

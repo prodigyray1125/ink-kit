@@ -1,7 +1,7 @@
 :root,
 :root.ink\:light-theme {
   /* Background */
-  --ink-background-dark: rgb(240, 239, 255);
+  --ink-background-dark: rgba(244, 243, 249);
   --ink-background-light: rgb(255, 255, 255);
   --ink-background-shadow: rgba(22, 15, 31, 1);
 
