@@ -131,3 +131,5 @@ export const SegmentedControl = <TOptionValue extends string>({
     </div>
   );
 };
+
+SegmentedControl.displayName = "SegmentedControl";

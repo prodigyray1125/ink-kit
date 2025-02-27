@@ -28,3 +28,5 @@ export const FieldLabel: React.FC<FieldLabelProps> = ({
     </Field>
   );
 };
+
+FieldLabel.displayName = "FieldLabel";

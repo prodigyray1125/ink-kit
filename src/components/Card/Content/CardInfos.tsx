@@ -18,3 +18,5 @@ export const CardInfos = ({ children, className }: CardInfosProps) => {
     </div>
   );
 };
+
+CardInfos.displayName = "CardInfos";

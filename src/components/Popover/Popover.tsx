@@ -15,3 +15,5 @@ export const Popover = ({ children, className }: PopoverProps) => {
     </HeadlessPopover>
   );
 };
+
+Popover.displayName = "Popover";

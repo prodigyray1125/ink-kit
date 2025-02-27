@@ -1,4 +1,4 @@
-import { SegmentedControl } from "../../components";
+import { SegmentedControl } from "../../components/SegmentedControl";
 
 export const ExampleTopNav = () => {
   return (

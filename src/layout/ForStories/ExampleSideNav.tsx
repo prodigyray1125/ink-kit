@@ -1,4 +1,4 @@
-import { InkLayoutSideNav } from "../InkLayout";
+import { InkLayoutSideNav } from "../InkLayout/InkLayoutSideNav";
 import { EXAMPLE_LINKS } from "./ExampleLayoutLinks";
 
 export const ExampleSideNav = () => {

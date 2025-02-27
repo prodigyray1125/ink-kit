@@ -52,14 +52,15 @@ export const SideNavWithCustomButtons: Story = {
           {
             children: <a className="ink:text-button-primary!">Home</a>,
             href: "#home",
-            icon: <InkIcon.Home />,
+            leftIcon: <InkIcon.Home />,
             target: "_self",
             asChild: true,
+            active: true,
           },
           {
             children: <a className="ink:text-button-primary!">Settings</a>,
             href: "#settings",
-            icon: <InkIcon.Settings />,
+            leftIcon: <InkIcon.Settings />,
             target: "_self",
             asChild: true,
           },

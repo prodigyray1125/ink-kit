@@ -167,3 +167,5 @@ const ConnectedWalletSection = ({
     </>
   );
 };
+
+ConnectWallet.displayName = "ConnectWallet";

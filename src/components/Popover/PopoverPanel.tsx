@@ -27,3 +27,5 @@ export const PopoverPanel: React.FC<PopoverPanelProps> = ({
     </HeadlessPopoverPanel>
   );
 };
+
+PopoverPanel.displayName = "PopoverPanel";

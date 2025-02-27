@@ -21,3 +21,5 @@ export const Panel: React.FC<PanelProps> = ({ children, className }) => {
     </div>
   );
 };
+
+Panel.displayName = "Panel";

@@ -25,3 +25,5 @@ export const InkPageLayout: React.FC<InkPageLayoutProps> = ({
     </div>
   );
 };
+
+InkPageLayout.displayName = "InkPageLayout";

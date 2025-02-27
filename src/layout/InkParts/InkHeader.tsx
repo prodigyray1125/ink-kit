@@ -24,3 +24,5 @@ export const InkHeader: React.FC<InkHeaderProps> = ({
     </div>
   );
 };
+
+InkHeader.displayName = "InkHeader";

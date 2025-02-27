@@ -35,3 +35,5 @@ export const CardInfo = ({
     </Card>
   );
 };
+
+CardInfo.displayName = "CardInfo";

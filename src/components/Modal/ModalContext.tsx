@@ -73,3 +73,5 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
     </ModalManagementContext.Provider>
   );
 };
+
+ModalProvider.displayName = "ModalProvider";

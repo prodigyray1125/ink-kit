@@ -39,3 +39,5 @@ export const InkPanel = forwardRef<HTMLDivElement, InkPanelProps>(
     );
   }
 );
+
+InkPanel.displayName = "InkPanel";

@@ -46,30 +46,31 @@ export interface TagProps
   icon?: React.ReactNode;
 }
 
-export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
-  ({ className, variant, selected, icon, children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={classNames(
-          tagVariants({ variant, selected, hasIcon: !!icon, className })
-        )}
-        {...props}
-      >
-        {icon && (
-          <div
-            className={classNames(
-              "ink:flex ink:items-center ink:justify-center",
-              variant === "featured" ? "ink:size-1.5" : "ink:size-2"
-            )}
-          >
-            {icon}
-          </div>
-        )}
-        {children}
-      </div>
-    );
-  }
-);
+export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
+  { className, variant, selected, icon, children, ...props },
+  ref
+) {
+  return (
+    <div
+      ref={ref}
+      className={classNames(
+        tagVariants({ variant, selected, hasIcon: !!icon, className })
+      )}
+      {...props}
+    >
+      {icon && (
+        <div
+          className={classNames(
+            "ink:flex ink:items-center ink:justify-center",
+            variant === "featured" ? "ink:size-1.5" : "ink:size-2"
+          )}
+        >
+          {icon}
+        </div>
+      )}
+      {children}
+    </div>
+  );
+});
 
 Tag.displayName = "Tag";

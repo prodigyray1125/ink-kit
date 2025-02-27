@@ -1,6 +1,6 @@
 export * from "./CallToAction";
-export * from "./CardInfos";
 export * from "./CardInfo";
+export * from "./CardInfos";
 export * from "./Image";
 export * from "./LargeLink";
 export * from "./LargeLinks";

@@ -21,3 +21,5 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
     </HeadlessRadioGroup>
   );
 };
+
+RadioGroup.displayName = "RadioGroup";

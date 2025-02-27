@@ -53,3 +53,5 @@ export const Image: React.FC<ImageProps> = ({
     </div>
   );
 };
+
+Image.displayName = "Image";

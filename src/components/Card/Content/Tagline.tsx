@@ -28,3 +28,5 @@ export const Tagline: React.FC<TaglineProps> = ({
     </div>
   );
 };
+
+Tagline.displayName = "Tagline";

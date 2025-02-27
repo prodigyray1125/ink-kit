@@ -21,3 +21,5 @@ export const CallToAction: React.FC<CallToActionProps> = ({
     </div>
   );
 };
+
+CallToAction.displayName = "CallToAction";

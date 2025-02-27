@@ -31,3 +31,5 @@ export const InkLayoutProvider = ({
     </InkLayoutContext.Provider>
   );
 };
+
+InkLayoutProvider.displayName = "InkLayoutProvider";

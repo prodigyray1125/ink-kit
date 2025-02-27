@@ -32,3 +32,5 @@ export const Tiny = ({
     </div>
   );
 };
+
+Tiny.displayName = "Tiny";

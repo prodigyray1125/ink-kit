@@ -13,8 +13,8 @@ export const InkLayoutSideNav: React.FC<InkLayoutSideNavProps> = ({
   return (
     <nav className="ink:h-full ink:flex ink:flex-col ink:font-default ink:text-text-default ink:text-body-3-bold ink:pb-4 ink:gap-4 ink:box-border">
       <div className="ink:flex-1 ink:flex ink:flex-col">
-        {links.map((link, i) => {
-          return <InkNavLink {...link} key={link.href} active={i === 0} />;
+        {links.map((link) => {
+          return <InkNavLink {...link} key={link.href} />;
         })}
       </div>
       <div className="ink:flex-1 ink:flex ink:flex-col ink:justify-end">
@@ -23,3 +23,5 @@ export const InkLayoutSideNav: React.FC<InkLayoutSideNavProps> = ({
     </nav>
   );
 };
+
+InkLayoutSideNav.displayName = "InkLayoutSideNav";

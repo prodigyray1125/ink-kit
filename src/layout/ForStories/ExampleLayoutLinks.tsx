@@ -5,13 +5,14 @@ export const EXAMPLE_LINKS: InkLayoutLink[] = [
   {
     children: "Home",
     href: "#home",
-    icon: <InkIcon.Home />,
+    leftIcon: <InkIcon.Home />,
     target: "_self",
+    active: true,
   },
   {
     children: "Settings",
     href: "#settings",
-    icon: <InkIcon.Settings />,
+    leftIcon: <InkIcon.Settings />,
     target: "_self",
   },
 ];

@@ -40,3 +40,5 @@ export const Toggle: React.FC<ToggleProps> = ({ checked, onChange }) => {
     </Switch>
   );
 };
+
+Toggle.displayName = "Toggle";

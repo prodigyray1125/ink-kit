@@ -18,3 +18,5 @@ export const LargeLinks = ({ children, className }: LargeLinksProps) => {
     </div>
   );
 };
+
+LargeLinks.displayName = "LargeLinks";

@@ -37,3 +37,5 @@ export const Link = ({
     </Tiny>
   );
 };
+
+Link.displayName = "Link";

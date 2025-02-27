@@ -73,3 +73,5 @@ export const ListItem: React.FC<ListItemProps> = ({
     </Component>
   );
 };
+
+ListItem.displayName = "ListItem";

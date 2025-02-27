@@ -47,3 +47,5 @@ export const LargeLink = ({
     </Component>
   );
 };
+
+LargeLink.displayName = "LargeLink";

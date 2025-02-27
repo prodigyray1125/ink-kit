@@ -26,7 +26,7 @@ export const TitleAndDescription = ({
         {title}
       </h3>
       {description && (
-        <p
+        <div
           className={classNames(
             "ink:text-body-3-regular ink:text-(--ink-card-muted-color) ink:box-border ink:m-0",
             variantClassNames(size, {
@@ -37,8 +37,10 @@ export const TitleAndDescription = ({
           )}
         >
           {description}
-        </p>
+        </div>
       )}
     </div>
   );
 };
+
+TitleAndDescription.displayName = "TitleAndDescription";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { classNames, variantClassNames } from "../../util/classes";
 import { Slot, Slottable } from "../Slot";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -61,19 +61,23 @@ ink:overflow-hidden
   }
 );
 
-export const Card: React.FC<CardProps> = ({
-  children,
-  className,
-  image,
-  imageLocation,
-  asChild,
-  variant,
-  clickable,
-  size,
-}) => {
+export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
+  {
+    children,
+    className,
+    image,
+    imageLocation,
+    asChild,
+    variant,
+    clickable,
+    size,
+  },
+  ref
+) {
   const Component = asChild ? Slot : "div";
   return (
     <Component
+      ref={ref}
       className={classNames(
         cardVariants({
           variant,
@@ -128,4 +132,6 @@ export const Card: React.FC<CardProps> = ({
       </Slottable>
     </Component>
   );
-};
+});
+
+Card.displayName = "Card";

@@ -36,3 +36,5 @@ export const ListboxOption = <T,>({
     </HeadlessListboxOption>
   );
 };
+
+ListboxOption.displayName = "ListboxOption";

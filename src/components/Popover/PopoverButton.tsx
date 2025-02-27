@@ -28,3 +28,5 @@ export const PopoverButton: React.FC<PopoverButtonProps> = ({
     />
   );
 };
+
+PopoverButton.displayName = "PopoverButton";

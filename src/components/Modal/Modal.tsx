@@ -93,3 +93,5 @@ export const Modal = <TOnCloseProps,>({
     </>
   );
 };
+
+Modal.displayName = "Modal";

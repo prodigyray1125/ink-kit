@@ -20,3 +20,5 @@ export const Listbox = <T extends object>({
     </HeadlessListbox>
   );
 };
+
+Listbox.displayName = "Listbox";

@@ -121,3 +121,5 @@ const InkLayoutContent = ({
     </>
   );
 };
+
+InkLayout.displayName = "InkLayout";
