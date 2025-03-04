@@ -17,7 +17,7 @@ function getIconName(svg) {
 }
 
 async function processSvgsInFolder(folder) {
-  // Start by renaming the files to remove the "Type=" or "Propery 1=" prefix
+  // Start by renaming the files to remove the "Type=" or "Property 1=" prefix
   await Promise.all(
     (await fs.readdir(folder, { recursive: true })).map(async (name) => {
       if (name.includes("=")) {
