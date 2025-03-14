@@ -13,8 +13,8 @@ RUN pnpm build-storybook
 # Use official Nginx image as base
 FROM nginx:alpine
 
-# Copy Storybook static files into Nginx's default public directory
-COPY storybook-static/ /usr/share/nginx/html
+# Copy Storybook static files from the build stage
+COPY --from=0 /app/storybook-static/ /usr/share/nginx/html
 
 # Expose port 80 (Nginx default)
 EXPOSE 80
