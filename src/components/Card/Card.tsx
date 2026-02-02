@@ -83,7 +83,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
           variant,
           imageLocation: image ? imageLocation : undefined,
           clickable,
-          size: size || (image ? "default" : "small"),
+          size: size || (image ? "default" : "big"),
           className,
         }),
         className
