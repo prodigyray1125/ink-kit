@@ -37,11 +37,7 @@ ink:overflow-hidden
         true: "ink:cursor-pointer",
         false: "",
       },
-      size: {
-        noPadding: "ink:rounded-lg",
-        small: "ink:p-2 ink:pb-3 ink:sm:p-3 ink:rounded-lg",
-        default: "ink:p-2 ink:pb-3 ink:sm:p-3 ink:rounded-xl",
-      },
+     
     },
     compoundVariants: [
       {
