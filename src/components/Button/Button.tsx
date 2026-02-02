@@ -20,7 +20,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asChild,
       className,
       children,
-      variant = "primary",
+      variant = "secondary",
       size = "md",
       rounded = "default",
       iconLeft,
