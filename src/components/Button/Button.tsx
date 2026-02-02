@@ -88,6 +88,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {(child) => (
             <>
               {iconLeft && <div className={iconClasses}>{iconLeft}</div>}
+              {iconLeft && <div className={iconClasses}>{iconLeft}</div>}
               {child}
               {iconRight && <div className={iconClasses}>{iconRight}</div>}
             </>
