@@ -5,7 +5,7 @@ import { InkIcon } from "../..";
 export interface AlertProps {
   title: string;
   description?: React.ReactNode;
-  variant?: "success" | "error" | "warning" | "info";
+  variant?: "success" | "error" | "warning" | "info" | "danger";
   icon?: React.ReactNode;
   className?: string;
   /**
